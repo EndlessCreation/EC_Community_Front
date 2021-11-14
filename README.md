@@ -18,50 +18,54 @@
 ## Skills
 
 <table><tbody>
-     <tr>
-      <td colspan="1" align="center"><strong>Language</strong></td>
-      <td colspan="1" align="center"><strong>Framework</strong></td>
-       <td colspan="1" align="center"><strong>State Manage</strong></td>
-       <td colspan="2" align="center"><strong>UI</strong></td>
-       <td colspan="2" align="center"><strong>Testing</strong></td>
-       </tr
-  <tr align="center" valign="middle">
+    <tr>
+        <td colspan="1" align="center"><strong>Language</strong></td>
+        <td colspan="2" align="center"><strong>Framework</strong></td>
+        <td colspan="1" align="center"><strong>State Manage</strong></td>
+    </tr>
+    <tr align="center" valign="middle">
         <td width="100">
-      <a href="https://www.typescriptlang.org/" target="_blank"> 
-        <img src="https://user-images.githubusercontent.com/24623403/141670247-7c4a3d98-5869-4808-ba4a-fef810dc63f9.png" width="80" height="80"/> 
-      </a><br>
-    </td>
-    <td width="140" align="center">
-      <a href="https://nextjs.org/" target="_blank"> 
-        <img src="https://user-images.githubusercontent.com/24623403/141670773-81b7e9a3-6431-485b-ae11-08c6d5c4cb4b.png" alt="next" width="120" height="60"/> 
-      </a><br>
-    </td>
-    <td width="140" align="center">
-      <a href="https://redux.js.org" target="_blank"> 
-        <img src="https://github.com/devicons/devicon/blob/master/icons/redux/redux-original.svg" alt="redux" width="80" height="60"/> 
-      </a><br>
-    </td>
-    <td width="120" align="center">
-      <a href="https://material-ui.com" target="_blank"> 
-        <img src="https://github.com/devicons/devicon/blob/master/icons/materialui/materialui-original.svg" alt="material-ui" width="100" height="80"/> 
-      </a><br>
-    </td>
-    <td width="100" align="center">
-      <a href="https://sass-lang.com/" target="_blank"> 
-        <img src="https://user-images.githubusercontent.com/24623403/141670732-be39e6c4-0c1a-40c1-8eb6-8c458b915368.png" alt="Sass" width="80" height="60"/> 
-      </a><br>
-    </td>
-                  <td width="100" align="center">
-      <a href="https://jestjs.io/" target="_blank"> 
-        <img src="https://user-images.githubusercontent.com/24623403/141670720-f3aa3e80-5b86-41a8-9633-f5c2acea2bde.png" alt="Sass" width="80" height="60"/> 
-      </a><br>
-    </td>
-           <td width="100" align="center">
-      <a href="https://testing-library.com/docs/react-testing-library" target="_blank"> 
-        <img src="https://user-images.githubusercontent.com/24623403/141670712-57da78c7-b4fc-4076-a194-f2b10b985ff0.png" alt="Sass" width="80" height="80"/> 
-      </a><br>
-    </td>
-  </tr>
+            <a href="https://www.typescriptlang.org/" target="_blank"> 
+                <img src="https://user-images.githubusercontent.com/24623403/141670247-7c4a3d98-5869-4808-ba4a-fef810dc63f9.png" alt="typeScript" width="80" height="80"/> 
+            </a><br>
+        </td>
+            <td width="140" align="center" colspan="2">
+            <a href="https://nextjs.org/" target="_blank"> 
+                <img src="https://user-images.githubusercontent.com/24623403/141670773-81b7e9a3-6431-485b-ae11-08c6d5c4cb4b.png" alt="next" width="120" height="60"/> 
+            </a><br>
+        </td>
+        <td width="140" align="center">
+            <a href="https://redux.js.org" target="_blank"> 
+                <img src="https://github.com/devicons/devicon/blob/master/icons/redux/redux-original.svg" alt="redux" width="80" height="60"/> 
+            </a><br>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center"><strong>UI</strong></td>
+        <td colspan="2" align="center"><strong>Testing</strong></td>
+    </tr>
+    <tr>
+        <td width="120" align="center">
+            <a href="https://material-ui.com" target="_blank"> 
+                <img src="https://github.com/devicons/devicon/blob/master/icons/materialui/materialui-original.svg" alt="material-ui" width="100" height="80"/> 
+            </a><br>
+        </td>
+        <td width="100" align="center">
+            <a href="https://sass-lang.com/" target="_blank"> 
+                <img src="https://user-images.githubusercontent.com/24623403/141670732-be39e6c4-0c1a-40c1-8eb6-8c458b915368.png" alt="Sass" width="80" height="60"/> 
+            </a><br>
+        </td>
+        <td width="100" align="center">
+            <a href="https://jestjs.io/" target="_blank"> 
+                <img src="https://user-images.githubusercontent.com/24623403/141670720-f3aa3e80-5b86-41a8-9633-f5c2acea2bde.png" alt="Jest" width="80" height="60"/> 
+            </a><br>
+        </td>
+        <td width="100" align="center">
+            <a href="https://testing-library.com/docs/react-testing-library" target="_blank"> 
+                <img src="https://user-images.githubusercontent.com/24623403/141670712-57da78c7-b4fc-4076-a194-f2b10b985ff0.png" alt="React Testing Library" width="80" height="80"/> 
+            </a><br>
+        </td>
+    </tr>
 </tbody></table>
 
 ## 기능
