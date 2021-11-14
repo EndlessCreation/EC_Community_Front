@@ -1,5 +1,6 @@
 {
   "name": "ec_community_front",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
