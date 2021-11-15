@@ -17,7 +17,7 @@
 
 ## Skills
 
-<table><tbody>
+<table align="center"><tbody>
     <tr>
         <td colspan="1" align="center"><strong>Language</strong></td>
         <td colspan="2" align="center"><strong>Framework</strong></td>
@@ -29,7 +29,7 @@
                 <img src="https://user-images.githubusercontent.com/24623403/141670247-7c4a3d98-5869-4808-ba4a-fef810dc63f9.png" alt="typeScript" width="80" height="80"/> 
             </a><br>
         </td>
-            <td width="140" align="center" colspan="2">
+            <td width="200" align="center" colspan="2">
             <a href="https://nextjs.org/" target="_blank"> 
                 <img src="https://user-images.githubusercontent.com/24623403/141670773-81b7e9a3-6431-485b-ae11-08c6d5c4cb4b.png" alt="next" width="120" height="60"/> 
             </a><br>
