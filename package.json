@@ -11,6 +11,7 @@
   "dependencies": {
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.2.0",
     "@mui/material": "^5.2.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -28,8 +29,7 @@
     "redux-actions": "^2.6.5",
     "redux-devtools-extension": "^2.13.9",
     "redux-logger": "^3.0.6",
-    "redux-pender": "^2.0.12",
-    "sass": "^1.43.5"
+    "redux-pender": "^2.0.12"
   },
   "devDependencies": {
     "@types/node": "16.11.7",
