@@ -1,7 +1,22 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { Box, Card, styled, useScrollTrigger } from '@mui/material';
+import {
+  Box,
+  Divider,
+  IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  styled,
+  SwipeableDrawer,
+  useScrollTrigger,
+} from '@mui/material';
 import { Link } from './common';
+import MenuIcon from '@mui/icons-material/Menu';
+import { useState } from 'react';
+import InboxIcon from '@mui/icons-material/Inbox';
 
 type MainNavProps = {};
 
@@ -16,11 +31,21 @@ const index = [
 ];
 
 const MainNav = ({}: MainNavProps) => {
-  const isScrolled = useScrollTrigger({ disableHysteresis: true, threshold: 10 });
+  const isScrolled = useScrollTrigger({ disableHysteresis: true, threshold: 50 });
+  const [open, setOpen] = useState(false);
+
+  const toggleMenu = (open: boolean) => (event: any) => {
+    if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+    setOpen(open);
+  };
 
   return (
-    <Header isScrolled={isScrolled}>
-      <Link href="/">Endless Creation</Link>
+    <Header isScrolled={isScrolled} elevation={isScrolled ? 1 : 0}>
+      <Link href="/" css={{ fontWeight: 'bold' }}>
+        Endless Creation
+      </Link>
       <LinkList isScrolled={isScrolled}>
         {index.map((item) => (
           <Link key={item.url} href={item.url}>
@@ -28,25 +53,70 @@ const MainNav = ({}: MainNavProps) => {
           </Link>
         ))}
       </LinkList>
+      <IconButton
+        className="menu"
+        onClick={() => {
+          setOpen(true);
+        }}
+      >
+        <MenuIcon className="icon" />
+      </IconButton>
+      <SwipeableDrawer
+        anchor="right"
+        open={open}
+        onClose={toggleMenu(false)}
+        onOpen={toggleMenu(true)}
+      >
+        <Box onClick={toggleMenu(false)} onKeyDown={toggleMenu(false)}>
+          <List>
+            {index.map((item) => (
+              <ListItem key={item.url} button>
+                <ListItemIcon>
+                  <InboxIcon />
+                </ListItemIcon>
+                <ListItemText primary={item.title} />
+              </ListItem>
+            ))}
+          </List>
+        </Box>
+      </SwipeableDrawer>
     </Header>
   );
 };
 
 export default MainNav;
 
-const Header = styled(Card)<any>(
+const Header = styled(Box)<any>(
   ({ isScrolled }: any) => css`
     width: 100%;
-    height: 64px;
-    padding: 0 32px;
+    height: 4rem;
+    padding: 0 2rem;
+    border-radius: 0px;
     position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-between;
     transition: all 0.3s ease;
-    background-color: ${isScrolled ? 'white' : 'transparent'};
+    background-color: ${isScrolled ? '#ffffffc7' : 'transparent'};
+    backdrop-filter: ${isScrolled && 'blur(5px)'};
+    & .menu {
+      display: none;
+      color: ${isScrolled ? 'black' : 'white'};
+      & .icon {
+        width: 1.7rem;
+        height: 1.7rem;
+      }
+    }
+    & a {
+      transition: all 0.3s ease;
+    }
     & > a {
-      color: ${isScrolled ? '#1a1a1a' : 'white'};
+      color: ${isScrolled ? '#1a1a1a' : '#FFF'};
+    }
+    @media screen and (max-width: 768px) {
+      & .menu {
+        display: flex;
+      }
     }
   `,
 );
@@ -54,12 +124,20 @@ const Header = styled(Card)<any>(
 const LinkList = styled(Box)<any>(
   ({ isScrolled }: any) => css`
     display: flex;
+    height: 100%;
     & a {
-      width: 95px;
+      height: 100%;
+      line-height: 4rem;
+      width: 5.9375rem;
       color: ${isScrolled ? '#1a1a1a' : '#ededed'};
       &:hover {
         color: ${isScrolled ? 'black' : '#ffffff'};
         font-weight: bold;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      & {
+        display: none;
       }
     }
   `,

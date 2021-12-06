@@ -1,11 +1,9 @@
 import { Box, useScrollTrigger, Zoom } from '@mui/material';
 
-function ScrollTop(props: any) {
-  const { children, window } = props;
+function ScrollTop({ children }: any) {
   const trigger = useScrollTrigger({
-    target: window ? window() : undefined,
     disableHysteresis: true,
-    threshold: 100,
+    threshold: 500,
   });
 
   const handleClick = (event: any) => {
