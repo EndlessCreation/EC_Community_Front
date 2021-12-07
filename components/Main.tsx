@@ -135,6 +135,7 @@ const Top = styled(Box)<any>(
     background-repeat: no-repeat;
     background-size: cover;
     & > .MuiBox-root {
+      user-select: none;
       & > p {
         color: white;
       }
@@ -218,7 +219,7 @@ const Identity = styled(Box)<any>(
 
 const Divider = styled(Box)<any>(
   css`
-    width: 100vw;
+    width: 100%;
     padding: 2rem;
     height: 10rem;
     display: flex;

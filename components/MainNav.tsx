@@ -2,21 +2,19 @@
 import { css } from '@emotion/react';
 import {
   Box,
-  Divider,
   IconButton,
   List,
   ListItem,
-  ListItemButton,
   ListItemIcon,
   ListItemText,
   styled,
   SwipeableDrawer,
   useScrollTrigger,
 } from '@mui/material';
-import { Link } from './common';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from 'react';
 import InboxIcon from '@mui/icons-material/Inbox';
+import Link from 'next/link';
 
 type MainNavProps = {};
 
@@ -43,9 +41,7 @@ const MainNav = ({}: MainNavProps) => {
 
   return (
     <Header isScrolled={isScrolled} elevation={isScrolled ? 1 : 0}>
-      <Link href="/" css={{ fontWeight: 'bold' }}>
-        Endless Creation
-      </Link>
+      <Link href="/">Endless Creation</Link>
       <LinkList isScrolled={isScrolled}>
         {index.map((item) => (
           <Link key={item.url} href={item.url}>
@@ -108,9 +104,11 @@ const Header = styled(Box)<any>(
       }
     }
     & a {
+      text-align: center;
       transition: all 0.3s ease;
     }
     & > a {
+      font-weight: bold;
       color: ${isScrolled ? '#1a1a1a' : '#FFF'};
     }
     @media screen and (max-width: 768px) {

@@ -1,9 +1,10 @@
 import { AnyAction } from 'redux';
 import { createAction, handleActions } from 'redux-actions';
 import { pender } from 'redux-pender';
+import { User } from '../types';
 
 type AuthState = {
-  auth: null | User;
+  auth: User | null;
 };
 
 const initialState: AuthState = {

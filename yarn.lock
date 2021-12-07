@@ -1489,15 +1489,6 @@
     "@svgr/plugin-jsx" "^6.1.0"
     "@svgr/plugin-svgo" "^6.1.0"
 
-"@tanem/svg-injector@^10.1.11":
-  version "10.1.12"
-  resolved "https://registry.yarnpkg.com/@tanem/svg-injector/-/svg-injector-10.1.12.tgz#9aaf0b696802d89ea54ae5a9dbd05ab9ca37de46"
-  integrity sha512-hFuuqGBBkKfPBVA2wnNTlRV56Qk+n9hqCE/HB6/5UERRklFoSz6Sl0PDbCLliJkK/r71L5uSqfve6E/neF2mdA==
-  dependencies:
-    "@babel/runtime" "^7.16.3"
-    content-type "^1.0.4"
-    tslib "^2.3.1"
-
 "@testing-library/dom@^7.28.1":
   version "7.31.2"
   resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-7.31.2.tgz#df361db38f5212b88555068ab8119f5d841a8c4a"
@@ -2267,11 +2258,6 @@ constants-browserify@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/constants-browserify/-/constants-browserify-1.0.0.tgz#c20b96d8c617748aaf1c16021760cd27fcb8cb75"
   integrity sha1-wguW2MYXdIqvHBYCF2DNJ/y4y3U=
-
-content-type@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/content-type/-/content-type-1.0.4.tgz#e138cc75e040c727b1966fe5e5f8c9aee256fe3b"
-  integrity sha512-hIP3EEPs8tB9AT1L+NUqtwOAps4mk2Zob89MWXMHjHWg9milF/j4osnnQLXBCBFBk/tvIG/tUc9mOUJiPBhPXA==
 
 convert-source-map@1.7.0:
   version "1.7.0"
@@ -4297,16 +4283,6 @@ react-refresh@0.8.3:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"
   integrity sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==
 
-react-svg@^14.1.4:
-  version "14.1.4"
-  resolved "https://registry.yarnpkg.com/react-svg/-/react-svg-14.1.4.tgz#9afc24ae56191a2f6b0b29fa2cb544840ada38df"
-  integrity sha512-WNkT9+bb5ue9yH4tdnEaFq4iuxEo78Nr5Fl8bd0Tbddliyqm4yZmqnw/u2eFt541E1OOF9fDwu3PZoK3W/KWVA==
-  dependencies:
-    "@babel/runtime" "^7.16.3"
-    "@tanem/svg-injector" "^10.1.11"
-    "@types/prop-types" "^15.7.4"
-    prop-types "^15.7.2"
-
 react-transition-group@^4.4.2:
   version "4.4.2"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-4.4.2.tgz#8b59a56f09ced7b55cbd53c36768b922890d5470"
@@ -4908,11 +4884,6 @@ tslib@^1.8.1:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
-
-tslib@^2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
-  integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
 
 tsutils@^3.21.0:
   version "3.21.0"
