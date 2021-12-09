@@ -7,7 +7,7 @@ import { wrapper } from '../store';
 const WrappedApp: FC<AppProps> = ({ Component, pageProps }) => (
   <>
     <CssBaseline />
-    <Component {...pageProps} />{' '}
+    <Component {...pageProps} />
   </>
 );
 

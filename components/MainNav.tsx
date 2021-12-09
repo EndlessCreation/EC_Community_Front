@@ -21,7 +21,7 @@ type MainNavProps = {};
 const index = [
   { title: '소개', url: '/about' },
   { title: '멤버', url: '/member' },
-  { title: '포트폴리오', url: '/portfolio' },
+  { title: '프로젝트', url: '/project' },
   { title: '블로그', url: '/blog' },
   { title: '활동일정', url: '/schedule' },
   { title: '지원하기', url: '/recruit' },
