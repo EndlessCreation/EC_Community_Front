@@ -8,6 +8,16 @@ export type User = {
   image: string;
 };
 
+export const testUser1: User = {
+  id: 1,
+  name: '황인서',
+  email: 'sjsjsj1246@gmail.com',
+  skills: ['react', 'react-native', 'next', 'typescript'],
+  isActive: true,
+  role: ['웹 파트장'],
+  image: 'https://avatars.githubusercontent.com/u/24623403?v=4',
+};
+
 export type Project = {
   id: number;
   title: string;

@@ -5,6 +5,7 @@ import ScrollTop from './ScrollTop';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { CooperationIcon, GrowthIcon, SharingIcon } from '../public/svgs';
 import { PostCard, ResponsiveLayout, Text } from './common';
+import { testUser1 } from '../types';
 
 type MainProps = {};
 
@@ -102,7 +103,14 @@ const Main = ({}: MainProps) => {
             <span>P</span>roject
             {/* @TODO 포스트 auto slide 구현 */}
             <Box>
-              <PostCard title="제 목" />
+              <PostCard
+                title="제 목"
+                description="테스트입니다."
+                image="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+                skills={['react', 'express', 'docker']}
+                source={'https://github.com'}
+                member={[testUser1]}
+              />
             </Box>
           </Text>
         </Project>

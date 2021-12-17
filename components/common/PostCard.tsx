@@ -6,7 +6,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Text } from '.';
 import TagList from './TagList';
 
-const PostCard = ({ title, description, image, skills, source, member }: Project) => {
+const PostCard = ({ title, description, image, skills, source, member }: Partial<Project>) => {
   return (
     <CardWrapper container component={Card} elevation={3}>
       <Display item xs={12} md={7}></Display>

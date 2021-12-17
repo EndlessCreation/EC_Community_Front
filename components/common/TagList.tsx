@@ -20,11 +20,11 @@ export const Tag = styled(Box)<any>(css`
   }
 `);
 
-export const TagList = ({ tags }: { tags: Array<String> }) => {
+export const TagList = ({ tags }: { tags: Array<string> }) => {
   return (
     <TagListWrapper>
       {tags.map((tag) => (
-        <Tag>{tag}</Tag>
+        <Tag key={tag}>{tag}</Tag>
       ))}
     </TagListWrapper>
   );
@@ -36,5 +36,4 @@ const TagListWrapper = styled(Box)<any>(css`
   width: 100%;
   display: flex;
   overflow: scroll;
-  ::-webkit-scrollbar: ;
 `);
