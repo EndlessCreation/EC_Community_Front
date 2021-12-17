@@ -20,7 +20,7 @@ export const Tag = styled(Box)<any>(css`
   }
 `);
 
-export const TagList = ({ tags }: { tags: Array<String> }) => {
+export const TagList = ({ tags }: { tags: Array<string> }) => {
   return (
     <TagListWrapper>
       {tags.map((tag) => (

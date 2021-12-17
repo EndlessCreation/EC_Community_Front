@@ -12,6 +12,7 @@
   "dependencies": {
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
+    "@fontsource/noto-sans-kr": "^4.5.2",
     "@mui/icons-material": "^5.2.0",
     "@mui/material": "^5.2.1",
     "@svgr/webpack": "^6.1.1",

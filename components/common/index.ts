@@ -2,10 +2,7 @@
 import { css } from '@emotion/react';
 import { Box, styled } from '@mui/material';
 
-export const Text = styled('p')(css`
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-    'Open Sans', 'Helvetica Neue', sans-serif;
-`);
+export const Text = styled('p')(css``);
 
 export const ResponsiveLayout = styled(Box)<any>(
   css`

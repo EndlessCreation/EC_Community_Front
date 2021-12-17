@@ -8,8 +8,6 @@ html {
   width: 100%;
   height: 100%;
   overflow-y: scroll;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif,
-    Apple Color Emoji, Segoe UI Emoji;
   font-size: 16px;
 }
 
@@ -27,6 +25,7 @@ body {
   word-break: keep-all;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Noto Sans KR', Arial, sans-serif;
 }
 
 ul {
