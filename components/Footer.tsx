@@ -22,11 +22,13 @@ const Footer = () => (
   <Wrapper>
     <Box className="main">
       <Text className="title">Endless Creation</Text>
-      {contributor.map((item) => (
-        <Box className="contributor">
+      {contributor.map((item, i) => (
+        <Box className="contributor" key={i}>
           <Text className="role">{item.role}</Text>
-          {item.author.map((name) => (
-            <Text className="name">{name}</Text>
+          {item.author.map((name, i2) => (
+            <Text className="name" key={i2}>
+              {name}
+            </Text>
           ))}
         </Box>
       ))}

@@ -24,7 +24,7 @@ export const TagList = ({ tags }: { tags: Array<string> }) => {
   return (
     <TagListWrapper>
       {tags.map((tag) => (
-        <Tag>{tag}</Tag>
+        <Tag key={tag}>{tag}</Tag>
       ))}
     </TagListWrapper>
   );
