@@ -20,6 +20,7 @@ const Schedule = ({}: ScheduleProps) => {
         <Section>
           <Text className="title">주요 일정</Text>
           {/* @TODO 주요 일정 이미지 삽입 */}
+          추가 예정입니다...
         </Section>
       </ResponsiveLayout>
 
@@ -27,6 +28,7 @@ const Schedule = ({}: ScheduleProps) => {
         <Section>
           <Text className="title">세부 일정</Text>
           {/* @기획 후 이미지 삽입 */}
+          추가 예정입니다...
         </Section>
       </ResponsiveLayout>
 
