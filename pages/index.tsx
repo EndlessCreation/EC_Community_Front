@@ -1,11 +1,9 @@
 import { NextPage } from 'next';
 import React from 'react';
-import Main from '../components/Main';
-import MainLayout from '../layouts/MinLayout';
+import Main from '../components/home/Main';
+import MainLayout from '../layouts/MainLayout';
 
-type MainPageProps = NextPage & {};
-
-const MainPage = ({}: MainPageProps) => {
+const MainPage = () => {
   return (
     <MainLayout>
       <Main />

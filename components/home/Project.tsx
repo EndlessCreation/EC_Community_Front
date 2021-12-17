@@ -1,14 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { Box, Card, Grid, styled } from '@mui/material';
-import { ResponsiveLayout, Text } from '../common';
+import { Box, Grid, styled } from '@mui/material';
+import { ResponsiveLayout, Section, Text } from '../common';
 import HomeHead from './HomeHead';
 import Slider from 'react-slick';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { testProject1, testProject2 } from '../../types';
 import { ProjectCard, ProjectDetailCard } from '../Card';
-import ScrollTop from '../ScrollTop';
 
 type ProjectProps = {};
 
@@ -43,9 +42,7 @@ const Project = ({}: ProjectProps) => {
             </div>
           </StyledSlider>
         </Section>
-      </ResponsiveLayout>
 
-      <ResponsiveLayout>
         <Section>
           <Text className="title">Project</Text>
           <Grid container spacing={4}>
@@ -67,8 +64,6 @@ const Project = ({}: ProjectProps) => {
           </Grid>
         </Section>
       </ResponsiveLayout>
-
-      <ScrollTop />
     </Box>
   );
 };
@@ -83,15 +78,5 @@ const StyledSlider = styled(Slider)(css`
     &:hover {
       color: black;
     }
-  }
-`);
-
-const Section = styled(Box)(css`
-  padding: 2rem;
-
-  & > .title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
   }
 `);

@@ -2,7 +2,6 @@
 import { css } from '@emotion/react';
 import { Box } from '@mui/material';
 import { ResponsiveLayout, Section, Text } from '../common';
-import ScrollTop from '../ScrollTop';
 import HomeHead from './HomeHead';
 
 type ScheduleProps = {};
@@ -22,17 +21,13 @@ const Schedule = ({}: ScheduleProps) => {
           {/* @TODO 주요 일정 이미지 삽입 */}
           추가 예정입니다...
         </Section>
-      </ResponsiveLayout>
 
-      <ResponsiveLayout>
         <Section>
           <Text className="title">세부 일정</Text>
           {/* @기획 후 이미지 삽입 */}
           추가 예정입니다...
         </Section>
       </ResponsiveLayout>
-
-      <ScrollTop />
     </Box>
   );
 };

@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { Box, styled } from '@mui/material';
-import { Text } from './common';
+import { Text } from '../components/common';
 
 const contributor = [
   {

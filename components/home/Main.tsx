@@ -1,10 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { Box, Fab, styled } from '@mui/material';
-import ScrollTop from './ScrollTop';
-import { CooperationIcon, GrowthIcon, SharingIcon } from '../public/svgs';
-import { PostCard, ResponsiveLayout, Text } from './common';
-import { testUser1 } from '../types';
+import { Box, styled } from '@mui/material';
+import { CooperationIcon, GrowthIcon, SharingIcon } from '../../public/svgs';
+import { PostCard, ResponsiveLayout, Text } from '../common';
+import { testUser1 } from '../../types';
 
 type MainProps = {};
 
@@ -130,8 +129,6 @@ const Main = ({}: MainProps) => {
           </Box>
         </Activity>
       </ResponsiveLayout>
-
-      <ScrollTop />
     </>
   );
 };

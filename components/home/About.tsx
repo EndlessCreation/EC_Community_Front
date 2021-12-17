@@ -1,8 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { Box, Card, Fab, Grid, styled } from '@mui/material';
-import ScrollTop from '../ScrollTop';
-import { ResponsiveLayout, Text } from '../common';
+import { Box, Card, Grid, styled } from '@mui/material';
+import { ResponsiveLayout, Section, Text } from '../common';
 import HomeHead from './HomeHead';
 
 type AboutProps = {};
@@ -40,9 +39,7 @@ const About = ({}: AboutProps) => {
             </Grid>
           </Grid>
         </Section>
-      </ResponsiveLayout>
 
-      <ResponsiveLayout>
         <Section>
           <Text className="title">풍부한 활동</Text>
           <Grid container spacing={8}>
@@ -93,23 +90,11 @@ const About = ({}: AboutProps) => {
           </Grid>
         </Section>
       </ResponsiveLayout>
-
-      <ScrollTop />
     </Box>
   );
 };
 
 export default About;
-
-const Section = styled(Box)(css`
-  padding: 2rem;
-
-  & > .title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
-  }
-`);
 
 const StatusCard = styled(Card)(css`
   width: 70%;

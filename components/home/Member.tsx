@@ -4,7 +4,6 @@ import { Box, Grid, styled } from '@mui/material';
 import { testUser1, testUser2 } from '../../types';
 import { UserCard } from '../Card';
 import { ResponsiveLayout, Section, Text } from '../common';
-import ScrollTop from '../ScrollTop';
 import HomeHead from './HomeHead';
 
 type MemberProps = {};
@@ -36,9 +35,7 @@ const Member = ({}: MemberProps) => {
             </Grid>
           </Grid>
         </Section>
-      </ResponsiveLayout>
 
-      <ResponsiveLayout>
         <Section>
           <Text className="title">리더</Text>
           <Grid container spacing={4}>
@@ -51,8 +48,6 @@ const Member = ({}: MemberProps) => {
           </Grid>
         </Section>
       </ResponsiveLayout>
-
-      <ScrollTop />
     </Box>
   );
 };
