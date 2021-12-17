@@ -1,10 +1,8 @@
 import React from 'react';
 import Blog from '../../components/home/Blog';
-import MainLayout from '../../layouts/MinLayout';
+import MainLayout from '../../layouts/MainLayout';
 
-type BlogPageProps = {};
-
-const BlogPage = ({}: BlogPageProps) => {
+const BlogPage = () => {
   return (
     <MainLayout>
       <Blog />

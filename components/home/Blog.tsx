@@ -6,7 +6,6 @@ import HomeHead from './HomeHead';
 import SearchIcon from '@mui/icons-material/Search';
 import { testBlog1 } from '../../types';
 import { BlogCard } from '../Card';
-import ScrollTop from '../ScrollTop';
 
 type BlogProps = {};
 
@@ -39,8 +38,6 @@ const Blog = ({}: BlogProps) => {
           <BlogCard className="blogCard" blog={testBlog1} />
         </BlogList>
       </ResponsiveLayout>
-
-      <ScrollTop />
     </Box>
   );
 };

@@ -2,7 +2,6 @@
 import { css } from '@emotion/react';
 import { Box } from '@mui/material';
 import { ResponsiveLayout, Section, Text } from '../common';
-import ScrollTop from '../ScrollTop';
 import HomeHead from './HomeHead';
 
 type ScheduleProps = {};
@@ -31,8 +30,6 @@ const Schedule = ({}: ScheduleProps) => {
           추가 예정입니다...
         </Section>
       </ResponsiveLayout>
-
-      <ScrollTop />
     </Box>
   );
 };

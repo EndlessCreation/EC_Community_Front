@@ -1,10 +1,13 @@
-import { Box } from '@mui/material';
 import React from 'react';
+import Recruit from '../components/home/Recruit';
+import MainLayout from '../layouts/MainLayout';
 
-type RecruitPageProps = {};
-
-const RecruitPage = ({}: RecruitPageProps) => {
-  return <Box></Box>;
+const RecruitPage = () => {
+  return (
+    <MainLayout>
+      <Recruit />
+    </MainLayout>
+  );
 };
 
 export default RecruitPage;

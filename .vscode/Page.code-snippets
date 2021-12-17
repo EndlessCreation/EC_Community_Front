@@ -1,0 +1,21 @@
+{
+	"Component": {
+		"prefix": "page",
+		"body": [
+			"import React from 'react';",
+			"import ${1} from '../components/home/${1}';",
+			"import MainLayout from '../layouts/MinLayout';",
+			"",
+			"const ${1}Page = () => {",
+			"return (",
+			"<MainLayout>",
+			"<${1} />",
+			"</MainLayout>",
+			");",
+			"};",
+			"",
+			"export default ${1}Page;"
+		],
+		"description": "Component"
+	}
+}

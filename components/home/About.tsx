@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { Box, Card, Fab, Grid, styled } from '@mui/material';
-import ScrollTop from '../ScrollTop';
+import { Box, Card, Grid, styled } from '@mui/material';
 import { ResponsiveLayout, Text } from '../common';
 import HomeHead from './HomeHead';
 
@@ -93,8 +92,6 @@ const About = ({}: AboutProps) => {
           </Grid>
         </Section>
       </ResponsiveLayout>
-
-      <ScrollTop />
     </Box>
   );
 };

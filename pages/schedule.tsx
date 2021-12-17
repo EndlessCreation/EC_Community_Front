@@ -1,10 +1,8 @@
 import React from 'react';
 import Schedule from '../components/home/Schedule';
-import MainLayout from '../layouts/MinLayout';
+import MainLayout from '../layouts/MainLayout';
 
-type SchedulePageProps = {};
-
-const SchedulePage = ({}: SchedulePageProps) => {
+const SchedulePage = () => {
   return (
     <MainLayout>
       <Schedule />

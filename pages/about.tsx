@@ -1,10 +1,8 @@
 import React from 'react';
 import About from '../components/home/About';
-import MainLayout from '../layouts/MinLayout';
+import MainLayout from '../layouts/MainLayout';
 
-type AboutPageProps = {};
-
-const AboutPage = ({}: AboutPageProps) => {
+const AboutPage = () => {
   return (
     <MainLayout>
       <About />
