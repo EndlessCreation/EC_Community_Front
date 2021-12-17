@@ -1,6 +1,7 @@
-import { Box, useScrollTrigger, Zoom } from '@mui/material';
+import { Box, Fab, useScrollTrigger, Zoom } from '@mui/material';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
-function ScrollTop({ children }: any) {
+function ScrollTop() {
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 500,
@@ -24,7 +25,9 @@ function ScrollTop({ children }: any) {
         role="presentation"
         sx={{ position: 'fixed', bottom: 16, right: 16 }}
       >
-        {children}
+        <Fab size="small">
+          <KeyboardArrowUpIcon />
+        </Fab>
       </Box>
     </Zoom>
   );

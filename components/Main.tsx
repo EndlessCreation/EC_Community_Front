@@ -2,7 +2,6 @@
 import { css } from '@emotion/react';
 import { Box, Fab, styled } from '@mui/material';
 import ScrollTop from './ScrollTop';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { CooperationIcon, GrowthIcon, SharingIcon } from '../public/svgs';
 import { PostCard, ResponsiveLayout, Text } from './common';
 import { testUser1 } from '../types';
@@ -132,11 +131,7 @@ const Main = ({}: MainProps) => {
         </Activity>
       </ResponsiveLayout>
 
-      <ScrollTop>
-        <Fab size="small">
-          <KeyboardArrowUpIcon />
-        </Fab>
-      </ScrollTop>
+      <ScrollTop />
     </>
   );
 };

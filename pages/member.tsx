@@ -1,14 +1,11 @@
-import { Box } from '@mui/material';
 import React from 'react';
-import Main from '../components/Main';
+import Member from '../components/home/Member';
 import MainLayout from '../layouts/MinLayout';
 
-type MemberPageProps = {};
-
-const MemberPage = ({}: MemberPageProps) => {
+const MemberPage = () => {
   return (
     <MainLayout>
-      <Main />
+      <Member />
     </MainLayout>
   );
 };
