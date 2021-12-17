@@ -2,12 +2,26 @@
 import { css } from '@emotion/react';
 import { Box, styled } from '@mui/material';
 import { CooperationIcon, GrowthIcon, SharingIcon } from '../../public/svgs';
-import { PostCard, ResponsiveLayout, Text } from '../common';
-import { testUser1 } from '../../types';
+import { ResponsiveLayout, Text } from '../common';
+import { testProject1, testProject2 } from '../../types';
+import { ProjectDetailCard } from '../Card';
+import Slider from 'react-slick';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
 type MainProps = {};
 
 const Main = ({}: MainProps) => {
+  const settings = {
+    dots: true,
+    fade: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow: <ArrowForwardIosIcon />,
+    prevArrow: <ArrowBackIosIcon />,
+  };
   return (
     <>
       <Top id="back-to-top-anchor">
@@ -99,17 +113,14 @@ const Main = ({}: MainProps) => {
         <Project>
           <Text className="title">
             <span>P</span>roject
-            {/* @TODO 포스트 auto slide 구현 */}
-            <Box>
-              <PostCard
-                title="제 목"
-                description="테스트입니다."
-                image="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-                skills={['react', 'express', 'docker']}
-                source={'https://github.com'}
-                member={[testUser1]}
-              />
-            </Box>
+            <StyledSlider {...settings}>
+              <div>
+                <ProjectDetailCard project={testProject1} />
+              </div>
+              <div>
+                <ProjectDetailCard project={testProject2} />
+              </div>
+            </StyledSlider>
           </Text>
         </Project>
       </ResponsiveLayout>
@@ -265,6 +276,17 @@ const Project = styled(Box)<any>(
     }
   `,
 );
+
+const StyledSlider = styled(Slider)(css`
+  margin: 0 4rem;
+  & .slick-arrow {
+    color: black;
+
+    &:hover {
+      color: black;
+    }
+  }
+`);
 
 const Activity = styled(Box)<any>(
   css`
