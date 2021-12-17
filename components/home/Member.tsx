@@ -35,9 +35,7 @@ const Member = ({}: MemberProps) => {
             </Grid>
           </Grid>
         </Section>
-      </ResponsiveLayout>
 
-      <ResponsiveLayout>
         <Section>
           <Text className="title">리더</Text>
           <Grid container spacing={4}>

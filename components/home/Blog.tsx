@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { Box, InputAdornment, OutlinedInput, styled } from '@mui/material';
-import { ResponsiveLayout } from '../common';
+import { ResponsiveLayout, Section } from '../common';
 import HomeHead from './HomeHead';
 import SearchIcon from '@mui/icons-material/Search';
 import { testBlog1 } from '../../types';
@@ -29,14 +29,14 @@ const Blog = ({}: BlogProps) => {
             }
           />
         </Section>
-      </ResponsiveLayout>
 
-      <ResponsiveLayout>
-        <BlogList>
-          <BlogCard className="blogCard" blog={testBlog1} />
-          <BlogCard className="blogCard" blog={testBlog1} />
-          <BlogCard className="blogCard" blog={testBlog1} />
-        </BlogList>
+        <Section>
+          <BlogList>
+            <BlogCard className="blogCard" blog={testBlog1} />
+            <BlogCard className="blogCard" blog={testBlog1} />
+            <BlogCard className="blogCard" blog={testBlog1} />
+          </BlogList>
+        </Section>
       </ResponsiveLayout>
     </Box>
   );
@@ -44,16 +44,11 @@ const Blog = ({}: BlogProps) => {
 
 export default Blog;
 
-const Section = styled(Box)(css`
-  padding: 2rem 4rem;
-  display: flex;
-  flex-direction: column;
+const Search = styled(OutlinedInput)(css`
+  width: 100%;
 `);
 
-const Search = styled(OutlinedInput)(css``);
-
 const BlogList = styled(Box)(css`
-  padding: 2rem 4rem;
   display: flex;
   flex-direction: column;
 

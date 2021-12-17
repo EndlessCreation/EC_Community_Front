@@ -12,7 +12,7 @@ export const ResponsiveLayout = styled(Box)<any>(
 );
 
 export const Section = styled(Box)(css`
-  padding: 2rem;
+  padding: 2rem 2rem 4rem 2rem;
 
   & > .title {
     font-size: 2rem;

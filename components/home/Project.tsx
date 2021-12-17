@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { Box, Grid, styled } from '@mui/material';
-import { ResponsiveLayout, Text } from '../common';
+import { ResponsiveLayout, Section, Text } from '../common';
 import HomeHead from './HomeHead';
 import Slider from 'react-slick';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -42,9 +42,7 @@ const Project = ({}: ProjectProps) => {
             </div>
           </StyledSlider>
         </Section>
-      </ResponsiveLayout>
 
-      <ResponsiveLayout>
         <Section>
           <Text className="title">Project</Text>
           <Grid container spacing={4}>
@@ -80,15 +78,5 @@ const StyledSlider = styled(Slider)(css`
     &:hover {
       color: black;
     }
-  }
-`);
-
-const Section = styled(Box)(css`
-  padding: 2rem;
-
-  & > .title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
   }
 `);
