@@ -1,6 +1,5 @@
-import { Box } from '@mui/material';
 import React from 'react';
-import Main from '../components/Main';
+import Schedule from '../components/home/Schedule';
 import MainLayout from '../layouts/MinLayout';
 
 type SchedulePageProps = {};
@@ -8,7 +7,7 @@ type SchedulePageProps = {};
 const SchedulePage = ({}: SchedulePageProps) => {
   return (
     <MainLayout>
-      <Main />
+      <Schedule />
     </MainLayout>
   );
 };

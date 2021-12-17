@@ -11,5 +11,15 @@ export const ResponsiveLayout = styled(Box)<any>(
   `,
 );
 
+export const Section = styled(Box)(css`
+  padding: 2rem;
+
+  & > .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+`);
+
 export { default as PostCard } from './PostCard';
 export { default as TagList } from './TagList';
