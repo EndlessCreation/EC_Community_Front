@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { Avatar, Box, Card, Grid, styled } from '@mui/material';
+import { Box, Grid, styled } from '@mui/material';
 import { testUser1, testUser2 } from '../../types';
 import { UserCard } from '../Card';
-import { ResponsiveLayout, Text } from '../common';
+import { ResponsiveLayout, Section, Text } from '../common';
 import ScrollTop from '../ScrollTop';
 import HomeHead from './HomeHead';
 
@@ -58,13 +58,3 @@ const Member = ({}: MemberProps) => {
 };
 
 export default Member;
-
-const Section = styled(Box)(css`
-  padding: 2rem;
-
-  & > .title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
-  }
-`);

@@ -8,6 +8,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { testProject1, testProject2 } from '../../types';
 import { ProjectCard, ProjectDetailCard } from '../Card';
+import ScrollTop from '../ScrollTop';
 
 type ProjectProps = {};
 
@@ -66,6 +67,8 @@ const Project = ({}: ProjectProps) => {
           </Grid>
         </Section>
       </ResponsiveLayout>
+
+      <ScrollTop />
     </Box>
   );
 };
