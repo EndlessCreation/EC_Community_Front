@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { Box, Card, Fab, Grid, styled } from '@mui/material';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import ScrollTop from '../ScrollTop';
 import { ResponsiveLayout, Text } from '../common';
 import HomeHead from './HomeHead';
@@ -11,7 +10,11 @@ type AboutProps = {};
 const About = ({}: AboutProps) => {
   return (
     <Box>
-      <HomeHead title="Endless Creation이란?" description="Endless Creation을 소개합니다" />
+      <HomeHead
+        title="Endless Creation이란?"
+        description="Endless Creation을 소개합니다"
+        src="'https://images.unsplash.com/photo-1588269232168-d212b558cea2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80'"
+      />
 
       <ResponsiveLayout>
         <Section>
@@ -91,11 +94,7 @@ const About = ({}: AboutProps) => {
         </Section>
       </ResponsiveLayout>
 
-      <ScrollTop>
-        <Fab size="small">
-          <KeyboardArrowUpIcon />
-        </Fab>
-      </ScrollTop>
+      <ScrollTop />
     </Box>
   );
 };
