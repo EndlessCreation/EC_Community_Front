@@ -1,14 +1,11 @@
-import { Box } from '@mui/material';
 import React from 'react';
-import Main from '../components/Main';
+import Project from '../components/home/Project';
 import MainLayout from '../layouts/MinLayout';
 
-type ProjectPageProps = {};
-
-const ProjectPage = ({}: ProjectPageProps) => {
+const ProjectPage = () => {
   return (
     <MainLayout>
-      <Main />
+      <Project />
     </MainLayout>
   );
 };

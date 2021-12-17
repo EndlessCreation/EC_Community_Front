@@ -20,6 +20,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "@types/qs": "^6.9.7",
+    "@types/react-slick": "^0.23.7",
     "@types/redux-actions": "^2.6.2",
     "@types/redux-logger": "^3.0.9",
     "axios": "^0.24.0",
@@ -28,11 +29,13 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-redux": "^7.2.6",
+    "react-slick": "^0.28.1",
     "redux": "^4.1.2",
     "redux-actions": "^2.6.5",
     "redux-devtools-extension": "^2.13.9",
     "redux-logger": "^3.0.6",
-    "redux-pender": "^2.0.12"
+    "redux-pender": "^2.0.12",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@types/node": "16.11.7",

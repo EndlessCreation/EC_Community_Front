@@ -15,6 +15,9 @@ export const Tag = styled(Box)<any>(css`
   padding: 0.6rem;
   border-radius: 5px;
   background-color: #2e952a;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   & + & {
     margin-left: 0.5rem;
   }
@@ -23,9 +26,11 @@ export const Tag = styled(Box)<any>(css`
 export const TagList = ({ tags }: { tags: Array<string> }) => {
   return (
     <TagListWrapper>
-      {tags.map((tag) => (
-        <Tag key={tag}>{tag}</Tag>
-      ))}
+      <Box className="list">
+        {tags.map((tag) => (
+          <Tag key={tag}>{tag}</Tag>
+        ))}
+      </Box>
     </TagListWrapper>
   );
 };
@@ -34,6 +39,15 @@ export default TagList;
 
 const TagListWrapper = styled(Box)<any>(css`
   width: 100%;
-  display: flex;
-  overflow: scroll;
+  overflow: hidden;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  & .list {
+    width: fit-content;
+    display: flex;
+    overflow-x: scroll;
+  }
 `);
