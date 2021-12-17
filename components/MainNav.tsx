@@ -95,6 +95,7 @@ const Header = styled(Box)<any>(
     transition: all 0.3s ease;
     background-color: ${isScrolled ? '#ffffffc7' : 'transparent'};
     backdrop-filter: ${isScrolled && 'blur(5px)'};
+    z-index: 1000;
     & .menu {
       display: none;
       color: ${isScrolled ? 'black' : 'white'};
