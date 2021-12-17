@@ -3,8 +3,8 @@ import { css } from '@emotion/react';
 import { Box, Fab, styled } from '@mui/material';
 import ScrollTop from './ScrollTop';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import { Text } from './common';
 import { CooperationIcon, GrowthIcon, SharingIcon } from '../public/svgs';
+import { PostCard, ResponsiveLayout, Text } from './common';
 
 type MainProps = {};
 
@@ -100,16 +100,28 @@ const Main = ({}: MainProps) => {
         <Project>
           <Text className="title">
             <span>P</span>roject
+            {/* @TODO 포스트 auto slide 구현 */}
+            <Box>
+              <PostCard title="제 목" />
+            </Box>
           </Text>
         </Project>
       </ResponsiveLayout>
 
       <ResponsiveLayout css={{ backgroundColor: '#F2F2F2' }}>
-        <Project>
+        <Activity>
           <Text className="title">
             <span>A</span>ctivity
           </Text>
-        </Project>
+          <Box className="wrapper">
+            <Text className="title">잘 하는데</Text>
+            <Text className="description">스터디, 세미나, EC어드밴스...</Text>
+          </Box>
+          <Box className="wrapper">
+            <Text className="title">잘 놀기까지</Text>
+            <Text className="description">신입생 환영회, 봄 소풍, 창립기념일, MT...</Text>
+          </Box>
+        </Activity>
       </ResponsiveLayout>
 
       <ScrollTop>
@@ -146,13 +158,6 @@ const Top = styled(Box)<any>(
         display: none;
       }
     }
-  `,
-);
-
-const ResponsiveLayout = styled(Box)<any>(
-  css`
-    width: 100%;
-    padding: 2rem calc((100% - 91.5rem) / 2);
   `,
 );
 
@@ -256,6 +261,46 @@ const Project = styled(Box)<any>(
       font-weight: bold;
       & span {
         color: #64cca2;
+      }
+    }
+  `,
+);
+
+const Activity = styled(Box)<any>(
+  css`
+    width: 100%;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    & > .title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      & span {
+        color: #64cca2;
+      }
+    }
+
+    & .wrapper {
+      width: 37.5rem;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 2rem;
+
+      & .title {
+        display: flex;
+        align-items: center;
+        width: 9rem;
+        height: 4rem;
+        border-right: 2px solid #64cca2;
+        margin-right: 1rem;
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+
+      & .description {
+        font-size: 1rem;
+        color: #5a5a5a;
       }
     }
   `,
