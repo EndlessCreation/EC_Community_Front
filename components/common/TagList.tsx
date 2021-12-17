@@ -36,5 +36,4 @@ const TagListWrapper = styled(Box)<any>(css`
   width: 100%;
   display: flex;
   overflow: scroll;
-  ::-webkit-scrollbar: ;
 `);
