@@ -1,6 +1,5 @@
-import { Box } from '@mui/material';
 import React from 'react';
-import Main from '../components/Main';
+import About from '../components/home/About';
 import MainLayout from '../layouts/MinLayout';
 
 type AboutPageProps = {};
@@ -8,7 +7,7 @@ type AboutPageProps = {};
 const AboutPage = ({}: AboutPageProps) => {
   return (
     <MainLayout>
-      <Main />
+      <About />
     </MainLayout>
   );
 };
