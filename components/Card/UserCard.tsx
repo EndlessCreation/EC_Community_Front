@@ -8,7 +8,7 @@ const UserCard = ({ user, ...props }: { user: User; [k: string]: any }) => {
   return (
     <CardWrapper elevation={3} {...props}>
       <Box className="image">
-        <Avatar src="https://avatars.githubusercontent.com/u/24623403?v=4" />
+        <Avatar src={user.image} />
       </Box>
       <Box className="profile">
         <Text className="name">{user.name}</Text>

@@ -65,6 +65,7 @@ const Wrapper = styled(Box)<any>(
       display: flex;
     }
     & .role {
+      width: 6.25rem;
     }
     & .name {
     }
