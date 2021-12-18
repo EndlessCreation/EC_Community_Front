@@ -21,7 +21,7 @@ type CommunityNavProps = {};
 const CommunityNav = ({}: CommunityNavProps) => {
   const router = useRouter();
   return (
-    <StyledMenuList dense>
+    <StyledMenuList dense className="sideNav">
       <Text className="title">
         Endless Creation
         <br />
@@ -73,9 +73,9 @@ const CommunityNav = ({}: CommunityNavProps) => {
         </ListItemIcon>
         <ListItemText>활동</ListItemText>
       </StyledMenuItem>
-      <StyledMenuItem className="copyright">
+      <Box className="copyright">
         <ListItemText>Copyright ⓒ Endless Creation 2021</ListItemText>
-      </StyledMenuItem>
+      </Box>
     </StyledMenuList>
   );
 };
@@ -97,6 +97,17 @@ const StyledMenuList = styled(MenuList)(css`
     font-size: 1.4rem;
     font-weight: bold;
   }
+
+  & .copyright {
+    margin-top: auto;
+    & .MuiTypography-root {
+      font-size: 0.2rem;
+      text-align: right;
+      margin-right: 0.5rem;
+    }
+    color: #bfccb9;
+    user-select: none;
+  }
 `);
 
 const StyledMenuItem = styled(MenuItem)(css`
@@ -116,14 +127,5 @@ const StyledMenuItem = styled(MenuItem)(css`
     height: 1.6rem;
     color: #d1e0ca;
     margin-right: 1rem;
-  }
-
-  &.copyright {
-    margin-top: auto;
-    & .MuiTypography-root {
-      font-size: 0.3rem;
-      text-align: right;
-    }
-    color: #bfccb9;
   }
 `);
