@@ -5,16 +5,12 @@ import { testUser1, testUser2, testUser3, User } from '../../types';
 import { Text } from '../common';
 import { UserWaitCard } from '../Card';
 
-type SignProps = {
-  waitUser: Array<User>;
-};
-
-const Sign = ({ waitUser = [testUser1, testUser2, testUser3] }: SignProps) => {
+const Sign = ({}) => {
   return (
     <Wrapper>
       <Text className="title">가입 승인</Text>
       <Grid container spacing={4}>
-        {waitUser.map((user) => (
+        {[testUser1, testUser2, testUser3].map((user) => (
           <Grid item xs={12} key={user.id}>
             <UserWaitCard user={user} />
           </Grid>
