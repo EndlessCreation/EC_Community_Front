@@ -1,12 +1,14 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
-import { Box } from '@mui/material';
 import React from 'react';
+import UserManagement from '../../components/admin/UserManagement';
+import AdminLayout from '../../layouts/AdminLayout';
+import { testUser1, testUser2, testUser3 } from '../../types';
 
-type UserPageProps = {};
-
-const UserPage = ({}: UserPageProps) => {
-  return <Box></Box>;
+const UserPage = () => {
+  return (
+    <AdminLayout>
+      <UserManagement userList={[testUser1, testUser2, testUser3]} />
+    </AdminLayout>
+  );
 };
 
 export default UserPage;
