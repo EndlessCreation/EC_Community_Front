@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { Box, Grid, Paper, styled } from '@mui/material';
-import { testProject1, testProject2, testUser1, testUser2, testUser3 } from '../../types';
+import { testActivity1, testActivity2, testUser1, testUser2, testUser3 } from '../../types';
 import { Text } from '../common';
 import SimpleActivityList from './SimpleActivityList';
 import SimpleUserList from './SimpleUserList';
@@ -28,7 +28,7 @@ const AdminMain = ({}: AdminMainProps) => {
         <Grid item xs={12} md={6}>
           <Item>
             <Text className="title">활동</Text>
-            <SimpleActivityList projectList={[testProject1, testProject2]} />
+            <SimpleActivityList activityList={[testActivity1, testActivity2]} />
           </Item>
         </Grid>
       </Grid>

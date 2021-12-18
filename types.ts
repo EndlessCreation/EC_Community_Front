@@ -42,7 +42,7 @@ export const testUser3: User = {
   image: 'https://avatars.githubusercontent.com/u/28949213?v=4',
 };
 
-export type Project = {
+export type Activity = {
   id: number;
   title: string;
   category: 'study' | 'competition' | 'advance';
@@ -56,7 +56,7 @@ export type Project = {
   skills: Array<string>;
 };
 
-export const testProject1: Project = {
+export const testActivity1: Activity = {
   id: 1,
   title: '모여런',
   category: 'competition',
@@ -72,7 +72,7 @@ export const testProject1: Project = {
   skills: ['react', 'react-native', 'nest', 'docker', 'kafka', 'k8s', 'FCM'],
 };
 
-export const testProject2: Project = {
+export const testActivity2: Activity = {
   id: 1,
   title: 'Upgle',
   category: 'competition',

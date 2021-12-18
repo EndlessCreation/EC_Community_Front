@@ -1,19 +1,19 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { Box, Card, styled } from '@mui/material';
-import { Project } from '../../types';
+import { Activity } from '../../types';
 import { TagList, Text } from '../common';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
-const ProjectCard = ({ project, ...props }: { project: Project; [k: string]: any }) => {
+const ActivityDetailCard = ({ activity, ...props }: { activity: Activity; [k: string]: any }) => {
   return (
     <CardWrapper {...props} elevation={4}>
-      <img className="image" src={project.image || ''} alt=""></img>
+      <img className="image" src={activity.image || ''} alt=""></img>
       <Box className="info">
-        <Text className="title">{project.title}</Text>
-        <TagList tags={project.skills} />
-        <Text className="description">{project.description}</Text>
-        <a href={project.source || ''} target="_black" className="source">
+        <Text className="title">{activity.title}</Text>
+        <TagList tags={activity.skills} />
+        <Text className="description">{activity.description}</Text>
+        <a href={activity.source || ''} target="_black" className="source">
           <GitHubIcon />
         </a>
       </Box>
@@ -21,26 +21,23 @@ const ProjectCard = ({ project, ...props }: { project: Project; [k: string]: any
   );
 };
 
-export default ProjectCard;
+export default ActivityDetailCard;
 
 const CardWrapper = styled(Card)(css`
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  width: 18.75rem;
-  height: 25rem;
-  transition: all 0.5s ease;
+  width: fit-content;
+  height: 14.375rem;
   cursor: pointer;
 
   & .image {
-    width: 100%;
-    height: 12.5rem;
-    object-fit: contain;
+    height: 100%;
+    width: auto;
   }
 
   & .info {
-    width: 100%;
-    flex: 1;
+    width: 18.75rem;
+    height: 100%;
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -67,9 +64,5 @@ const CardWrapper = styled(Card)(css`
     & .source {
       margin-top: auto;
     }
-  }
-
-  &:hover {
-    transform: scale(1.02);
   }
 `);

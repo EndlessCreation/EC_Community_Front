@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import { penderReducer } from 'redux-pender';
 import auth from './auth';
 import user from './user';
-import project from './project';
+import project from './activity';
 
 const rootReducer = combineReducers({
   auth,
