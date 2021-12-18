@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 import { Box, styled } from '@mui/material';
 import React from 'react';
-import { Project } from '../../types';
+import { Activity } from '../../types';
 
 export const Tag = styled(Box)<any>(css`
   width: fit-content;

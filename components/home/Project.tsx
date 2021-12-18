@@ -6,12 +6,10 @@ import HomeHead from './HomeHead';
 import Slider from 'react-slick';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import { testProject1, testProject2 } from '../../types';
-import { ProjectCard, ProjectDetailCard } from '../Card';
+import { testActivity1, testActivity2 } from '../../types';
+import { ActivityCard, ActivityDetailCard } from '../Card';
 
-type ProjectProps = {};
-
-const Project = ({}: ProjectProps) => {
+const Project = () => {
   const settings = {
     dots: true,
     fade: true,
@@ -35,10 +33,10 @@ const Project = ({}: ProjectProps) => {
           <Text className="title">EC Pick</Text>
           <StyledSlider {...settings}>
             <div>
-              <ProjectDetailCard project={testProject1} />
+              <ActivityDetailCard activity={testActivity1} />
             </div>
             <div>
-              <ProjectDetailCard project={testProject2} />
+              <ActivityDetailCard activity={testActivity2} />
             </div>
           </StyledSlider>
         </Section>
@@ -47,19 +45,19 @@ const Project = ({}: ProjectProps) => {
           <Text className="title">Project</Text>
           <Grid container spacing={4}>
             <Grid item xs={6} md={4}>
-              <ProjectCard project={testProject1} />
+              <ActivityCard activity={testActivity1} />
             </Grid>
             <Grid item xs={6} md={4}>
-              <ProjectCard project={testProject2} />
+              <ActivityCard activity={testActivity2} />
             </Grid>
             <Grid item xs={6} md={4}>
-              <ProjectCard project={testProject2} />
+              <ActivityCard activity={testActivity2} />
             </Grid>
             <Grid item xs={6} md={4}>
-              <ProjectCard project={testProject2} />
+              <ActivityCard activity={testActivity2} />
             </Grid>
             <Grid item xs={6} md={4}>
-              <ProjectCard project={testProject2} />
+              <ActivityCard activity={testActivity2} />
             </Grid>
           </Grid>
         </Section>

@@ -11,13 +11,13 @@ import {
   TableHead,
   TableRow,
 } from '@mui/material';
-import { Project } from '../../types';
+import { Activity } from '../../types';
 
 type SimpleActivityListProps = {
-  projectList: Array<Project>;
+  activityList: Array<Activity>;
 };
 
-const SimpleActivityList = ({ projectList }: SimpleActivityListProps) => {
+const SimpleActivityList = ({ activityList }: SimpleActivityListProps) => {
   return (
     <Wrapper>
       <TableContainer>
@@ -30,17 +30,20 @@ const SimpleActivityList = ({ projectList }: SimpleActivityListProps) => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {projectList.map((project) => (
-              <TableRow key={project.id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+            {activityList.map((activity) => (
+              <TableRow
+                key={activity.id}
+                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              >
                 <TableCell
                   component="th"
                   scope="row"
                   sx={{ display: 'flex', alignItems: 'center' }}
                 >
-                  {project.title}
+                  {activity.title}
                 </TableCell>
-                <TableCell>{project.category}</TableCell>
-                <TableCell>{project.status}</TableCell>
+                <TableCell>{activity.category}</TableCell>
+                <TableCell>{activity.status}</TableCell>
               </TableRow>
             ))}
           </TableBody>

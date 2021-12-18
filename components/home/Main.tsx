@@ -3,8 +3,8 @@ import { css } from '@emotion/react';
 import { Box, styled } from '@mui/material';
 import { CooperationIcon, GrowthIcon, SharingIcon } from '../../public/svgs';
 import { ResponsiveLayout, Text } from '../common';
-import { testProject1, testProject2 } from '../../types';
-import { ProjectDetailCard } from '../Card';
+import { testActivity1, testActivity2 } from '../../types';
+import { ActivityDetailCard } from '../Card';
 import Slider from 'react-slick';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
@@ -115,10 +115,10 @@ const Main = ({}: MainProps) => {
             <span>P</span>roject
             <StyledSlider {...settings}>
               <div>
-                <ProjectDetailCard project={testProject1} />
+                <ActivityDetailCard activity={testActivity1} />
               </div>
               <div>
-                <ProjectDetailCard project={testProject2} />
+                <ActivityDetailCard activity={testActivity2} />
               </div>
             </StyledSlider>
           </Text>

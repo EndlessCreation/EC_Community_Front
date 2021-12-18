@@ -1,12 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { Box, Card, Grid, styled } from '@mui/material';
-import { Project } from '../../types';
+import { Activity } from '../../types';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Text } from '.';
 import TagList from './TagList';
 
-const PostCard = ({ title, description, image, skills, source, member }: Partial<Project>) => {
+const PostCard = ({ title, description, image, skills, source, member }: Partial<Activity>) => {
   return (
     <CardWrapper container component={Card} elevation={3}>
       <Display item xs={12} md={7}></Display>
