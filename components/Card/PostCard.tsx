@@ -3,8 +3,8 @@ import { css } from '@emotion/react';
 import { Box, Card, Grid, styled } from '@mui/material';
 import { Activity } from '../../types';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { Text } from '.';
-import TagList from './TagList';
+import { Text } from '../common';
+import TagList from '../common/TagList';
 
 const PostCard = ({ title, description, image, skills, source, member }: Partial<Activity>) => {
   return (

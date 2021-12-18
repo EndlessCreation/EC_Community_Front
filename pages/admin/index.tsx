@@ -1,5 +1,4 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
+import React from 'react';
 import AdminMain from '../../components/admin/AdminMain';
 import AdminLayout from '../../layouts/AdminLayout';
 

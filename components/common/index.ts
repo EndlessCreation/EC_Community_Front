@@ -21,5 +21,5 @@ export const Section = styled(Box)(css`
   }
 `);
 
-export { default as PostCard } from './PostCard';
+export { default as PostCard } from '../Card/PostCard';
 export { default as TagList } from './TagList';
