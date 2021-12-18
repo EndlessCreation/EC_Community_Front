@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { AppBar, Badge, Box, IconButton, styled, Toolbar } from '@mui/material';
+import { AppBar, Box, IconButton, styled, Toolbar } from '@mui/material';
 import { Text } from '../../components/common';
 import HomeIcon from '@mui/icons-material/Home';
 import MenuIcon from '@mui/icons-material/Menu';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import AdminNav from './AdminNav';
 import { useRouter } from 'next/dist/client/router';
 

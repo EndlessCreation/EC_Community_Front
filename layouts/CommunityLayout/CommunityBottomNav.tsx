@@ -6,8 +6,17 @@ import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 import PriorityHighIcon from '@mui/icons-material/PriorityHigh';
 import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import HomeIcon from '@mui/icons-material/Home';
 
 type CommunityBottomNavProps = {};
+
+const index = [
+  { title: '홈', url: '/community', icon: <HomeIcon className="icon" /> },
+  { title: '질문/답변', url: '/community/question', icon: <QuestionAnswerIcon className="icon" /> },
+  { title: '활동', url: '/community/activity', icon: <DirectionsRunIcon className="icon" /> },
+  { title: '공지사항', url: '/community/notice', icon: <PriorityHighIcon className="icon" /> },
+  { title: '마이페이지', url: '/mypage', icon: <AccountCircleIcon className="icon" /> },
+];
 
 const CommunityBottomNav = ({}: CommunityBottomNavProps) => {
   const [value, setValue] = useState(0);
@@ -21,10 +30,9 @@ const CommunityBottomNav = ({}: CommunityBottomNavProps) => {
           setValue(newValue);
         }}
       >
-        <NavItem label="활동" icon={<DirectionsRunIcon />} />
-        <NavItem label="질문" icon={<QuestionAnswerIcon />} />
-        <NavItem label="공지사항" icon={<PriorityHighIcon />} />
-        <NavItem label="마이페이지" icon={<AccountCircleIcon />} />
+        {index.map((nav) => (
+          <NavItem label={nav.title} icon={nav.icon} key={nav.title} />
+        ))}
       </BottomNavigation>
     </Wrapper>
   );

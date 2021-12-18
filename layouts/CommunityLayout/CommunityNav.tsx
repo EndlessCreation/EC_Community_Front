@@ -18,6 +18,12 @@ import { useRouter } from 'next/dist/client/router';
 
 type CommunityNavProps = {};
 
+const index = [
+  { title: '공지사항', url: '/community/notice', icon: <PriorityHighIcon className="icon" /> },
+  { title: '질문/답변', url: '/community/question', icon: <QuestionAnswerIcon className="icon" /> },
+  { title: '활동', url: '/community/activity', icon: <DirectionsRunIcon className="icon" /> },
+];
+
 const CommunityNav = ({}: CommunityNavProps) => {
   const router = useRouter();
   return (
@@ -43,36 +49,18 @@ const CommunityNav = ({}: CommunityNavProps) => {
 
       <Divider />
 
-      <StyledMenuItem
-        onClick={() => {
-          router.push('/community/notice');
-        }}
-      >
-        <ListItemIcon>
-          <PriorityHighIcon className="icon" />
-        </ListItemIcon>
-        <ListItemText>공지사항</ListItemText>
-      </StyledMenuItem>
-      <StyledMenuItem
-        onClick={() => {
-          router.push('/community/question');
-        }}
-      >
-        <ListItemIcon>
-          <QuestionAnswerIcon className="icon" />
-        </ListItemIcon>
-        <ListItemText>질문</ListItemText>
-      </StyledMenuItem>
-      <StyledMenuItem
-        onClick={() => {
-          router.push('/community/activity');
-        }}
-      >
-        <ListItemIcon>
-          <DirectionsRunIcon className="icon" />
-        </ListItemIcon>
-        <ListItemText>활동</ListItemText>
-      </StyledMenuItem>
+      {index.map((nav) => (
+        <StyledMenuItem
+          key={nav.url}
+          onClick={() => {
+            router.push(nav.url);
+          }}
+        >
+          <ListItemIcon>{nav.icon}</ListItemIcon>
+          <ListItemText>{nav.title}</ListItemText>
+        </StyledMenuItem>
+      ))}
+
       <Box className="copyright">
         <ListItemText>Copyright ⓒ Endless Creation 2021</ListItemText>
       </Box>
