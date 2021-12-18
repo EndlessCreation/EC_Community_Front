@@ -6,15 +6,15 @@
 			"import { css } from '@emotion/react';",
 			"import { Box } from '@mui/material';",
 			"",
-			"type ${1}Props = {",
+			"type ${1:${TM_FILENAME_BASE}}Props = {",
 			"  ",
 			"};",
 			"",
-			"const ${1} = ({}: ${1}Props) => {",
+			"const ${1:${TM_FILENAME_BASE}} = ({}: ${1:${TM_FILENAME_BASE}}Props) => {",
 			"  return <Box></Box>;",
 			"};",
 			"",
-			"export default ${1};",
+			"export default ${1:${TM_FILENAME_BASE}};",
 		],
 		"description": "Component"
 	}

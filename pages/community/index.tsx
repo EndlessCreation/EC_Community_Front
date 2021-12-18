@@ -1,12 +1,12 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
 import { Box } from '@mui/material';
-import React from 'react';
+import CommunityLayout from '../../layouts/CommunityLayout';
 
-type CommunityPageProps = {};
-
-const CommunityPage = ({}: CommunityPageProps) => {
-  return <Box></Box>;
+const CommunityPage = () => {
+  return (
+    <CommunityLayout>
+      <Box>test</Box>
+    </CommunityLayout>
+  );
 };
 
 export default CommunityPage;
