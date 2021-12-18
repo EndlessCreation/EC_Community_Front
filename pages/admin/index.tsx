@@ -1,12 +1,14 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { Box } from '@mui/material';
-import React from 'react';
+import AdminMain from '../../components/admin/AdminMain';
+import AdminLayout from '../../layouts/AdminLayout';
 
-type AdminPageProps = {};
-
-const AdminPage = ({}: AdminPageProps) => {
-  return <Box></Box>;
+const AdminPage = () => {
+  return (
+    <AdminLayout>
+      <AdminMain />
+    </AdminLayout>
+  );
 };
 
 export default AdminPage;

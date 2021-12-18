@@ -1,6 +1,6 @@
 import React from 'react';
 import Recruit from '../components/home/Recruit';
-import MainLayout from '../layouts/MainLayout';
+import MainLayout from '../layouts/HomeLayout';
 
 const RecruitPage = () => {
   return (

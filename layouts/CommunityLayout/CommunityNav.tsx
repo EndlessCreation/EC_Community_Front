@@ -13,7 +13,7 @@ import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 import PriorityHighIcon from '@mui/icons-material/PriorityHigh';
 import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
 import LoginIcon from '@mui/icons-material/Login';
-import { Text } from '../components/common';
+import { Text } from '../../components/common';
 import { useRouter } from 'next/dist/client/router';
 
 type CommunityNavProps = {};
