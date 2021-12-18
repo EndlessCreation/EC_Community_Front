@@ -3,18 +3,18 @@
 		"prefix": "page",
 		"body": [
 			"import React from 'react';",
-			"import ${1} from '../components/home/${1}';",
+			"import ${1:${TM_FILENAME_BASE}} from '../components/home/${1:${TM_FILENAME_BASE}}';",
 			"import MainLayout from '../layouts/MinLayout';",
 			"",
-			"const ${1}Page = () => {",
+			"const ${1:${TM_FILENAME_BASE}}Page = () => {",
 			"return (",
 			"<MainLayout>",
-			"<${1} />",
+			"<${1:${TM_FILENAME_BASE}} />",
 			"</MainLayout>",
 			");",
 			"};",
 			"",
-			"export default ${1}Page;"
+			"export default ${1:${TM_FILENAME_BASE}}Page;"
 		],
 		"description": "Component"
 	}
