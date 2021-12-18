@@ -23,13 +23,23 @@ export const testUser1: User = {
 };
 
 export const testUser2: User = {
-  id: 1,
+  id: 2,
   name: '김건훈',
   email: 'dnatuna123@gmail.com',
   skills: ['express', 'nest', 'typescript', 'devOps'],
   isActive: true,
   role: ['회장'],
   image: 'https://avatars.githubusercontent.com/u/28949165?v=4',
+};
+
+export const testUser3: User = {
+  id: 3,
+  name: '조인혁',
+  email: 'ss112d86@gmail.com',
+  skills: ['express', 'nest', 'typescript', 'devOps'],
+  isActive: true,
+  role: ['부회장'],
+  image: 'https://avatars.githubusercontent.com/u/28949213?v=4',
 };
 
 export type Project = {

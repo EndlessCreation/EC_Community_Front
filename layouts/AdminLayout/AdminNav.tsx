@@ -12,14 +12,23 @@ import {
 } from '@mui/material';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import PeopleIcon from '@mui/icons-material/People';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { Text } from '../../components/common';
+import { useRouter } from 'next/dist/client/router';
 
 type AdminNavProps = {
   open: boolean;
   toggleDrawer: () => void;
 };
 
+const index = [
+  { title: '회원 관리', url: '/admin/user', icon: <PeopleIcon /> },
+  { title: '가입 관리', url: '/admin/sign', icon: <CheckCircleIcon /> },
+];
+
 const AdminNav = ({ open, toggleDrawer }: AdminNavProps) => {
+  const router = useRouter();
+
   return (
     <Wrapper variant="permanent" open={open}>
       <Toolbar
@@ -36,12 +45,17 @@ const AdminNav = ({ open, toggleDrawer }: AdminNavProps) => {
       </Toolbar>
       <Divider />
       <List>
-        <ListItem button>
-          <ListItemIcon>
-            <PeopleIcon />
-          </ListItemIcon>
-          <Text>회원 관리</Text>
-        </ListItem>
+        {index.map((nav) => (
+          <ListItem
+            button
+            onClick={() => {
+              router.push(nav.url);
+            }}
+          >
+            <ListItemIcon>{nav.icon}</ListItemIcon>
+            <Text>{nav.title}</Text>
+          </ListItem>
+        ))}
       </List>
       <Divider />
       <List></List>
@@ -53,13 +67,13 @@ export default AdminNav;
 
 const Wrapper = styled(Drawer)<any>(
   ({ open }) => css`
-    width: ${open ? '240px' : '64px'};
+    width: ${open ? '15rem' : '4rem'};
     overflow-x: ${!open && 'hidden'};
     transition: all 0.5s ease;
 
     & .MuiDrawer-paper {
       position: relative;
-      width: ${open ? '240px' : '64px'};
+      width: ${open ? '15rem' : '4rem'};
       z-index: 999;
       transition: all 0.5s ease;
 

@@ -4,7 +4,7 @@ import { AppBar, Badge, Box, IconButton, styled, Toolbar } from '@mui/material';
 import { Text } from '../../components/common';
 import HomeIcon from '@mui/icons-material/Home';
 import MenuIcon from '@mui/icons-material/Menu';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import AdminNav from './AdminNav';
 
 type AdminLayoutProps = {
@@ -59,7 +59,8 @@ const Wrapper = styled(Box)(css`
 
 const Header = styled(AppBar)<any>(
   ({ open }) => css`
-    width: ${open ? 'calc(100% - 240px)' : '100%'};
+    width: ${open ? 'calc(100% - 15rem)' : '100%'};
+    height: 4rem;
     margin-left: ${open && '15rem'};
     position: fixed;
     top: 0;
@@ -73,13 +74,15 @@ const Header = styled(AppBar)<any>(
 
     & .title {
       flex: 1;
-      font-size: 20px;
+      font-size: 1.25rem;
       font-weight: bold;
     }
   `,
 );
 
 const Section = styled(Box)(css`
-  background: #dbdbdb;
+  background: #eeeeee;
+  margin-top: 4rem;
   flex: 1;
+  overflow: scroll;
 `);
