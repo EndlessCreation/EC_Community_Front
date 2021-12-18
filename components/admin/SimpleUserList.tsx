@@ -41,7 +41,7 @@ const SimpleUserList = ({ userList }: SimpleUserListProps) => {
                   {user.name}
                 </TableCell>
                 <TableCell>{user.email}</TableCell>
-                <TableCell>{user.role[0]}</TableCell>
+                <TableCell>{user.role![0]}</TableCell>
               </TableRow>
             ))}
           </TableBody>

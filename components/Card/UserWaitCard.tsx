@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { Avatar, Box, Card, styled } from '@mui/material';
+import { Avatar, Box, Button, Card, styled } from '@mui/material';
 import { User } from '../../types';
 import { TagList, Text } from '../common';
 
-const UserCard = ({ user, ...props }: { user: User; [k: string]: any }) => {
+const UserWaitCard = ({ user, ...props }: { user: User; [k: string]: any }) => {
   return (
     <CardWrapper elevation={3} {...props}>
       <Box className="image">
@@ -12,14 +12,18 @@ const UserCard = ({ user, ...props }: { user: User; [k: string]: any }) => {
       </Box>
       <Box className="profile">
         <Text className="name">{user.name}</Text>
-        <TagList tags={user.role || []} />
+        <Text className="year">{user.year}기</Text>
         <Text className="email">{user.email}</Text>
+      </Box>
+      <Box className="sign">
+        <Button className="approval">승인</Button>
+        <Button className="rejection">거절</Button>
       </Box>
     </CardWrapper>
   );
 };
 
-export default UserCard;
+export default UserWaitCard;
 
 const CardWrapper = styled(Card)(css`
   width: 100%;
@@ -27,7 +31,7 @@ const CardWrapper = styled(Card)(css`
   display: flex;
 
   & .image {
-    flex: 4;
+    flex: 2;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -40,7 +44,7 @@ const CardWrapper = styled(Card)(css`
   }
 
   & .profile {
-    flex: 5;
+    flex: 3;
     display: flex;
     padding: 1rem;
     flex-direction: column;
@@ -49,19 +53,32 @@ const CardWrapper = styled(Card)(css`
       font-size: 2rem;
     }
 
-    & .role {
-      margin-top: 0.2rem;
-      width: fit-content;
-      padding: 0.1rem 0.6rem;
-      font-size: 1.1rem;
-      border-radius: 5px;
-      background-color: #408048;
-      color: white;
-    }
-
     & .email {
       margin-top: auto;
       color: #757575;
+    }
+  }
+
+  & .sign {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    & .approval,
+    .rejection {
+      flex: 1;
+      border-radius: 0px;
+      font-family: 'Noto Sans KR';
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    & .approval {
+      color: #269c17;
+    }
+
+    & .rejection {
+      color: #c21b1b;
     }
   }
 `);

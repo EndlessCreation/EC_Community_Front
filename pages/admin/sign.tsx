@@ -1,12 +1,13 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
-import { Box } from '@mui/material';
 import React from 'react';
+import Sign from '../../components/admin/Sign';
+import AdminLayout from '../../layouts/AdminLayout';
 
-type SignPageProps = {};
-
-const SignPage = ({}: SignPageProps) => {
-  return <Box></Box>;
+const SignPage = () => {
+  return (
+    <AdminLayout>
+      <Sign />
+    </AdminLayout>
+  );
 };
 
 export default SignPage;
