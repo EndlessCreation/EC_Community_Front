@@ -43,8 +43,16 @@ const Wrapper = styled(Box)(css`
 `);
 
 const Section = styled(Box)(css`
-  flex: 1;
-  min-width: 80rem;
   height: fit-content;
   overflow: auto;
+  flex: 1;
+  width: calc(100% - 14.5rem);
+  margin-left: 14.5rem;
+
+  @media screen and (max-width: 768px) {
+    & {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
 `);
