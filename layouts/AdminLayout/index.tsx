@@ -6,6 +6,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useEffect, useState } from 'react';
 import AdminNav from './AdminNav';
+import { useRouter } from 'next/dist/client/router';
 
 type AdminLayoutProps = {
   children: React.ReactChild;
@@ -13,6 +14,7 @@ type AdminLayoutProps = {
 
 const AdminLayout = ({ children }: AdminLayoutProps) => {
   const [open, setOpen] = useState(true);
+  const router = useRouter();
   const toggleDrawer = () => {
     setOpen(!open);
   };
@@ -37,7 +39,14 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
           >
             <MenuIcon />
           </IconButton>
-          <Text className="title">EC Admin</Text>
+          <Text
+            className="title"
+            onClick={() => {
+              router.push('/admin');
+            }}
+          >
+            EC Admin
+          </Text>
           <IconButton color="inherit">
             <HomeIcon />
           </IconButton>
@@ -76,6 +85,7 @@ const Header = styled(AppBar)<any>(
       flex: 1;
       font-size: 1.25rem;
       font-weight: bold;
+      cursor: pointer;
     }
   `,
 );

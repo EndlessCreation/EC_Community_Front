@@ -48,6 +48,7 @@ const AdminNav = ({ open, toggleDrawer }: AdminNavProps) => {
         {index.map((nav) => (
           <ListItem
             button
+            key={nav.url}
             onClick={() => {
               router.push(nav.url);
             }}

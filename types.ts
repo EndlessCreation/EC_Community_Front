@@ -4,41 +4,57 @@ export type Token = {
 
 export type User = {
   id: number;
-  name: string;
+  year: number | null;
+  name: string | null;
   email: string;
   skills: Array<string>;
   isActive: boolean;
-  role: Array<string>; // 한글로 ex) 회장, 부회장, 총무, 인사부장, 프론트 리더, 백엔드 리더,  ..........
+  role: Array<string> | null; // 한글로 ex) 회장, 부회장, 총무, 인사부장, 프론트 리더, 백엔드 리더, ...
+  status: 'auth' | 'wait' | 'login';
+  isAdmin: boolean;
+  isLeader: boolean;
   image: string;
 };
 
 export const testUser1: User = {
   id: 1,
+  year: 28,
   name: '황인서',
   email: 'sjsjsj1246@gmail.com',
   skills: ['react', 'react-native', 'next', 'typescript'],
   isActive: true,
-  role: ['웹 파트장'],
+  role: ['웹 파트장', '사람'],
+  status: 'login',
+  isAdmin: true,
+  isLeader: true,
   image: 'https://avatars.githubusercontent.com/u/24623403?v=4',
 };
 
 export const testUser2: User = {
   id: 2,
+  year: 27,
   name: '김건훈',
   email: 'dnatuna123@gmail.com',
   skills: ['express', 'nest', 'typescript', 'devOps'],
   isActive: true,
-  role: ['회장'],
+  role: ['회장', '사람'],
+  status: 'login',
+  isAdmin: true,
+  isLeader: true,
   image: 'https://avatars.githubusercontent.com/u/28949165?v=4',
 };
 
 export const testUser3: User = {
   id: 3,
+  year: 27,
   name: '조인혁',
   email: 'ss112d86@gmail.com',
   skills: ['express', 'nest', 'typescript', 'devOps'],
   isActive: true,
-  role: ['부회장'],
+  role: ['부회장', '사람'],
+  status: 'login',
+  isAdmin: true,
+  isLeader: false,
   image: 'https://avatars.githubusercontent.com/u/28949213?v=4',
 };
 
