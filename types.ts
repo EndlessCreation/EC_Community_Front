@@ -1,3 +1,7 @@
+export type Token = {
+  accessToken: string;
+};
+
 export type User = {
   id: number;
   name: string;
