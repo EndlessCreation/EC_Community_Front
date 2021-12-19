@@ -1,4 +1,4 @@
-export function getDateString(date) {
+export function getDateString(date: string) {
   const now = new Date();
   const ret = new Date(date);
   if (
@@ -15,11 +15,7 @@ export function getDateString(date) {
   }
 }
 
-export function getCommentDateString(createdAt, updatedAt) {
-  return !updatedAt ? getDateString(createdAt) : getDateString(updatedAt) + ' (수정됨)';
-}
-
-export const getChatDate = (date) => {
+export const getChatDate = (date: string) => {
   const newDate = new Date(date);
   var nowHour = newDate.getHours();
   var nowMt = newDate.getMinutes();
