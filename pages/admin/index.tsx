@@ -1,6 +1,6 @@
 import React from 'react';
 import AdminMain from '../../components/admin/AdminMain';
-import AdminLayout from '../../layouts/AdminLayout';
+import AdminLayout from '../../components/layouts/AdminLayout';
 
 const AdminPage = () => {
   return (

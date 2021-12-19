@@ -2,7 +2,7 @@ import { AnyAction } from 'redux';
 import { createAction, handleActions } from 'redux-actions';
 import { pender } from 'redux-pender';
 import { Activity } from '../types';
-import * as activityAPI from '../api/activity';
+import * as activityAPI from './api/activity';
 
 const GET_ACTIVITY = 'activity/GET_ACTIVITY' as const;
 const GET_ACTIVITY_LIST = 'activity/GET_ACTIVITY_LIST' as const;

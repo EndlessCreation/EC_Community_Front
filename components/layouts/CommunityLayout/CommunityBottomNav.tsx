@@ -6,6 +6,7 @@ import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 import PriorityHighIcon from '@mui/icons-material/PriorityHigh';
 import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import PeopleIcon from '@mui/icons-material/People';
 import HomeIcon from '@mui/icons-material/Home';
 
 type CommunityBottomNavProps = {};
@@ -15,6 +16,7 @@ const index = [
   { title: '질문/답변', url: '/community/question', icon: <QuestionAnswerIcon className="icon" /> },
   { title: '활동', url: '/community/activity', icon: <DirectionsRunIcon className="icon" /> },
   { title: '공지사항', url: '/community/notice', icon: <PriorityHighIcon className="icon" /> },
+  { title: '멤버', url: '/community/member', icon: <PeopleIcon className="icon" /> },
   { title: '마이페이지', url: '/mypage', icon: <AccountCircleIcon className="icon" /> },
 ];
 

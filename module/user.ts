@@ -2,7 +2,7 @@ import { AnyAction } from 'redux';
 import { createAction, handleActions } from 'redux-actions';
 import { pender } from 'redux-pender';
 import { User } from '../types';
-import * as userAPI from '../api/user';
+import * as userAPI from './api/user';
 
 const GET_USER_DATA = 'user/GET_USER_DATA' as const;
 const EDIT_PROFILE = 'user/EDIT_PROFILE' as const;

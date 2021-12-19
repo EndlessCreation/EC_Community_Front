@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { User } from '../types';
+import { User } from '../../types';
 
 export const kakaoOauth = async (accessToken: string) => {
   const { data } = await axios.post<any>(`${process.env.NEXT_PUBLIC_API_URL}/oauth/kakao`, {

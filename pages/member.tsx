@@ -1,6 +1,6 @@
 import React from 'react';
 import Member from '../components/home/Member';
-import MainLayout from '../layouts/HomeLayout';
+import MainLayout from '../components/layouts/HomeLayout';
 
 const MemberPage = () => {
   return (
