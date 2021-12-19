@@ -1,16 +1,10 @@
+import { useRouter } from 'next/dist/client/router';
 import React from 'react';
-import Blog from '../../components/home/Blog';
-import Main from '../../components/home/Main';
-import MainLayout from '../../components/layouts/HomeLayout';
+import BlogContainer from '../../containers/home/BlogContainer';
 
-type BlogPageProps = {};
-
-const BlogPage = ({}: BlogPageProps) => {
-  return (
-    <MainLayout>
-      <Main />
-    </MainLayout>
-  );
+const BlogPage = () => {
+  const { query }: any = useRouter();
+  return <BlogContainer id={parseInt(query.id)} />;
 };
 
 export default BlogPage;

@@ -1,13 +1,13 @@
 import React from 'react';
-import Blog from '../../components/home/Blog';
+import BlogList from '../../components/home/BlogList';
 import MainLayout from '../../components/layouts/HomeLayout';
 
-const BlogPage = () => {
+const BlogListPage = () => {
   return (
     <MainLayout>
-      <Blog />
+      <BlogList />
     </MainLayout>
   );
 };
 
-export default BlogPage;
+export default BlogListPage;

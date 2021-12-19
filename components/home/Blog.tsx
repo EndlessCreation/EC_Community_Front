@@ -1,58 +1,70 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { Box, InputAdornment, OutlinedInput, styled } from '@mui/material';
-import { ResponsiveLayout, Section } from '../common';
-import HomeHead from './HomeHead';
-import SearchIcon from '@mui/icons-material/Search';
-import { testBlog1 } from '../../types';
-import { BlogCard } from '../Card';
+import { Box, Button, Card, IconButton, styled } from '@mui/material';
+import { forwardRef, useCallback, useRef } from 'react';
+import editorConfig from '../../lib/config/editorConfig';
+import { Blog } from '../../types';
+import dynamic from 'next/dynamic';
+import { Viewer as ViewerType, ViewerProps } from '@toast-ui/react-editor';
+import { TuiViewerWithForwardedProps } from '../common/Viewer';
+import { Text } from '../common';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { useRouter } from 'next/dist/client/router';
 
-type BlogProps = {};
+type BlogProps = {
+  blog: Blog;
+};
 
-const Blog = ({}: BlogProps) => {
+const Viewer = dynamic<TuiViewerWithForwardedProps>(() => import('../common/Viewer'), {
+  ssr: false,
+});
+
+const Blog = ({ blog }: BlogProps) => {
+  const router = useRouter();
+
   return (
-    <Box>
-      <HomeHead
-        title="Blog"
-        description="기억보단 기록을, EC의 기술 블로그입니다"
-        src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-      />
+    <Wrapper>
+      <InnerWrapper elevation={3}>
+        <Head>
+          <IconButton>
+            <ArrowBackIcon
+              onClick={() => {
+                router.push('/blog');
+              }}
+            />
+          </IconButton>
+          <Text className="title">{blog.title}</Text>
+        </Head>
 
-      <ResponsiveLayout>
-        <Section>
-          <Search
-            placeholder="Search..."
-            endAdornment={
-              <InputAdornment position="end">
-                <SearchIcon />
-              </InputAdornment>
-            }
-          />
-        </Section>
-
-        <Section>
-          <BlogList>
-            <BlogCard className="blogCard" blog={testBlog1} />
-            <BlogCard className="blogCard" blog={testBlog1} />
-            <BlogCard className="blogCard" blog={testBlog1} />
-          </BlogList>
-        </Section>
-      </ResponsiveLayout>
-    </Box>
+        <Viewer initialValue={blog.content} />
+      </InnerWrapper>
+    </Wrapper>
   );
 };
 
 export default Blog;
 
-const Search = styled(OutlinedInput)(css`
-  width: 100%;
+const Wrapper = styled(Box)(css`
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+  background: #f0f0f0;
 `);
 
-const BlogList = styled(Box)(css`
+const Head = styled(Box)(css`
   display: flex;
-  flex-direction: column;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid #aaa;
 
-  & .blogCard + .blogCard {
-    margin-top: 2.5rem;
+  & .title {
+    margin-left: 1rem;
+    font-size: 1.8rem;
+    font-weight: bold;
   }
+`);
+
+const InnerWrapper = styled(Card)(css`
+  padding: 2rem;
+  max-width: 50rem;
 `);

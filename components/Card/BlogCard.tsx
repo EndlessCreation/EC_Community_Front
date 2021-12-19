@@ -1,12 +1,23 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { Avatar, Box, Card, Grid, styled } from '@mui/material';
+import { useRouter } from 'next/dist/client/router';
 import { Blog } from '../../types';
 import { TagList, Text } from '../common';
 
 const BlogCard = ({ blog, ...props }: { blog: Blog; [k: string]: any }) => {
+  const router = useRouter();
+
   return (
-    <CardWrapper container component={Card} elevation={2} {...props}>
+    <CardWrapper
+      container
+      component={Card}
+      elevation={2}
+      onClick={() => {
+        router.push(`/blog/${blog.id}`);
+      }}
+      {...props}
+    >
       <Grid item xs={12} md={10}>
         <Box className="info">
           <Text className="title">{blog.title}</Text>
@@ -36,6 +47,7 @@ const CardWrapper = styled(Grid)<any>(css`
 
   &:hover {
     transform: scale(1.02);
+    filter: brightness(0.95);
   }
 
   & .info {

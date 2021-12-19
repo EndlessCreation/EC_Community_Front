@@ -162,11 +162,11 @@ gatsby new [프로젝트 이름] [적용할 테마의 주소]
 
 ## 3. Repository 만들기
 
-![Untitled](img/3-1.png)
+![Untitled](https://hislogs.com/static/6d8b14491ba3d102760afda8280d820c/a242d/3-1.png)
 
 먼저 깃허브에 Repogitory를 생성합니다.
 
-![Untitled](img/3-2.png)
+![Untitled](https://hislogs.com/static/281f0805d3992a6ffca43463bbdfd2b2/f213e/3-2.png)
 
 그리고 Gatsby 프로젝트 디렉토리에서 위 명령어를 입력해 저장소로 푸쉬합니다.
 
@@ -178,21 +178,21 @@ gatsby new [프로젝트 이름] [적용할 테마의 주소]
 
 먼저 프로젝트의 정보를 수정해줍니다.
 
-![Untitled](img/4-1.png)
+![Untitled](https://hislogs.com/static/f8166169fa7fc1d8278ded4beb8c54f8/f21e7/4-1.png)
 
 ### gatsby-meta-config.js
 
 Gatsby에서 사용하는 메타 데이터를 수정해줍니다. 테마 마다 다르겠지만 사이트 제목, 썸네일 주소, 깃허브 주소, 이메일, 포트폴리오 등등 기존에 써져있는 데이터를 자신에게 맞게 변경하거나 테마의 repository에 안내된 방법대로 수정해주시면 되겠습니다.
 
-![Untitled](img/4-2.png)
+![Untitled](https://hislogs.com/static/38e7ba7c11c5f8264940baa6c9c84347/b3e51/4-2.png)
 
 ## 5. 포스팅하기
 
 이부분도 테마별로 다르지만 보통 root 디렉토리에 blog 또는 content라는 디렉토리가 있을 겁니다.
 
-![Untitled](img/5-1.png)
+![Untitled](https://hislogs.com/static/5125a0948813f95936b6c8b280348d61/2efce/5-1.png)
 
-![Untitled](img/5-2.png)
+![Untitled](https://hislogs.com/static/0d063b74c18967393598deebd02b9ca6/62f93/5-2.png)
 
 그곳에 형식에 맞게, 테마의 안내에 따라 마크다운으로 글을 작성해주시면 됩니다.
 
@@ -226,13 +226,13 @@ github pages를 프로젝트에 설치해줍니다.
 
 ### 커스텀 도메인을 이용하고 싶을 때
 
-![Untitled](img/7-1.png)
+![Untitled](https://hislogs.com/static/86f7c8f3de936749d9acecde2afd2594/1b19f/7-1.png)
 
-![Untitled](img/7-2.png)
+![Untitled](https://hislogs.com/static/8d4637246c1c5d901f8a9128df8a3f9c/4255a/7-2.png)
 
 DNS 세팅을 위와 같이 해줍니다.
 
-![Untitled](img/7-3.png)
+![Untitled](https://hislogs.com/static/303c65848a114e2dfbfd7bad1bb5a2c6/1d8ec/7-3.png)
 
 프로젝트 루트에 CNAME이라는 파일을 만들어 주고 커스텀 도메인의 주소를 넣습니다.
 
@@ -253,7 +253,7 @@ Package.json에 다음 명령어를 작성해줍니다.
 yarn deploy
 \`\`\`
 
-![Untitled](img/7-4.png)
+![Untitled](https://hislogs.com/static/f9bc475714dd36ba75e7703b7ae2b636/0d0e4/7-4.png)
 
 Enforce HTTPS를 활성화시켜 보안을 강화하세요!
 
@@ -268,7 +268,7 @@ repository settings에서 이런식으로 세팅이 되었다면 성공입니다
 "deploy": "gh-pages -d public",
 \`\`\`
 
-![Untitled](img/7-4.png)
+![Untitled](https://hislogs.com/static/f9bc475714dd36ba75e7703b7ae2b636/0d0e4/7-4.png)
 
 커스텀 도메인이 없을 경우는 깃허브에서 알아서 https://{username}.github.io/{repositoryname}의 주소로 배포될겁니다.
 
@@ -276,13 +276,13 @@ repository settings에서 이런식으로 세팅이 되었다면 성공입니다
 
 블로그 저장소 Secrets에 비밀 키를 하나 만들어줍니다. 키 이름은 ACCESS_TOKEN으로 합니다. 값으로는 깃허브 개발자 설정에서 엑세스 토큰을 하나 만들어야 합니다.
 
-![Untitled](img/7-5.png)
+![Untitled](https://hislogs.com/static/6f3a08419fe4c677d5a57562fb57fd6d/b8471/7-5.png)
 
-![Untitled](img/7-6.png)
+![Untitled](https://hislogs.com/static/b736e88678cd31f22c5608329694772f/daf70/7-6.png)
 
 그다음 블로그 저장소에서 Actions탭에 들어가 set up a workflow yourself를 눌러줍니다.
 
-![Untitled](img/7-7.png)
+![Untitled](https://hislogs.com/static/bacd4018a4fc717622303a8a2aaab33c/b6e50/7-7.png)
 
 내용에 다음을 적습니다.
 
@@ -351,13 +351,13 @@ netlify deploy --prod
 
 프로젝트 디렉토리에서 명령어를 실행해줍니다.
 
-![Untitled](img/8-1.png)
+![Untitled](https://hislogs.com/static/e49997940acb0ce5d1e2401f9e908ffc/898f6/8-1.png)
 
 콘솔에 안내된대로 배포를 해주면 https://{입력한 사이트 이름}.netlify.app에 배포가 됩니다.
 
 ### 도메인 설정
 
-![Untitled](img/8-2.png)
+![Untitled](https://hislogs.com/static/79c4242d73195351ccdc555d8be91577/58213/8-2.png)
 
 다음과 같이 CNAME을 넷리파이에서 준 주소로 입력합니다.
 
@@ -365,21 +365,21 @@ netlify 사이트로 이동해서 방금 배포한 사이트 설정으로 이동
 
 Custom domains에 Add custom domain을 누릅니다.
 
-![Untitled](img/8-3.png)
+![Untitled](https://hislogs.com/static/e3c0428d657893770ede127633fa1de9/82c1e/8-3.png)
 
 www.도메인이름을 입력하고 Add domain을 누릅니다.
 
-![Untitled](img/8-4.png)
+![Untitled](https://hislogs.com/static/3b593379e5966c8bb816f5d13b60f6cc/41045/8-4.png)
 
 위와 같이 뜬다면 성공했습니다.
 
-![Untitled](img/8-5.png)
+![Untitled](https://hislogs.com/static/ad7b522662281b3db4afce864d8a43e0/2093e/8-5.png)
 
 또한 아래의 HTTPS에서 인증서를 받을 수 있습니다. 하단 왼쪽의 버튼을 누르세요
 
 ### 배포 자동화
 
-![Untitled](img/8-6.png)
+![Untitled](https://hislogs.com/static/e08fb2ecd1160f90f5f2e1462283773f/daf70/8-6.png)
 
 Build & deploy 탭에서 배포 설정을 할 수 있습니다.
 
@@ -397,7 +397,7 @@ Build Command는 반드시 CI=false npm run build로 해주시고 배포 폴더�
 
 구글 [애널리틱스에](https://analytics.google.com/) 접속합니다.
 
-![Untitled](img/10-1.png)
+![Untitled](https://hislogs.com/static/4d7355ac38badce1d8d95f109bbd79a2/43142/10-1.png)
 
 왼쪽 하단 설정 버튼을 누른 뒤 왼쪽의 계정 만들기를 누릅니다. 계정이름은 마음대로 하셔도 됩니다.
 

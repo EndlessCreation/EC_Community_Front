@@ -46,7 +46,7 @@ const editorCss = css`
   }
 
   .toastui-editor-contents p {
-    font-family: 'Barlow', 'Noto Sans KR';
+    font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -65,7 +65,7 @@ const editorCss = css`
     border-radius: 1.875rem;
     font-size: 1rem;
     font-weight: 600;
-    font-family: 'Barlow', 'Noto Sans KR';
+    font-family: 'Noto Sans KR';
     margin-bottom: 1.25rem;
     &::before {
       font-size: 1.25rem;
