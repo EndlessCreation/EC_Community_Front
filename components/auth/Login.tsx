@@ -89,7 +89,6 @@ const Section = styled(Box)(css`
   align-items: center;
   background: #ffffffe2;
   border-radius: 3px;
-  border: 0.5rem solid #ffffff67;
 `);
 
 const logo = css`

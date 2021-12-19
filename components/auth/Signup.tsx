@@ -1,16 +1,23 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { Box, styled } from '@mui/material';
+import { Box, Button, Checkbox, styled, TextField } from '@mui/material';
 import { Text } from '../common';
 import ImageUploading, { ImageType } from 'react-images-uploading';
 import { CancelImageIcon, CameraIcon } from '../../public/svgs';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import useInput from '../../lib/hooks/useInput';
+import Input from '../common/Input';
+import { useState } from 'react';
 
 type SignupProps = {
   image: string;
 };
 
 const Signup = ({ image }: SignupProps) => {
+  const [name, onNameChange] = useInput('');
+  const [year, onYearChange] = useInput(null);
+  const [isActive, setIsActive] = useState(true);
+
   const onChange = (imageList: Array<any>) => {
     if (imageList.length === 0) return;
     const formData = new FormData();
@@ -42,7 +49,7 @@ const Signup = ({ image }: SignupProps) => {
                 ) : (
                   <Box css={imageBox}>
                     <AccountCircleIcon css={currentImage} />
-                    <CameraIcon css={cancelImage} onClick={() => {}} />
+                    <CameraIcon css={cancelImage} onClick={onImageUpload} />
                   </Box>
                 )}
               </>
@@ -50,31 +57,23 @@ const Signup = ({ image }: SignupProps) => {
           </ImageUploading>
         </UploadImageWrapper>
 
-        {/* <Box>
-          <TextField
-            size="small"
-            fullWidth
-            label="이름"
-            error={emailError}
-            helperText={emailError && '잘못된 이메일 형식입니다.'}
-            value={email}
-            onChange={handleEmailChange}
-            type="email"
-            sx={input}
-          ></TextField>
-        </Box>
+        <InputWrapper>
+          <Input value={name} onChange={onNameChange} label="이름" colors="black" />
+          <Input value={year} onChange={onYearChange} label="기수" colors="black" type="number" />
 
-        <Box>
-          <TextField
-            size="small"
-            fullWidth
-            label="비밀번호"
-            value={password}
-            onChange={handlePasswordChange}
-            type="password"
-            sx={input}
-          ></TextField>
-        </Box> */}
+          <CheckWrapper>
+            <Text>혹시 졸업생이신가요?</Text>
+            <Checkbox
+              checked={!isActive}
+              onChange={(e) => {
+                setIsActive(!e.target.checked);
+              }}
+            />
+          </CheckWrapper>
+          <Button className="button" variant="contained">
+            가입 요청
+          </Button>
+        </InputWrapper>
       </Section>
     </Wrapper>
   );
@@ -101,9 +100,9 @@ const Section = styled(Box)(css`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #ffffffe2;
+  background: #ffffffd1;
+  backdrop-filter: blur(8px);
   border-radius: 3px;
-  border: 0.5rem solid #ffffff67;
 
   & .title {
     font-size: 1.1rem;
@@ -112,18 +111,16 @@ const Section = styled(Box)(css`
 `);
 
 const UploadImageWrapper = styled(Box)(css`
-  width: fit-content;
-  height: fit-content;
+  width: 9.375rem;
+  height: 9.375rem;
 `);
 
 const DragSenser = styled(Box)<any>(
   ({ isDragging }) => css`
-    margin-top: 5.38rem;
-    margin-left: 6.05rem;
-    width: 11rem;
-    height: 11rem;
-    margin-top: 0.125rem;
-    margin-left: 0.125rem;
+    width: 8rem;
+    height: 8rem;
+    margin-top: 0.6875rem;
+    margin-left: 0.6875rem;
     position: absolute;
     border-radius: 50%;
     cursor: pointer;
@@ -135,23 +132,50 @@ const DragSenser = styled(Box)<any>(
 );
 
 const imageBox = css`
-  width: 130px;
-  height: 130px;
+  width: 9.375rem;
+  height: 9.375rem;
 `;
 
 const currentImage = css`
-  width: 130px;
-  height: 130px;
+  width: 9.375rem;
+  height: 9.375rem;
   border-radius: 50%;
-  color: gray;
+  color: #a0a0a0;
 `;
 
 const cancelImage = css`
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   position: relative;
-  top: -45px;
-  left: 85px;
+  top: -3rem;
+  left: 6rem;
   cursor: pointer;
   z-index: 1000;
 `;
+
+const InputWrapper = styled(Box)(css`
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+
+  & .input + .input {
+    margin-top: 2rem;
+  }
+
+  & .button {
+    font-size: 1.2rem;
+    height: 3.5rem;
+    margin-top: 3rem;
+  }
+`);
+
+const CheckWrapper = styled(Box)(css`
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > p {
+    margin-right: 1rem;
+  }
+`);

@@ -1,15 +1,15 @@
-import { uploadImage } from './../api/image';
+import { uploadImage } from '../../module/api/image';
 import { css } from '@emotion/react';
 
 const renderer = {
-  question(node, context) {
+  question(node: any, context: any) {
     return [
       { type: 'openTag', tagName: 'div', outerNewLine: true, classNames: ['question'] },
       { type: 'html', content: node.literal },
       { type: 'closeTag', tagName: 'div', outerNewLine: true },
     ];
   },
-  answer(node, context) {
+  answer(node: any, context: any) {
     return [
       { type: 'openTag', tagName: 'div', outerNewLine: true, classNames: ['answer'] },
       { type: 'html', content: node.literal },
@@ -18,7 +18,7 @@ const renderer = {
   },
 };
 const hooks = {
-  addImageBlobHook: async function (blob, callback) {
+  addImageBlobHook: async function (blob: any, callback: any) {
     let formData = new FormData();
     formData.append('files', blob);
     const uploadedImageUrl = await uploadImage(formData);
