@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { User } from '../types';
+import { User } from '../../types';
 import qs from 'qs';
 
 export const getUserData = async (id?: User['id']) => {

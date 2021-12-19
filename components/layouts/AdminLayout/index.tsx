@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { AppBar, Box, IconButton, styled, Toolbar } from '@mui/material';
-import { Text } from '../../components/common';
+import { Text } from '../../common';
 import HomeIcon from '@mui/icons-material/Home';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from 'react';

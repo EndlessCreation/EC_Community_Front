@@ -13,7 +13,8 @@ import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 import PriorityHighIcon from '@mui/icons-material/PriorityHigh';
 import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
 import LoginIcon from '@mui/icons-material/Login';
-import { Text } from '../../components/common';
+import PeopleIcon from '@mui/icons-material/People';
+import { Text } from '../../common';
 import { useRouter } from 'next/dist/client/router';
 
 type CommunityNavProps = {};
@@ -21,6 +22,7 @@ type CommunityNavProps = {};
 const index = [
   { title: '공지사항', url: '/community/notice', icon: <PriorityHighIcon className="icon" /> },
   { title: '질문/답변', url: '/community/question', icon: <QuestionAnswerIcon className="icon" /> },
+  { title: '멤버', url: '/community/member', icon: <PeopleIcon className="icon" /> },
   { title: '활동', url: '/community/activity', icon: <DirectionsRunIcon className="icon" /> },
 ];
 
@@ -38,7 +40,7 @@ const CommunityNav = ({}: CommunityNavProps) => {
 
       <StyledMenuItem
         onClick={() => {
-          router.push('/community/login');
+          router.push('/login');
         }}
       >
         <ListItemIcon>

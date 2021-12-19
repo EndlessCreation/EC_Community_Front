@@ -13,7 +13,7 @@ import {
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import PeopleIcon from '@mui/icons-material/People';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import { Text } from '../../components/common';
+import { Text } from '../../common';
 import { useRouter } from 'next/dist/client/router';
 
 type AdminNavProps = {

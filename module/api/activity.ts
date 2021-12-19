@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Activity } from '../types';
+import { Activity } from '../../types';
 import qs from 'qs';
 
 export const getActivity = async (id: Activity['id']) => {

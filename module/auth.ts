@@ -2,7 +2,7 @@ import { AnyAction } from 'redux';
 import { createAction, handleActions } from 'redux-actions';
 import { pender } from 'redux-pender';
 import { Token } from '../types';
-import * as authAPI from '../api/auth';
+import * as authAPI from './api/auth';
 
 const KAKAO_OAUTH = 'auth/KAKAO_OAUTH' as const;
 const GOOGLE_OAUTH = 'auth/GOOGLE_OAUTH' as const;

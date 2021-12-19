@@ -1,6 +1,6 @@
 import React from 'react';
 import Sign from '../../components/admin/Sign';
-import AdminLayout from '../../layouts/AdminLayout';
+import AdminLayout from '../../components/layouts/AdminLayout';
 
 const SignPage = () => {
   return (

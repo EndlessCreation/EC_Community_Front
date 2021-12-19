@@ -1,6 +1,6 @@
 import React from 'react';
 import CommunityMain from '../../components/community/CommunityMain';
-import CommunityLayout from '../../layouts/CommunityLayout';
+import CommunityLayout from '../../components/layouts/CommunityLayout';
 
 const CommunityPage = () => {
   return (

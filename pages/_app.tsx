@@ -1,4 +1,4 @@
-import '../styles/global.css';
+import '../lib/styles/global.css';
 import { CssBaseline } from '@mui/material';
 import { AppProps } from 'next/app';
 import React, { FC } from 'react';

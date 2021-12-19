@@ -20,10 +20,10 @@ const OAuthButton = ({ OauthIcon, title, ...props }: any) => {
 
 type LoginPageProps = {};
 
-const LoginPage = ({}: LoginPageProps) => {
+const Login = ({}: LoginPageProps) => {
   return (
-    <Box css={loginWrapper}>
-      <Box>
+    <Wrapper>
+      <Section>
         <LogoWithText css={logo} />
         <Box css={oauthWrapper}>
           <KakaoLogin
@@ -61,31 +61,36 @@ const LoginPage = ({}: LoginPageProps) => {
             cookiePolicy={'single_host_origin'}
           />
         </Box>
-      </Box>
-    </Box>
+      </Section>
+    </Wrapper>
   );
 };
 
-export default LoginPage;
+export default Login;
 
-const loginWrapper = css`
+const Wrapper = styled(Box)(css`
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://images.unsplash.com/photo-1509909756405-be0199881695?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+  background-size: cover;
+  background-repeat: no-repeat;
+`);
+
+const Section = styled(Box)(css`
+  width: 100%;
+  padding: 3rem;
+  max-width: 40rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-weight: bold;
-
-  & > .MuiBox-root {
-    width: 100%;
-    max-width: 50rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-`;
+  background: #ffffffe2;
+  border-radius: 3px;
+  border: 0.5rem solid #ffffff67;
+`);
 
 const logo = css`
   width: 18.75rem;
@@ -97,7 +102,7 @@ const oauthWrapper = css`
 `;
 
 const oauthButtonWrapper = css`
-  width: calc(100% - 40px);
+  width: 100%;
   height: 56px;
   padding: 0 20px;
   margin-bottom: 10px;
