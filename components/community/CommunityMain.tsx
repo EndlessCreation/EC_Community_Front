@@ -8,6 +8,7 @@ import PriorityHighIcon from '@mui/icons-material/PriorityHigh';
 import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
 import { testUser1 } from '../../types';
+import { useRouter } from 'next/dist/client/router';
 
 type CommunityMainProps = {};
 
@@ -96,6 +97,8 @@ const contents = [
 ];
 
 const CommunityMain = ({}: CommunityMainProps) => {
+  const router = useRouter();
+
   return (
     <Wrapper container spacing={4}>
       {contents.map((content) => (
@@ -103,7 +106,12 @@ const CommunityMain = ({}: CommunityMainProps) => {
           <SectionTitle>
             {content.titleIcon}
             <Text className="title">{content.title}</Text>
-            <IconButton className="goButton">
+            <IconButton
+              className="goButton"
+              onClick={() => {
+                router.push(content.url);
+              }}
+            >
               <ArrowForwardIosIcon />
             </IconButton>
           </SectionTitle>

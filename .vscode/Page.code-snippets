@@ -4,7 +4,7 @@
 		"body": [
 			"import React from 'react';",
 			"import ${1:${TM_FILENAME_BASE}} from '../../components/${3}/${1:${TM_FILENAME_BASE}}';",
-			"import ${2}Layout from '../../layouts/${2}Layout';",
+			"import ${2}Layout from '../../components/layouts/${2}Layout';",
 			"",
 			"const ${1:${TM_FILENAME_BASE}}Page = () => {",
 			"return (",

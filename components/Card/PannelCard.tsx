@@ -10,7 +10,7 @@ type PannelCardProps = {
 
 const PannelCard = ({ list }: PannelCardProps) => {
   return (
-    <Wrapper>
+    <Wrapper elevation={3}>
       {list.map((item, index) => (
         <Item key={index}>
           <Text className="top">{item.title}</Text>

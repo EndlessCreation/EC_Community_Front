@@ -1,12 +1,13 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
-import { Box } from '@mui/material';
 import React from 'react';
+import Notice from '../../components/community/Notice';
+import CommunityLayout from '../../components/layouts/CommunityLayout';
 
-type NoticePageProps = {};
-
-const NoticePage = ({}: NoticePageProps) => {
-  return <Box></Box>;
+const NoticePage = () => {
+  return (
+    <CommunityLayout>
+      <Notice noticeList={null} />
+    </CommunityLayout>
+  );
 };
 
 export default NoticePage;

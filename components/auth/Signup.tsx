@@ -100,13 +100,14 @@ const Section = styled(Box)(css`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #ffffffd1;
+  background: #ffffffda;
   backdrop-filter: blur(8px);
   border-radius: 3px;
 
   & .title {
     font-size: 1.1rem;
     font-weight: bold;
+    margin-bottom: 1rem;
   }
 `);
 
