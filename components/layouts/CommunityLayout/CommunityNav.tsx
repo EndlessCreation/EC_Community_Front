@@ -30,7 +30,12 @@ const CommunityNav = ({}: CommunityNavProps) => {
   const router = useRouter();
   return (
     <StyledMenuList dense className="sideNav">
-      <Text className="title">
+      <Text
+        className="title"
+        onClick={() => {
+          router.push('/community');
+        }}
+      >
         Endless Creation
         <br />
         Community
@@ -86,6 +91,7 @@ const StyledMenuList = styled(MenuList)(css`
     padding: 1rem 0;
     font-size: 1.4rem;
     font-weight: bold;
+    cursor: pointer;
   }
 
   & .copyright {
