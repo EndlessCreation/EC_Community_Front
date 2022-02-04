@@ -3,9 +3,7 @@ import { User } from '../../types';
 import qs from 'qs';
 
 export const getUserData = async (id?: User['id']) => {
-  const { data } = await axios.get<User>(
-    `${process.env.NEXT_PUBLIC_API_URL}/user${id && '/' + id}`,
-  );
+  const { data } = await axios.get<User>(`${process.env.NEXT_PUBLIC_API_URL}/user/${id || ''}`);
   return data;
 };
 

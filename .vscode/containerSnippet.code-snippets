@@ -1,0 +1,24 @@
+{
+	"Container": {
+		"prefix": "con",
+		"body": [
+			"import { useRouter } from 'next/dist/client/router';",
+			"import React, { useEffect } from 'react';",
+			"import { useDispatch, useSelector } from 'react-redux';",
+			"import { RootState } from '../../module';",
+			"",
+			"const ${1:${TM_FILENAME_BASE}}Container = () => {",
+			"const { accessToken } = useSelector((state: RootState) => state.auth);",
+			"const router = useRouter();",
+			"const dispatch = useDispatch();",
+			"",
+			"useEffect(() => {",
+			"",
+			"}, [dispatch]);",
+			"return <${1:${TM_FILENAME_BASE}} />;",
+			"};",
+			"export default ${1:${TM_FILENAME_BASE}}Container;",
+		],
+		"description": "Container code"
+	}
+}

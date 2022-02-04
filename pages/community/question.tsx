@@ -1,12 +1,12 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
-import { Box } from '@mui/material';
-import React from 'react';
+import Notice from '../../components/community/Notice';
+import CommunityLayout from '../../components/layouts/CommunityLayout';
 
-type QuestionPageProps = {};
-
-const QuestionPage = ({}: QuestionPageProps) => {
-  return <Box></Box>;
+const QuestionPage = () => {
+  return (
+    <CommunityLayout>
+      <Notice noticeList={null} />
+    </CommunityLayout>
+  );
 };
 
 export default QuestionPage;

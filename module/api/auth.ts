@@ -5,6 +5,7 @@ export const kakaoOauth = async (accessToken: string) => {
   const { data } = await axios.post<any>(`${process.env.NEXT_PUBLIC_API_URL}/oauth/kakao`, {
     accessToken,
   });
+  axios.defaults.headers.common['Authorization'] = 'Bearer ' + data.accessToken;
   return data;
 };
 
@@ -12,6 +13,7 @@ export const googleOauth = async (accessToken: string) => {
   const { data } = await axios.post<any>(`${process.env.NEXT_PUBLIC_API_URL}/oauth/google`, {
     accessToken,
   });
+  axios.defaults.headers.common['Authorization'] = 'Bearer ' + data.accessToken;
   return data;
 };
 

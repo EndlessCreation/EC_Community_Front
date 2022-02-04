@@ -10,10 +10,11 @@ import Input from '../common/Input';
 import { useState } from 'react';
 
 type SignupProps = {
-  image: string;
+  image: string | null;
+  onUploadImage: (formData: FormData) => void;
 };
 
-const Signup = ({ image }: SignupProps) => {
+const Signup = ({ image, onUploadImage }: SignupProps) => {
   const [name, onNameChange] = useInput('');
   const [year, onYearChange] = useInput(null);
   const [isActive, setIsActive] = useState(true);
@@ -24,7 +25,7 @@ const Signup = ({ image }: SignupProps) => {
     console.log(imageList[0].file);
     formData.append('files', imageList[0].file);
     console.log(formData);
-    // onUploadProfileImage(formData);
+    onUploadImage(formData);
   };
 
   return (

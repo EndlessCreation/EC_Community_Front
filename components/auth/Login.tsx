@@ -1,26 +1,28 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { Box, styled } from '@mui/material';
+import { Box, ButtonBase, styled } from '@mui/material';
 import KakaoLogin from 'react-kakao-login';
 import GoogleLogin from 'react-google-login';
 import { GoogleIcon, KakaoIcon, LogoWithText } from '../../public/svgs';
 
 const OAuthButton = ({ OauthIcon, title, ...props }: any) => {
   return (
-    <Box css={oauthButtonWrapper} {...props}>
+    <ButtonBase css={oauthButtonWrapper} {...props}>
       <Box css={oauthIcon}>
         <OauthIcon />
       </Box>
       <Box textAlign="center" flex={1}>
         {title}
       </Box>
-    </Box>
+    </ButtonBase>
   );
 };
 
-type LoginPageProps = {};
+type LoginProps = {
+  onOauth: (mode: string, accessToken: string) => Promise<void>;
+};
 
-const Login = ({}: LoginPageProps) => {
+const Login = ({ onOauth }: LoginProps) => {
   return (
     <Wrapper>
       <Section>
@@ -30,8 +32,7 @@ const Login = ({}: LoginPageProps) => {
             useLoginForm={true}
             token={process.env.NEXT_PUBLIC_KAKAO_KEY!}
             onSuccess={(result) => {
-              // onOauth({ mode: 'kakao', access_token: result.response.access_token });
-              console.log(result);
+              onOauth('kakao', result.response.access_token);
             }}
             onFail={(result) => console.log(result)}
             render={(props) => (
@@ -53,9 +54,8 @@ const Login = ({}: LoginPageProps) => {
                 css={{ color: '#000000', background: '#FFFFFF', border: '1px solid #D1D1D1' }}
               />
             )}
-            onSuccess={(result) => {
-              // onOauth({ mode: 'google', access_token: result.accessToken })
-              console.log(result);
+            onSuccess={(response: any) => {
+              onOauth('google', response.accessToken);
             }}
             onFailure={(result) => console.log(result)}
             cookiePolicy={'single_host_origin'}

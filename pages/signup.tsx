@@ -1,8 +1,8 @@
 import React from 'react';
-import Signup from '../components/auth/Signup';
+import SignupContainer from '../containers/auth/SignupContainer';
 
 const SignupPage = () => {
-  return <Signup image="" />;
+  return <SignupContainer />;
 };
 
 export default SignupPage;
