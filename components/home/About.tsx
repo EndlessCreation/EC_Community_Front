@@ -3,6 +3,7 @@ import { css } from '@emotion/react';
 import { Box, Card, Grid, styled } from '@mui/material';
 import { ResponsiveLayout, Section, Text } from '../common';
 import HomeHead from './HomeHead';
+import CountUp from 'react-countup';
 
 type AboutProps = {};
 
@@ -18,22 +19,28 @@ const About = ({}: AboutProps) => {
       <ResponsiveLayout>
         <Section>
           <Text className="title">31년 째 멈추지 않는 열정</Text>
-          <Grid container spacing={4}>
+          <Grid container spacing={4} css={{ marginTop: '2rem' }}>
             <Grid item xs={12} md={4} container justifyContent="center">
               <StatusCard elevation={3}>
-                <Text className="title">1991년</Text>
+                <CountUp
+                  duration={2}
+                  start={new Date().getFullYear()}
+                  end={1991}
+                  className="title"
+                  suffix="년"
+                />
                 <Text className="description">창립일</Text>
               </StatusCard>
             </Grid>
             <Grid item xs={12} md={4} container justifyContent="center">
               <StatusCard elevation={3}>
-                <Text className="title">60명</Text>
+                <CountUp duration={2} end={45} className="title" suffix="명" />
                 <Text className="description">활동 멤버</Text>
               </StatusCard>
             </Grid>
             <Grid item xs={12} md={4} container justifyContent="center">
               <StatusCard elevation={3}>
-                <Text className="title">123개</Text>
+                <CountUp duration={2} end={80} className="title" suffix="개" />
                 <Text className="description">누적 프로젝트</Text>
               </StatusCard>
             </Grid>
@@ -49,8 +56,8 @@ const About = ({}: AboutProps) => {
                 elevation={5}
               >
                 <Box className="filter">
-                  <Text className="title">다양한 분야의 사람들과 정보를 공유합니다.</Text>
-                  <Text className="description">Networking</Text>
+                  <Text className="title">Networking</Text>
+                  <Text className="description">다양한 분야의 사람들과 정보를 공유합니다.</Text>
                 </Box>
               </ActivityCard>
             </Grid>
@@ -60,8 +67,8 @@ const About = ({}: AboutProps) => {
                 elevation={5}
               >
                 <Box className="filter">
-                  <Text className="title">팀 프로젝트를 통해 협업 능력을 키웁니다.</Text>
-                  <Text className="description">Project</Text>
+                  <Text className="title">Project</Text>
+                  <Text className="description">팀 프로젝트를 통해 협업 능력을 키웁니다.</Text>
                 </Box>
               </ActivityCard>
             </Grid>
@@ -71,8 +78,8 @@ const About = ({}: AboutProps) => {
                 elevation={5}
               >
                 <Box className="filter">
-                  <Text className="title">현직자의 경험을 공유합니다.</Text>
-                  <Text className="description">Invitation Seminar</Text>
+                  <Text className="title">Seminar</Text>
+                  <Text className="description">회원들과 서로의 경험을 공유합니다.</Text>
                 </Box>
               </ActivityCard>
             </Grid>
@@ -82,8 +89,8 @@ const About = ({}: AboutProps) => {
                 elevation={5}
               >
                 <Box className="filter">
-                  <Text className="title">뜻이 맞는 사람들과 함께 공부합니다.</Text>
-                  <Text className="description">Study</Text>
+                  <Text className="title">Study</Text>
+                  <Text className="description">뜻이 맞는 사람들과 함께 공부합니다.</Text>
                 </Box>
               </ActivityCard>
             </Grid>
@@ -126,25 +133,44 @@ const ActivityCard = styled(Card)<any>(
     background-repeat: no-repeat;
     background-size: cover;
 
+    &:hover {
+      & .title {
+        font-size: 2rem;
+      }
+      & .description {
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+
     & .filter {
       padding: 1.5rem;
       width: 100%;
       height: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
       background: linear-gradient(90deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.1) 100%);
+
+      &:hover {
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.3) 100%);
+      }
     }
 
     & .title {
       width: 60%;
-      font-size: 2rem;
+      font-size: 2.2rem;
       color: white;
+      transition: all 0.4s ease;
+      margin-bottom: 1rem;
     }
 
     & .description {
-      font-size: 1.2rem;
-      color: white;
+      font-size: 1.3rem;
+      color: #dddddd;
+      transition: all 0.4s ease;
+      visibility: hidden;
+      transform: translateY(12rem);
     }
   `,
 );
