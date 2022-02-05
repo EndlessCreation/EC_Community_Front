@@ -1,6 +1,6 @@
 import { displayData,scrollData, storyBoard, interaction } from "./type";
 
-class PlayData{
+export class PlayData{
         displayData : displayData= {
             innerWidth: 0,
             innerHeight: 0,
@@ -17,9 +17,9 @@ class PlayData{
 }
 
 // object import하면 읽기전용이라 값을 수정할수가 읎다
-const playData = new PlayData();
+const playData:PlayData = new PlayData();
 export default playData;
-
+ 
 
 
 

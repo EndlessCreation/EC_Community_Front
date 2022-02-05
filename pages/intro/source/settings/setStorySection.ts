@@ -1,66 +1,65 @@
 //모든 컴포넌트의 인터랙션 섹션 나누는거 여기에
 
-import  { PlayData } from "../utils/playData";
+import  playData from "../utils/playData";
 
 
 
-const dummyStoryBoardData = [
+// const dummyStoryBoardData = [
 
-    {
-        startScrollValue: 0,
-        endScrollValue: 100,
-        playId: 0,
-        playLength: 755,
-        startPoint: 2,
-    },
-    {
-        startScrollValue: 100,
-        endScrollValue: 200,
-        playId: 1,
-        playLength: 755,
-        startPoint: 2,
-    },
-    {
-        startScrollValue: 150,
-        endScrollValue: 250,
-        playId: 2,
-        playLength: 755,
-        startPoint: 2,
-    },
-    {
-        startScrollValue: 175,
-        endScrollValue: 240,
-        playId: 3,
-        playLength: 755,
-        startPoint: 2,
-    },
-    {
-        startScrollValue: 230,
-        endScrollValue: 300,
-        playId: 4,
-        playLength: 755,
-        startPoint: 2,
+//     {
+//         startScrollValue: 0,
+//         endScrollValue: 1000,
+//         playId: 0,
+//         playLength: 755,
+//         startPoint: 2,
+//     },
+//     {
+//         startScrollValue: 1000,
+//         endScrollValue: 2000,
+//         playId: 1,
+//         playLength: 755,
+//         startPoint: 2,
+//     },
+//     {
+//         startScrollValue: 1500,
+//         endScrollValue: 2500,
+//         playId: 2,
+//         playLength: 755,
+//         startPoint: 2,
+//     },
+//     {
+//         startScrollValue: 1750,
+//         endScrollValue: 2400,
+//         playId: 3,
+//         playLength: 755,
+//         startPoint: 2,
+//     },
+//     {
+//         startScrollValue: 2300,
+//         endScrollValue: 3000,
+//         playId: 4,
+//         playLength: 755,
+//         startPoint: 2,
         
-    },
-    {
-        startScrollValue: 100,
-        endScrollValue: 200,
-        playId: 5,
-        playLength: 755,
-        startPoint: 2,
-    },
-]
+//     },
+//     {
+//         startScrollValue: 1000,
+//         endScrollValue: 2000,
+//         playId: 5,
+//         playLength: 755,
+//         startPoint: 2,
+//     },
+// ]
 
 
 //실행 인터랙션 개수가 달라지는거에 따라 섹션 나누기
-export default function setStorySection(playData: PlayData) {
+export default function setStorySection() {
     
 
 
 
-    console.log(playData);
-    // const { storyBoard } = playData;
-    const storyBoard = dummyStoryBoardData
+    const { storyBoard } = playData;
+    // const storyBoard = dummyStoryBoardData
     
     //결과 담을 코드
     const section = [];
@@ -96,9 +95,9 @@ export default function setStorySection(playData: PlayData) {
         }
         //나머지 점 처리
         else {
-            //구간의 endpoint값에, 지금 조회하는 point 값을 넣고 섹션 추가
+            //구간의 endpoint값에, 지금 조회하는 point값을 넣고 idList 섹션에 추가
             check.endPoint = point.point;
-            section.push({...check, arr:[...temp]})
+            section.push({...check, idList:[...temp]})
             if (point.type === "start") {
             //포인트가 시작점이었을 경우, temp에 id 추가
             // console.log("push" ,point.id)
@@ -119,7 +118,8 @@ export default function setStorySection(playData: PlayData) {
 
     //스크롤값이 start == end 인 경우 필터링으로 제거
     section = section.filter((point)=>(point.startPoint !== point.endPoint))
-    console.log(section);
-    return section;
+    console.log(section); 
+    // return section;
+    playData.scrollData.section = section;
 }
 

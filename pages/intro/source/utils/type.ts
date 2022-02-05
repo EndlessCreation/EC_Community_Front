@@ -11,10 +11,7 @@ export type displayData = {
 export type scrollData = {
     wholeScroll: number,
     currentScroll: number,
-    section: {
-        sectionNumber: number,
-        onAirId: Array<number>
-    } | null;
+    section: Array<sectionElem> | null;
 };
 
 
@@ -39,8 +36,18 @@ export type interaction = {
     }
 };
 
+
+
 export type attribute = {
     opacity: number,
     top: number,
     transform: string;
 }
+
+export type sectionElem = {
+    
+        startPoint: number,
+        endPoint:number,
+        idList: Array<number>
+}
+

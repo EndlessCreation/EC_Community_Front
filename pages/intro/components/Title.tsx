@@ -20,12 +20,12 @@ const titleInit = (playId: number) => {
           //시작비율, 끝비율, (0~1) 실제값,
           start: 0,
           end: 0.3,
-          type: 'up',
+          value: [0, 1],
         },
         {
           start: 0.7,
           end: 1,
-          type: 'down',
+          value: [1, 0],
         },
       ],
     },
@@ -61,8 +61,8 @@ const Title = ({ playId }: { playId: number }) => {
     // if (titleRef.current && titleRef && thisStory && thisAnimation) {
     //   //   thisStory.DOM.addEventListener
     // }
-    console.log(thisStory);
-    console.log(thisAnimation);
+    // console.log(thisStory);
+    // console.log(thisAnimation);
   });
   return (
     <div ref={titleRef} css={titleStyle}>

@@ -9,3 +9,7 @@ export const calPlayLength = (innerHeight:number, playLength:number) => {
     return innerHeight *playLength
 }
 
+
+export const makeAsync =  async (callback :  ()=>void) => { 
+    callback();
+}

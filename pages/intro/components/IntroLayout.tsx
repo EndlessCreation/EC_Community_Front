@@ -6,10 +6,15 @@ import styled from '@emotion/styled';
 
 type IntroLayout = {
   children: Array<React.ReactChild> | React.ReactChild;
+  id: string;
 };
 
-const IntroLayout = ({ children }: IntroLayout) => {
-  return <MainLayout>{children}</MainLayout>;
+const IntroLayout = ({ children, id, ...props }: IntroLayout) => {
+  return (
+    <MainLayout id={id} {...props}>
+      {children}
+    </MainLayout>
+  );
 };
 
 export default IntroLayout;
