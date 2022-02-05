@@ -9,12 +9,12 @@ export const calPlayLength = (innerHeight:number, playLength:number) => {
     return innerHeight *playLength
 }
 
-export const calProgressRatio = ({ startScrollValue, endScrollValue, currentScrollValue }: {startScrollValue:number, endScrollValue:number, currentScrollValue:number }) => {
-    return ((currentScrollValue - startScrollValue) / (endScrollValue - startScrollValue));
+export const calProgressRatio = ({ start, end, progress }: {start:number, end:number, progress:number }) => {
+    return ((progress - start) / (end - start));
 }
 
 export const calCssValue = ({ startRatio, endRatio, progressRatio, value}:{startRatio:number, endRatio:number, progressRatio:number, value:[number,number]}) => {
-    let partRatio: number = ((progressRatio -startRatio) / (endRatio - startRatio));
+    let partRatio: number = calProgressRatio({start:startRatio, end:endRatio,progress:progressRatio});
     let cssValue:number = partRatio * value[1] + (1 - partRatio) * value[0];
     return cssValue;
 }

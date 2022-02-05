@@ -1,6 +1,7 @@
 import playData from "../utils/playData";
 import { sectionElem, storyBoard } from "../utils/type";
 import { valBlur, valFade, valOpacity, valPosition, valScale } from "../interactions";
+import { calCssValue, calProgressRatio } from "../utils/utils";
 
 
 
@@ -13,10 +14,10 @@ export default function playAction() {
         for (let playId of idList) {
             const story: storyBoard = playData.storyBoard[playId];
             //인터랙션 type별로 구분해서 함수실행, 
-            const cssValue = switchByType(story)!;
+            const cssValue = getCssValue(story)!;
             //DOM에 실제로 속성 적용
             console.log(
-                cssValue?cssValue.toFixed(4) : "");
+                cssValue && cssValue.toFixed(4));
 
         }
     }
@@ -31,7 +32,21 @@ const getIdListFromSection = (section: Array<sectionElem>) => {
 }
 
 
-
+const getCssValue = (story:storyBoard) => {
+    const currentScrollValue = window.pageYOffset;
+    const { startScrollValue, endScrollValue,actionList } = story;
+    for (let action of actionList) {
+        for (let prop of action.props) {
+            let ratio = calProgressRatio({ start: startScrollValue, end: endScrollValue, progress: currentScrollValue });
+            if (prop.start < ratio && ratio < prop.end) {
+                return calCssValue({ startRatio: prop.start, endRatio: prop.end, progressRatio: ratio, value:prop.value });
+            }
+            else {
+                continue;
+            }
+        }
+    }
+}
 
 
 
@@ -40,24 +55,24 @@ const switchByType = ({startScrollValue, endScrollValue, actionList} : storyBoar
     for (let action of actionList) {
         const scrollData:{startScrollValue:number, endScrollValue: number} = {startScrollValue,endScrollValue };
         switch (action.type) {
-            // case "blur": {
-            //     return valBlur()
-            // }
+            case "blur": {
+                return valBlur()
+            }
             case "opacity": {
                 return valOpacity(scrollData, action.props);
             }
-            // case "position": {
-            //     return valPosition()
+            case "position": {
+                return valPosition()
 
-            // }
-            // case "scale": {
-            //     return valScale()
+            }
+            case "scale": {
+                return valScale()
 
-            // }
-            // case "fade": {
-            //     return valFade()
+            }
+            case "fade": {
+                return valFade()
 
-            // }
+            }
             default: {
                 console.log('actionList.type = ',)
                 return 0;
