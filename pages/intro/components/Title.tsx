@@ -13,22 +13,25 @@ const titleInit = (playId: number) => {
     endScrollValue: 100,
     startPoint: 0,
     playLength: 2,
-    actionList: {
-      //여기서 애니메이션 어떻게 할건지 설정 해주기
-      opacity: [
-        {
-          //시작비율, 끝비율, (0~1) 실제값,
-          start: 0,
-          end: 0.3,
-          value: [0, 1],
-        },
-        {
-          start: 0.7,
-          end: 1,
-          value: [1, 0],
-        },
-      ],
-    },
+    actionList: [
+      {
+        //여기서 애니메이션 어떻게 할건지 설정 해주기
+        type: 'opacity',
+        props: [
+          {
+            //시작비율, 끝비율, (0~1) 실제값,
+            start: 0,
+            end: 0.3,
+            value: [0, 1],
+          },
+          {
+            start: 0.7,
+            end: 1,
+            value: [1, 0],
+          },
+        ],
+      },
+    ],
   };
   const titleAnimation: interaction = {
     playId: playId,

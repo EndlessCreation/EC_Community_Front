@@ -21,14 +21,14 @@ export type storyBoard = {
     DOM: HTMLElement | HTMLDivElement | null,
     startPoint: number,
     playLength: number,
-    startScrollValue?: number,
-    endScrollValue?: number,
-    actionList: {},
-} | null;
+    startScrollValue: number,
+    endScrollValue: number,
+    actionList: Array<attribute>,
+};
 
 
 
-//인터랙션의 속성값들의 상태 변화 O
+//인터랙션의 속성값들의 상태 변화 O -> 필요없을듯
 export type interaction = {
     playId: number,
     progressRatio: number,
@@ -39,11 +39,14 @@ export type interaction = {
 
 
 export type attribute = {
-    opacity: number,
-    top: number,
-    transform: string;
+    type: string,
+    props: Array<interActionProp>
 }
-
+export type interActionProp = {
+    start: number,
+    end: number,
+    value: [number,number]
+  }
 export type sectionElem = {
     
         startPoint: number,

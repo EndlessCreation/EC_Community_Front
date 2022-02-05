@@ -15,7 +15,6 @@ export const addEvent = () => {
         setStorySection();
     });
     window.addEventListener('scroll', () => {
-        // checkCurrentScroll();
         playAction();
 });
 
