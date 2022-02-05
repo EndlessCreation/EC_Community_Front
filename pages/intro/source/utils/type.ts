@@ -12,6 +12,8 @@ export type scrollData = {
     wholeScroll: number,
     currentScroll: number,
     section: Array<sectionElem> | null;
+    hiddenSection: Array<Array<number>> | null;
+
 };
 
 
@@ -42,6 +44,10 @@ export type attribute = {
     type: string,
     props: Array<interActionProp>
 }
+
+
+
+
 export type interActionProp = {
     start: number,
     end: number,
@@ -52,5 +58,11 @@ export type sectionElem = {
         startPoint: number,
         endPoint:number,
         idList: Array<number>
+}
+
+export type cssUpdateProps = {
+    DOM: HTMLElement | null,
+    cssValue: number,
+    // type: string
 }
 

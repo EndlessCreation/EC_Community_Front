@@ -32,7 +32,6 @@ const Intro = () => {
         {isRender ? (
           <>
             <ProgressRatioBar />
-            {/* <div style={{ height: '1000vh' }}></div> */}
             <Title playId={0} />
             <Contents playId={1} />
           </>
