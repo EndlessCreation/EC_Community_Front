@@ -8,6 +8,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { testActivity1, testActivity2 } from '../../types';
 import { ActivityCard, ActivityDetailCard } from '../Card';
+import Head from 'next/head';
 
 const Project = () => {
   const settings = {
@@ -23,6 +24,9 @@ const Project = () => {
 
   return (
     <Box>
+      <Head>
+        <title>EC: 프로젝트</title>
+      </Head>
       <HomeHead
         title="Project"
         description="Endless Creation의 멋진 프로젝트를 만나보세요"

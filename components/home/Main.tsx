@@ -8,6 +8,7 @@ import { ActivityDetailCard } from '../Card';
 import Slider from 'react-slick';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import Head from 'next/head';
 
 type MainProps = {};
 
@@ -24,6 +25,9 @@ const Main = ({}: MainProps) => {
   };
   return (
     <>
+      <Head>
+        <title>Endless Creation</title>
+      </Head>
       <Top id="back-to-top-anchor">
         <Box>
           <Text css={{ fontSize: '3.25rem' }}>성장하는 즐거움</Text>

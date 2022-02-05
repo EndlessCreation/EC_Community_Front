@@ -4,6 +4,7 @@ import { Box, styled } from '@mui/material';
 import { ResponsiveLayout, Section, Text } from '../common';
 import HomeHead from './HomeHead';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import Head from 'next/head';
 
 const wantList = [
   '소속에 상관없이, 개발자 / 디자이너로 활동이 가능한 분',
@@ -16,6 +17,9 @@ type RecruitProps = {};
 const Recruit = ({}: RecruitProps) => {
   return (
     <Box>
+      <Head>
+        <title>EC: 지원하기</title>
+      </Head>
       <HomeHead
         title="Recruit"
         description="Endless Creation에 지원하고 싶으신가요?"

@@ -20,7 +20,6 @@ type MainNavProps = {};
 
 const index = [
   { title: '소개', url: '/about' },
-  { title: '멤버', url: '/member' },
   { title: '프로젝트', url: '/project' },
   { title: '블로그', url: '/blog' },
   { title: '활동일정', url: '/schedule' },

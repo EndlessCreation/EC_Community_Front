@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { Box, Grid, styled } from '@mui/material';
-import { testUser1, testUser2 } from '../../types';
+import { testUser1, testUser2, testUser3, testUser4, testUser5, testUser6 } from '../../types';
 import { UserCard } from '../Card';
 import { ResponsiveLayout, Section, Text } from '../common';
 import HomeHead from './HomeHead';
@@ -28,10 +28,16 @@ const Member = ({}: MemberProps) => {
               <UserCard user={testUser2} elevation={3} />
             </Grid>
             <Grid item xs={6} md={4} container justifyContent="center">
-              <UserCard user={testUser1} elevation={3} />
+              <UserCard user={testUser3} elevation={3} />
             </Grid>
             <Grid item xs={6} md={4} container justifyContent="center">
-              <UserCard user={testUser2} elevation={3} />
+              <UserCard user={testUser4} elevation={3} />
+            </Grid>
+            <Grid item xs={6} md={4} container justifyContent="center">
+              <UserCard user={testUser5} elevation={3} />
+            </Grid>
+            <Grid item xs={6} md={4} container justifyContent="center">
+              <UserCard user={testUser6} elevation={3} />
             </Grid>
           </Grid>
         </Section>

@@ -57,7 +57,7 @@ const HomeHeadWrapper = styled(Box)<any>(
     & .description {
       padding-left: 2rem;
       font-size: 1.4rem;
-      color: white;
+      color: #e7e7e7;
     }
   `,
 );

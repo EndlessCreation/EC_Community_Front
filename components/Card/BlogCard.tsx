@@ -46,8 +46,8 @@ const CardWrapper = styled(Grid)<any>(css`
   cursor: pointer;
 
   &:hover {
-    transform: scale(1.02);
-    filter: brightness(0.95);
+    transform: scale(1.01);
+    filter: brightness(0.96);
   }
 
   & .info {

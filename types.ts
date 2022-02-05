@@ -23,7 +23,7 @@ export const testUser1: User = {
   email: 'sjsjsj1246@gmail.com',
   skills: ['react', 'react-native', 'next', 'typescript'],
   isActive: true,
-  role: ['웹 파트장', '사람'],
+  role: ['회장'],
   status: 'login',
   isAdmin: true,
   isLeader: true,
@@ -32,30 +32,72 @@ export const testUser1: User = {
 
 export const testUser2: User = {
   id: 2,
+  year: 28,
+  name: '김윤성',
+  email: 'kysagoo@gmail.com',
+  skills: ['express', 'nest', 'typescript', 'devOps'],
+  isActive: true,
+  role: ['인사부장'],
+  status: 'login',
+  isAdmin: true,
+  isLeader: false,
+  image: 'https://avatars.githubusercontent.com/u/77562357?v=4',
+};
+
+export const testUser3: User = {
+  id: 3,
+  year: 31,
+  name: '이상준',
+  email: 'lsj96412@gmail.com',
+  skills: ['express', 'nest', 'typescript', 'devOps'],
+  isActive: true,
+  role: ['홍보부장'],
+  status: 'login',
+  isAdmin: true,
+  isLeader: false,
+  image: 'https://avatars.githubusercontent.com/u/66112027?v=4',
+};
+
+export const testUser4: User = {
+  id: 4,
+  year: 28,
+  name: '조재영',
+  email: 'jdyj1235@gmail.com',
+  skills: ['express', 'nest', 'typescript', 'devOps'],
+  isActive: true,
+  role: ['재정부장'],
+  status: 'login',
+  isAdmin: true,
+  isLeader: false,
+  image: 'https://avatars.githubusercontent.com/u/41135099?v=4',
+};
+
+export const testUser5: User = {
+  id: 5,
   year: 27,
   name: '김건훈',
   email: 'dnatuna123@gmail.com',
   skills: ['express', 'nest', 'typescript', 'devOps'],
   isActive: true,
-  role: ['회장', '사람'],
+  role: ['개발부장'],
   status: 'login',
   isAdmin: true,
   isLeader: true,
   image: 'https://avatars.githubusercontent.com/u/28949165?v=4',
 };
 
-export const testUser3: User = {
-  id: 3,
-  year: 27,
-  name: '조인혁',
-  email: 'ss112d86@gmail.com',
-  skills: ['express', 'nest', 'typescript', 'devOps'],
+export const testUser6: User = {
+  id: 6,
+  year: 28,
+  name: '오정진',
+  email: 'ojj991123@gmail.com',
+  skills: ['react', 'next', 'typescript'],
   isActive: true,
-  role: ['부회장', '사람'],
+  role: ['학술부장'],
   status: 'login',
   isAdmin: true,
   isLeader: false,
-  image: 'https://avatars.githubusercontent.com/u/28949213?v=4',
+  image: 'https://avatars.githubusercontent.com/u/33178048?v=4',
 };
 
 export type Activity = {
