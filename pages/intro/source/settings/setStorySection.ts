@@ -13,7 +13,6 @@ export default function setStorySection() {
 
     //결과 담을 코드
     let section:Array<sectionElem> = [];
-    const hiddenSection:Array<Array<number>> = [];
     //애니메이션 시작점 끝점을 point 객체로 만들어 배열에 담는다
     const pointArr = [];
     //섹션 안에 재생되는 인터랙션 id들, 구간 서치가 끝날때마다 section에 push해준다.
@@ -72,18 +71,10 @@ export default function setStorySection() {
 
 
 
-    //나머지 숨겨줄 컴포넌트들 위해 hiddenSection 갱신
-    for (let i = 0; i < section.length; i++) {
-        section[i].idList.forEach((playId) => {
-            const hiddenIdArr = wholeIdList.filter((id) => id !== playId)
-            hiddenSection.push(hiddenIdArr);
-        })
-    }
+  
     section.map((elem)=>{})
     playData.scrollData.section = section;
-    playData.scrollData.hiddenSection = hiddenSection;
     // console.log(section); 
-    // console.log(hiddenSection);
 
 
 }

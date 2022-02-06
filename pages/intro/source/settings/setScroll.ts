@@ -7,5 +7,5 @@ import { sectionElem } from '../utils/type';
 export const setWholeHeight = () => {
     const rootDOM: HTMLElement = document.querySelector("#root")!;
     const section:Array<sectionElem> = playData.scrollData.section!;
-    rootDOM.style.height = `${section[section.length - 1].endPoint}px`;
+    rootDOM.style.height = `${section[section.length - 1].endPoint + window.innerHeight}px`;
 }

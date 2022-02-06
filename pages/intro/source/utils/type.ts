@@ -12,7 +12,6 @@ export type scrollData = {
     wholeScroll: number,
     currentScroll: number,
     section: Array<sectionElem> | null;
-    hiddenSection: Array<Array<number>> | null;
 
 };
 
