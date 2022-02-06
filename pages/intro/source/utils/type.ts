@@ -24,32 +24,24 @@ export type storyBoard = {
     playLength: number,
     startScrollValue: number,
     endScrollValue: number,
-    actionList: Array<attribute>,
+    actionList: Array<action>,
 };
 
 
 
-//인터랙션의 속성값들의 상태 변화 O -> 필요없을듯
-export type interaction = {
-    playId: number,
-    progressRatio: number,
-    value: {
-    }
-};
 
 
-
-export type attribute = {
+export type action = {
     type: string,
-    props: Array<interActionProp>
+    interActionProps: Array<interActionProp>
 }
 
 
 
 
 export type interActionProp = {
-    start: number,
-    end: number,
+    startRatio: number,
+    endRatio: number,
     value: [number,number]
   }
 export type sectionElem = {
@@ -61,7 +53,7 @@ export type sectionElem = {
 
 export type cssUpdateProps = {
     DOM: HTMLElement | null,
-    cssValue: number,
-    // type: string
+    progressRatio: number,
+    interActionProp: interActionProp;
 }
 

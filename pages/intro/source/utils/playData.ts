@@ -1,4 +1,4 @@
-import { displayData,scrollData, storyBoard, interaction } from "./type";
+import { displayData,scrollData, storyBoard } from "./type";
 
 export class PlayData{
         displayData : displayData= {
@@ -13,7 +13,6 @@ export class PlayData{
             section: null,
         };
         storyBoard: Array<storyBoard> = [];
-        interaction: Array<interaction> = [];
 }
 
 // object import하면 읽기전용이라 값을 수정할수가 읎다
