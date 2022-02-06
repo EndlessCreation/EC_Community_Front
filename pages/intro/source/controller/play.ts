@@ -1,7 +1,7 @@
 import playData from "../utils/playData";
 import { sectionElem, storyBoard} from "../utils/type";
 
-import { concealInteraction, runInteractionByType } from "./controll";
+import { concealInteraction, runInteractionByType } from "./valueControll";
 
 
 
@@ -15,17 +15,17 @@ export default function playAction() {
     const idList = getIdListFromSection(section);
     if (idList) {
         for (let i = 0; i < storyBoard.length; i++) {
-            const playId = storyBoard[i].playId;
+            const {playId} = storyBoard[i];
+            const currentStory: storyBoard = playData.storyBoard[playId];
             //idList 안에 있는 액션들은 실행
             if (idList.some((id) => id === playId)) {
-                const currentStory: storyBoard = playData.storyBoard[playId];
                 // 인터랙션 type별로 구분해서 함수실행, 
                 runInteractionByType(currentStory);
             }
             //없으면 DOM 숨겨주기
             else {
-                // concealInteraction();
-                // console.log("noPlay  = ", playId);
+                concealInteraction(currentStory);
+                console.log("noPlay  = ", playId);
             }
         }
     }
