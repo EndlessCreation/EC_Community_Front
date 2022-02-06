@@ -42,7 +42,7 @@ export type action = {
 export type interActionProp = {
     startRatio: number,
     endRatio: number,
-    value: [number,number]
+    value: any,
   }
 export type sectionElem = {
     

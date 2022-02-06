@@ -5,7 +5,8 @@
 export const calStartPoint = (innerHeight: number, startPoint: number) => {
     return innerHeight *startPoint
 }
-export const calPlayLength = (innerHeight:number, playLength:number) => {
+export const calPlayLength = (innerHeight: number, playLength: number) => {
+    if (playLength === 0) { return innerHeight };
     return innerHeight *playLength
 }
 

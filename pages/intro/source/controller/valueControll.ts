@@ -1,6 +1,6 @@
 import { cssUpdateProps, storyBoard } from "../utils/type";
-import { calCssValue, calProgressRatio } from "../utils/utils";
-import { valBlur, valOpacity, valPosition, valScale } from "../interactions";
+import { calProgressRatio } from "../utils/utils";
+import { valBlur, valOpacity, valMatrix } from "../interactions";
 
 
 
@@ -15,30 +15,25 @@ export const runInteractionByType = (story: storyBoard) => {
         for (let interActionProp of action.interActionProps) {
             const { startRatio, endRatio } = interActionProp;
             if (startRatio < progressRatio && progressRatio < endRatio) {
-                DOM && (DOM.style.display = 'block');
+                DOM && (DOM.style.display = 'flex');
                 const cssUpdateProps: cssUpdateProps = { DOM, interActionProp, progressRatio};
                 switch (action.type) {
-                    // case "blur": {
-                    //     return valBlur(cssUpdateProps)
-                    // }
+                    case "blur": {
+                        valBlur(cssUpdateProps)
+                        continue;
+                    }
                     case "opacity": {
-                        return valOpacity(cssUpdateProps);
-                    }
-                    // case "position": {
-                    //     return valPosition(cssUpdateProps)
+                        valOpacity(cssUpdateProps);
+                        continue;
 
-                    // }
-                    // case "scale": {
-                    //     return valScale(cssUpdateProps)
-                    // }
-                    default: {
-                        console.log('actionList.type = ',)
-                        return 0;
                     }
+                    case "matrix": {
+                        valMatrix(cssUpdateProps);
+                        continue;
+
+                    }
+
                 }
-            }
-            else {
-                continue;
             }
         }
     }

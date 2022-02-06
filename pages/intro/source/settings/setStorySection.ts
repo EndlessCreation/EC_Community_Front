@@ -9,7 +9,6 @@ import { sectionElem } from "../utils/type";
 export default function setStorySection() {
     
     const { storyBoard } = playData;    
-    const wholeIdList = storyBoard.map((story) => story.playId);
 
     //결과 담을 코드
     let section:Array<sectionElem> = [];
@@ -24,7 +23,7 @@ export default function setStorySection() {
 
 
     //스토리보드 안에 있는 모든 인터랙션의 시작점 끝점 point로 만들기, type값을 start와 end로 구분해서 넣어준다
-    for (let i = 0; i < storyBoard.length; i++) {
+    for (let i in storyBoard) {
        pointArr.push( {point : storyBoard[i].startScrollValue, type:"start", id:storyBoard[i].playId})
        pointArr.push( {point : storyBoard[i].endScrollValue, type:"end", id:storyBoard[i].playId})
     }
@@ -72,9 +71,7 @@ export default function setStorySection() {
 
 
   
-    section.map((elem)=>{})
     playData.scrollData.section = section;
-    // console.log(section); 
 
 
 }

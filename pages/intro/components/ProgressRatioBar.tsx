@@ -2,24 +2,25 @@
 
 import React, { useEffect, useRef } from 'react';
 import { css } from '@emotion/react';
+import playData from '../source/utils/playData';
+import { calProgressRatio } from '../source/utils/utils';
 
-const ProgressRatioBar = () => {
-  const cursor = useRef<HTMLDivElement>(null);
-  const scrollTest = () => {
-    console.log(window.pageYOffset);
-  };
+const ProgressRatioBar = ({ playId }: { playId: number }) => {
+  const cursorRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    if (cursor.current && cursor) {
-      // cursor.current.addEventListener('click', scrollTest);
-    }
-    return () => {
-      // cursor.current.removeEventListener('click', scrollTest);
-    };
+    window.addEventListener('scroll', () => {
+      const progressRatio = calProgressRatio({
+        start: 0,
+        end: playData.scrollData.wholeScroll,
+        progress: window.pageYOffset,
+      });
+      cursorRef.current!.style.left = `calc(${progressRatio}*90vw )`;
+    });
   });
-
   return (
     <div css={progressBar}>
-      <div css={cursorStyle} ref={cursor}></div>
+      <div css={cursorStyle} ref={cursorRef}></div>
     </div>
   );
 };

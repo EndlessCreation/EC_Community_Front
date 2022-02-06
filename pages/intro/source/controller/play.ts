@@ -21,11 +21,12 @@ export default function playAction() {
             if (idList.some((id) => id === playId)) {
                 // 인터랙션 type별로 구분해서 함수실행, 
                 runInteractionByType(currentStory);
+                continue;
             }
             //없으면 DOM 숨겨주기
             else {
                 concealInteraction(currentStory);
-                console.log("noPlay  = ", playId);
+                // console.log("noPlay  = ", playId);
             }
         }
     }
