@@ -86,7 +86,7 @@ const About: FunctionComponent<AboutProps> = ({}) => {
               >
                 <Box className="filter">
                   <Text className="title">Seminar</Text>
-                  <Text className="description">회원들과 서로의 경험을 공유합니다.</Text>
+                  <Text className="description">회원들과 서로의 지식과 경험을 공유합니다.</Text>
                 </Box>
               </ActivityCard>
             </Grid>
@@ -104,7 +104,7 @@ const About: FunctionComponent<AboutProps> = ({}) => {
           </Grid>
         </Section>
 
-        <Section>
+        {/* <Section>
           <Text className="title">운영진</Text>
           <Grid container spacing={8}>
             <Grid item xs={6} md={4} container justifyContent="center">
@@ -126,7 +126,7 @@ const About: FunctionComponent<AboutProps> = ({}) => {
               <UserCard user={testUser6} elevation={2} />
             </Grid>
           </Grid>
-        </Section>
+        </Section> */}
       </ResponsiveLayout>
     </Box>
   );

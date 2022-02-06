@@ -1,11 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { Box, Button, Card, IconButton, styled } from '@mui/material';
-import { forwardRef, useCallback, useRef } from 'react';
-import editorConfig from '../../lib/config/editorConfig';
+import { Box, Card, IconButton, styled } from '@mui/material';
 import { Blog } from '../../types';
 import dynamic from 'next/dynamic';
-import { Viewer as ViewerType, ViewerProps } from '@toast-ui/react-editor';
 import { TuiViewerWithForwardedProps } from '../common/Viewer';
 import { Text } from '../common';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';

@@ -4,7 +4,7 @@ import { Box, InputAdornment, OutlinedInput, styled } from '@mui/material';
 import { ResponsiveLayout, Section } from '../common';
 import HomeHead from './HomeHead';
 import SearchIcon from '@mui/icons-material/Search';
-import { testBlog1 } from '../../types';
+import { testBlog1, testBlog2 } from '../../types';
 import { BlogCard } from '../Card';
 import Head from 'next/head';
 
@@ -33,8 +33,7 @@ const BlogList = ({}: BlogListProps) => {
         />
         <Section css={{ paddingTop: '2rem' }}>
           <List>
-            <BlogCard className="blogCard" blog={testBlog1} />
-            <BlogCard className="blogCard" blog={testBlog1} />
+            <BlogCard className="blogCard" blog={testBlog2} />
             <BlogCard className="blogCard" blog={testBlog1} />
           </List>
         </Section>
