@@ -18,7 +18,7 @@ const BlogCard = ({ blog, ...props }: { blog: Blog; [k: string]: any }) => {
       }}
       {...props}
     >
-      <Grid item xs={12} md={10}>
+      <Grid item xs={12} md={10} css={{ height: '100%' }}>
         <Box className="info">
           <Text className="title">{blog.title}</Text>
           <Text className="content">{blog.content}</Text>
@@ -51,7 +51,7 @@ const CardWrapper = styled(Grid)<any>(css`
   }
 
   & .info {
-    height: calc(100% - 4rem);
+    height: 100%;
     display: flex;
     flex-direction: column;
     & .title {
@@ -60,6 +60,7 @@ const CardWrapper = styled(Grid)<any>(css`
     }
 
     & .content {
+      flex: 1;
       margin-top: 1rem;
       font-size: 0.9rem;
       color: #444444;

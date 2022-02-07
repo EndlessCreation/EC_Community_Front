@@ -83,7 +83,7 @@ export default MainNav;
 
 const Header = styled(Box)<any>(
   ({ isScrolled }: any) => css`
-    width: 100%;
+    width: 100vw;
     height: 4rem;
     padding: 0 2rem;
     border-radius: 0px;

@@ -131,7 +131,7 @@ export const testActivity1: Activity = {
 };
 
 export const testActivity2: Activity = {
-  id: 1,
+  id: 2,
   title: 'Upgle',
   category: 'competition',
   status: 'finish',
@@ -142,7 +142,23 @@ export const testActivity2: Activity = {
     'https://user-images.githubusercontent.com/24623403/146601381-9eac6210-0f45-46b2-bbfe-d8ebc2355f11.png',
   source: 'https://github.com/Jandy-SeoulTech/Jandy_Web_Front',
   description:
-    'Upgle 은 웹 사이트 환경에서 자신이 잘하는 분야를 공유하는 공유자와 배우고 싶은 분야를 배우는 사람들이 실시간으로 인터렉션 할 수 있게 도와주는 사이트입니다.',
+    'Upgle은 웹 사이트 환경에서 자신이 잘하는 분야를 공유하는 공유자와 배우고 싶은 분야를 배우는 사람들이 실시간으로 인터렉션 할 수 있게 도와주는 사이트입니다.',
+  skills: ['react', 'Redux', 'material-ui'],
+};
+
+export const testActivity3: Activity = {
+  id: 3,
+  title: 'Gamp',
+  category: 'competition',
+  status: 'finish',
+  member: [testUser1],
+  startDate: new Date('2021-08-12'),
+  endDate: new Date('2021-10-12'),
+  image:
+    'https://user-images.githubusercontent.com/28949165/128905429-1cdcc41c-e570-4819-a112-608936563d79.png',
+  source: 'https://github.com/junction-hippy/Gamp_Front',
+  description:
+    'Gamp는 음성 채팅 서비스가 없는 게임에서 게임이 시작되면 팀원들과 자동으로 음성 매칭을 해주는 서비스입니다.',
   skills: ['react', 'Redux', 'material-ui'],
 };
 

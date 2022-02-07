@@ -6,7 +6,7 @@ import HomeHead from './HomeHead';
 import Slider from 'react-slick';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import { testActivity1, testActivity2 } from '../../types';
+import { testActivity1, testActivity2, testActivity3 } from '../../types';
 import { ActivityCard, ActivityDetailCard } from '../Card';
 import Head from 'next/head';
 
@@ -55,13 +55,7 @@ const Project = () => {
               <ActivityCard activity={testActivity2} />
             </Grid>
             <Grid item xs={6} md={4}>
-              <ActivityCard activity={testActivity2} />
-            </Grid>
-            <Grid item xs={6} md={4}>
-              <ActivityCard activity={testActivity2} />
-            </Grid>
-            <Grid item xs={6} md={4}>
-              <ActivityCard activity={testActivity2} />
+              <ActivityCard activity={testActivity3} />
             </Grid>
           </Grid>
         </Section>

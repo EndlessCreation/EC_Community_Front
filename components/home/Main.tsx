@@ -9,6 +9,7 @@ import Slider from 'react-slick';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 
 type MainProps = {};
 
@@ -27,12 +28,26 @@ const Main = ({}: MainProps) => {
     <>
       <Head>
         <title>Endless Creation</title>
+        <NextSeo
+          title="Endless Creation"
+          description="EC 홈페이지입니다."
+          openGraph={{
+            title: 'Endless Creation',
+            description: 'EC 홈페이지입니다.',
+            url: `/`,
+            images: [
+              {
+                url: '/img/ogImg.png',
+              },
+            ],
+          }}
+        />
       </Head>
       <Top id="back-to-top-anchor">
         <Box>
           <Text css={{ fontSize: '3.25rem' }}>성장하는 즐거움</Text>
           <Text css={{ fontSize: '4rem' }}>Endless Creation</Text>
-          <Text css={{ fontSize: '1.75rem' }}>신입 기수 모집중(~4.21)</Text>
+          <Text css={{ fontSize: '1.75rem' }}>신입 기수 모집중(~3.6)</Text>
           <Text css={{ fontSize: '1.75rem' }}>32기 여러분들을 기다리고 있어요!</Text>
         </Box>
       </Top>
@@ -307,7 +322,7 @@ const Activity = styled(Box)<any>(
     }
 
     & .wrapper {
-      width: 37.5rem;
+      width: 100%;
       display: flex;
       justify-content: flex-start;
       align-items: center;

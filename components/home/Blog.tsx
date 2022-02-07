@@ -32,7 +32,6 @@ const Blog = ({ blog }: BlogProps) => {
           </IconButton>
           <Text className="title">{blog.title}</Text>
         </Head>
-
         <Viewer initialValue={blog.content} />
       </InnerWrapper>
     </Wrapper>
