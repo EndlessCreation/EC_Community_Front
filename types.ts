@@ -643,7 +643,7 @@ export const testBlog2: Blog = {
   [https://www.popit.kr/나만-모르고-있던-http2/](https://www.popit.kr/%EB%82%98%EB%A7%8C-%EB%AA%A8%EB%A5%B4%EA%B3%A0-%EC%9E%88%EB%8D%98-http2/)
   `,
   createdAt: new Date('2021-04-12'),
-  tags: ['react', 'gatsby'],
+  tags: ['network', 'http'],
   author: testUser5,
   image:
     'https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1373&q=80',

@@ -9,7 +9,6 @@ import Slider from 'react-slick';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import Head from 'next/head';
-import { NextSeo } from 'next-seo';
 
 type MainProps = {};
 
@@ -28,20 +27,6 @@ const Main = ({}: MainProps) => {
     <>
       <Head>
         <title>Endless Creation</title>
-        <NextSeo
-          title="Endless Creation"
-          description="EC 홈페이지입니다."
-          openGraph={{
-            title: 'Endless Creation',
-            description: 'EC 홈페이지입니다.',
-            url: `/`,
-            images: [
-              {
-                url: '/img/ogImg.png',
-              },
-            ],
-          }}
-        />
       </Head>
       <Top id="back-to-top-anchor">
         <Box>
@@ -62,13 +47,6 @@ const Main = ({}: MainProps) => {
               <span>Endless Creation</span>은 사람과 컴퓨터를 사랑하는 동아리로, 개발하는 재미와
               함께 성장하는 즐거움을 알아갈 수 있는 다양한 활동을 준비하고 있습니다.{' '}
             </Text>
-            {/* <iframe
-              src="https://www.youtube.com/embed/6QosveEmeqg"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            /> */}
           </Box>
         </About>
       </ResponsiveLayout>
