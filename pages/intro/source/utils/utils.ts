@@ -23,3 +23,16 @@ export const makeAsync =  async (callback :  ()=>void) => {
     callback();
 }
 
+export const sliceRGBA = (colorData: string) => {
+    //# 붙이는거 안붙이는거 체크
+    const startIndex = colorData[0] === '#' ? 1 : 0;
+    let rgba = [
+      colorData.slice(startIndex, startIndex + 2),
+      colorData.slice(startIndex + 2, startIndex + 4),
+      colorData.slice(startIndex + 4, startIndex + 6),
+      colorData.slice(startIndex + 6, startIndex + 8) || "FF", //a값 없으면 FF로 고정
+    ];
+    return rgba.map((value) => parseInt(`0x${value}`));
+  
+    // rgba -> [ r, g ,b ,a ] 10진수로 리턴
+  };

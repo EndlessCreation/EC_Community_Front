@@ -5,7 +5,7 @@ import { css } from '@emotion/react';
 import playData from '../source/utils/playData';
 import { calProgressRatio } from '../source/utils/utils';
 
-const ProgressRatioBar = ({ playId }: { playId: number }) => {
+const ProgressRatioBar = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

@@ -22,7 +22,7 @@ export const scrollControll = (callback : () => void) => {
 export const loop = () => {
   const acc = 0.05;
   const scrollGap = (window.pageYOffset - playData.scrollData.currentScroll)
-  console.log('looop',Math.abs(scrollGap), playData.scrollData.currentScroll, window.pageYOffset)
+  // console.log('looop',Math.abs(scrollGap), playData.scrollData.currentScroll, window.pageYOffset)
 
   playData.scrollData.currentScroll += Math.round(parseInt((scrollGap * acc).toFixed(1)));
   playAction();

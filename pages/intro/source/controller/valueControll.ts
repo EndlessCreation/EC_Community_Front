@@ -1,6 +1,6 @@
 import { cssUpdateProps, storyBoard } from "../utils/type";
 import { calProgressRatio } from "../utils/utils";
-import { valBlur, valOpacity, valMatrix } from "../interactions";
+import { valBlur, valOpacity, valMatrix, valBackgroundColor } from "../interactions";
 import playData from "../utils/playData";
 
 
@@ -33,6 +33,9 @@ export const runInteractionByType = (story: storyBoard) => {
                         valMatrix(cssUpdateProps);
                         continue;
 
+                    }
+                    case "backgroundColor": {
+                        valBackgroundColor(cssUpdateProps);
                     }
 
                 }
