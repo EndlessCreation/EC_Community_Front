@@ -162,6 +162,22 @@ export const testActivity3: Activity = {
   skills: ['react', 'Redux', 'material-ui'],
 };
 
+export const testActivity4: Activity = {
+  id: 4,
+  title: 'JOIN',
+  category: 'competition',
+  status: 'finish',
+  member: [testUser1, testUser2],
+  startDate: new Date('2021-09-12'),
+  endDate: new Date('2021-11-12'),
+  image:
+    'https://user-images.githubusercontent.com/24623403/152966700-aa767bc2-9e36-41c3-aa09-e5e3a87640e9.png',
+  source: '',
+  description:
+    'JOIN은 교육용 플랫폼으로 소통과 정보전달이 수월해 학생 간 협업을 증진시킬 수 있고 자동 평가를 통해 선생님과 교수님의 부담을 덜어드릴 수 있는 과제 협업, 평가 학습 블로그입니다.',
+  skills: ['react', 'redux', 'koa', 'docker'],
+};
+
 export type Blog = {
   id: number;
   title: string;
