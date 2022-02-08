@@ -1,77 +1,72 @@
 /** @jsxImportSource @emotion/react */
-
 import React, { useEffect, useRef } from 'react';
 import playData from '../source/utils/playData';
 import { css } from '@emotion/react';
 import { storyBoard } from '../source/utils/type';
 import { calStartPoint, calPlayLength } from '../source/utils/utils';
 
-const progressRatioInit = (playId: number) => {
-  const titleStory: storyBoard = {
+const backgroundInit = (playId: number) => {
+  const backgroundStory: storyBoard = {
     playId: playId,
     DOM: null,
     startScrollValue: 0,
     endScrollValue: 0,
-    startPoint: 0,
-    playLength: 10,
+    startPoint: 2,
+    playLength: 3,
     actionList: [
       {
-        type: 'matrix',
+        //여기서 애니메이션 어떻게 할건지 설정 해주기
+        type: 'backgroundColor',
         interActionProps: [
           {
             //시작비율, 끝비율, (0~1) 실제값,
             startRatio: 0,
+            endRatio: 0.5,
+            value: ['#0000E6', '#550066'],
+          },
+          {
+            startRatio: 0.5,
             endRatio: 1,
-            value: [
-              [1, 0, 0, 1, 0, 0],
-              [1, 0, 0, 1, 100, 100],
-            ],
+            value: ['#550066', '#0000E6'],
           },
         ],
       },
     ],
   };
+
   //playData 인스턴스에 정보 등록
-  playData.storyBoard[playId] = titleStory;
+  playData.storyBoard[playId] = backgroundStory;
 };
 
-const ProgressRatioBar = ({ playId }: { playId: number }) => {
-  const progressBarRef = useRef<HTMLDivElement>(null);
+const Background = ({ playId }: { playId: number }) => {
+  const backgroundRef = useRef<HTMLDivElement>(null);
 
-  progressRatioInit(playId);
+  backgroundInit(playId);
+
   useEffect(() => {
+    //content 컴포넌트의 기본 정보 세팅,
     const displayData = playData.displayData;
     const thisStory = playData.storyBoard[playId];
     //storyBoard에 인터랙션 등록
-    if (progressBarRef.current && progressBarRef && thisStory) {
-      thisStory.DOM = progressBarRef.current;
+    if (backgroundRef.current && backgroundRef && thisStory) {
+      thisStory.DOM = backgroundRef.current;
       thisStory.startScrollValue = calStartPoint(displayData.innerHeight, thisStory.startPoint);
       thisStory.playLength = calPlayLength(displayData.innerHeight, thisStory.playLength);
       thisStory.endScrollValue = thisStory.startScrollValue + thisStory.playLength;
     }
   });
-
   return (
-    <div css={progressBar}>
-      <div css={cursorStyle} ref={progressBarRef}></div>
+    <div ref={backgroundRef} css={backgroundStyle}>
+      날좀보소
     </div>
   );
 };
 
-export default ProgressRatioBar;
+export default Background;
 
-const progressBar = css`
+const backgroundStyle = css`
   position: fixed;
-  top: 90vh;
-  width: 90vw;
-  left: 5vw;
-  height: 2px;
-  background-color: black;
-`;
-const cursorStyle = css`
-  position: absolute;
-  height: 10px;
-  width: 5px;
-  border: 1px solid black;
-  background-color: #d6f3f8;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
 `;

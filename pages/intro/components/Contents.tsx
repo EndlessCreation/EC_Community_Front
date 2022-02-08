@@ -89,7 +89,7 @@ export default Contents;
 
 const contentStyle = css`
   position: fixed;
-  z-index: 0;
+  z-index: 1;
   top: 50vh;
   left: 50vw;
   transform: translate(-50%, -50%);

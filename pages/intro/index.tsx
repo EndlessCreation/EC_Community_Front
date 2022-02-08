@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Background from './components/Background';
 import Contents from './components/Contents';
 import IntroLayout from './components/IntroLayout';
 import Matrix from './components/Matrix';
@@ -32,10 +33,11 @@ const Intro = () => {
       <IntroLayout id="root">
         {isRender ? (
           <>
-            <ProgressRatioBar playId={3} />
-            <Title playId={0} />
+            <ProgressRatioBar playId={0} />
+            <Title playId={1} />
             <Contents playId={2} />
-            <Matrix playId={1} />
+            <Matrix playId={3} />
+            <Background playId={4} />
           </>
         ) : (
           <div></div>

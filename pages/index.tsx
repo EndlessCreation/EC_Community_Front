@@ -7,7 +7,7 @@ const MainPage = () => {
   return (
     <MainLayout>
       <>
-        <Intro />
+        {/* <Intro /> */}
         <Main />
       </>
     </MainLayout>
