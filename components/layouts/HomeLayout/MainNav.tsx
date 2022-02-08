@@ -16,6 +16,7 @@ import { useState } from 'react';
 import InboxIcon from '@mui/icons-material/Inbox';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import ActiveLink from './ActiveLink';
 
 type MainNavProps = {};
 
@@ -42,12 +43,14 @@ const MainNav = ({}: MainNavProps) => {
 
   return (
     <Header isScrolled={isScrolled} elevation={isScrolled ? 1 : 0}>
-      <Link href="/">Endless Creation</Link>
+      <Link href="/">
+        <a>Endless Creation</a>
+      </Link>
       <LinkList isScrolled={isScrolled}>
         {index.map((item) => (
-          <Link key={item.url} href={item.url}>
-            {item.title}
-          </Link>
+          <ActiveLink key={item.url} href={item.url} activeClassName="active">
+            <a className="nav-link">{item.title}</a>
+          </ActiveLink>
         ))}
       </LinkList>
       <IconButton
@@ -125,14 +128,19 @@ const LinkList = styled(Box)<any>(
   ({ isScrolled }: any) => css`
     display: flex;
     height: 100%;
-    & a {
+    font-size: 14px;
+    & .nav-link {
       height: 100%;
       line-height: 4rem;
       width: 5.9375rem;
-      color: ${isScrolled ? '#1a1a1a' : '#ededed'};
+      color: ${isScrolled ? '#1a1a1a' : '#ffffff'};
       &:hover {
-        color: ${isScrolled ? 'black' : '#ffffff'};
-        font-weight: bold;
+        color: ${isScrolled ? '#1a1a1a' : '#ededed'};
+        font-weight: 900;
+      }
+      &.active {
+        text-decoration: underline;
+        font-weight: 900;
       }
     }
     @media screen and (max-width: 768px) {
