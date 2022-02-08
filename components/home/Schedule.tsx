@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { Box } from '@mui/material';
+import Head from 'next/head';
 import { ResponsiveLayout, Section, Text } from '../common';
 import HomeHead from './HomeHead';
 
@@ -9,6 +10,9 @@ type ScheduleProps = {};
 const Schedule = ({}: ScheduleProps) => {
   return (
     <Box>
+      <Head>
+        <title>EC: 활동일정</title>
+      </Head>
       <HomeHead
         title="Schedule"
         description="Endless Creation의 활동 계획을 소개합니다"

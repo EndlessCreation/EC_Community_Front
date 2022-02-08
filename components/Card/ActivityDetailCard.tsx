@@ -13,7 +13,7 @@ const ActivityDetailCard = ({ activity, ...props }: { activity: Activity; [k: st
         <Text className="title">{activity.title}</Text>
         <TagList tags={activity.skills} />
         <Text className="description">{activity.description}</Text>
-        <a href={activity.source || ''} target="_black" className="source">
+        <a href={activity.source || ''} target="_blank" rel="noreferrer" className="source">
           <GitHubIcon />
         </a>
       </Box>

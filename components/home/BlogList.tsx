@@ -4,14 +4,18 @@ import { Box, InputAdornment, OutlinedInput, styled } from '@mui/material';
 import { ResponsiveLayout, Section } from '../common';
 import HomeHead from './HomeHead';
 import SearchIcon from '@mui/icons-material/Search';
-import { testBlog1 } from '../../types';
+import { testBlog1, testBlog2 } from '../../types';
 import { BlogCard } from '../Card';
+import Head from 'next/head';
 
 type BlogListProps = {};
 
 const BlogList = ({}: BlogListProps) => {
   return (
     <Box>
+      <Head>
+        <title>EC: 블로그</title>
+      </Head>
       <HomeHead
         title="Blog"
         description="기억보단 기록을, EC의 기술 블로그입니다"
@@ -19,21 +23,17 @@ const BlogList = ({}: BlogListProps) => {
       />
 
       <ResponsiveLayout>
-        <Section>
-          <Search
-            placeholder="Search..."
-            endAdornment={
-              <InputAdornment position="end">
-                <SearchIcon />
-              </InputAdornment>
-            }
-          />
-        </Section>
-
-        <Section>
+        <Search
+          placeholder="Search..."
+          endAdornment={
+            <InputAdornment position="end">
+              <SearchIcon />
+            </InputAdornment>
+          }
+        />
+        <Section css={{ paddingTop: '2rem' }}>
           <List>
-            <BlogCard className="blogCard" blog={testBlog1} />
-            <BlogCard className="blogCard" blog={testBlog1} />
+            <BlogCard className="blogCard" blog={testBlog2} />
             <BlogCard className="blogCard" blog={testBlog1} />
           </List>
         </Section>
@@ -45,7 +45,8 @@ const BlogList = ({}: BlogListProps) => {
 export default BlogList;
 
 const Search = styled(OutlinedInput)(css`
-  width: 100%;
+  width: calc(100% - 8rem);
+  margin: 2rem 4rem 0 4rem;
 `);
 
 const List = styled(Box)(css`
