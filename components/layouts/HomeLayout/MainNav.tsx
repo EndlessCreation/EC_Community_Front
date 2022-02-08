@@ -15,6 +15,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from 'react';
 import InboxIcon from '@mui/icons-material/Inbox';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 type MainNavProps = {};
 
@@ -30,6 +31,7 @@ const index = [
 const MainNav = ({}: MainNavProps) => {
   const isScrolled = useScrollTrigger({ disableHysteresis: true, threshold: 50 });
   const [open, setOpen] = useState(false);
+  const route = useRouter();
 
   const toggleMenu = (open: boolean) => (event: any) => {
     if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -65,7 +67,7 @@ const MainNav = ({}: MainNavProps) => {
         <Box onClick={toggleMenu(false)} onKeyDown={toggleMenu(false)}>
           <List>
             {index.map((item) => (
-              <ListItem key={item.url} button>
+              <ListItem key={item.url} button onClick={() => route.push(item.url)}>
                 <ListItemIcon>
                   <InboxIcon />
                 </ListItemIcon>
