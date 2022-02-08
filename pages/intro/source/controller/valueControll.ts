@@ -1,12 +1,14 @@
 import { cssUpdateProps, storyBoard } from "../utils/type";
 import { calProgressRatio } from "../utils/utils";
 import { valBlur, valOpacity, valMatrix } from "../interactions";
+import playData from "../utils/playData";
 
 
 
 export const runInteractionByType = (story: storyBoard) => {
 
-    const currentScrollValue = window.pageYOffset;
+    const currentScrollValue = playData.scrollData.currentScroll;
+    // console.log(currentScrollValue)
     const { startScrollValue, endScrollValue, actionList, DOM } = story;
     const progressRatio = calProgressRatio({ start: startScrollValue, end: endScrollValue, progress: currentScrollValue });
     

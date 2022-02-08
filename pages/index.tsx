@@ -4,7 +4,14 @@ import MainLayout from '../components/layouts/HomeLayout';
 import Intro from './intro';
 
 const MainPage = () => {
-  return <Intro></Intro>;
+  return (
+    <MainLayout>
+      <>
+        <Intro />
+        <Main />
+      </>
+    </MainLayout>
+  );
 };
 
 export default MainPage;

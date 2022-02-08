@@ -4,6 +4,7 @@ import setStorySection from "./setStorySection";
 import playAction from "../controller/play";
 import { setWholeHeight } from "./setScroll";
 import { makeAsync } from "../utils/utils";
+import { loop, scrollControll } from "../controller/scrollControll";
 
 
 
@@ -15,7 +16,8 @@ export const addEvent = () => {
         setStorySection();
     });
     window.addEventListener('scroll', () => {
-        playAction();
+        // console.log(window.pageYOffset)
+        scrollControll(playAction);
 });
 
 

@@ -11,6 +11,7 @@ export class PlayData{
             wholeScroll: 0,
             currentScroll: 0,
             section: null,
+            rafId: null,
         };
         storyBoard: Array<storyBoard> = [];
 }

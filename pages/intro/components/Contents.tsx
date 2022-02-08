@@ -31,6 +31,29 @@ const contentInit = (playId: number) => {
           },
         ],
       },
+      {
+        //여기서 애니메이션 어떻게 할건지 설정 해주기
+        type: 'matrix',
+        interActionProps: [
+          {
+            //시작비율, 끝비율, (0~1) 실제값,
+            startRatio: 0,
+            endRatio: 0.5,
+            value: [
+              [1, 0, 0, 1, -150, -150],
+              [0, 1, 1, 0, 50, 50],
+            ],
+          },
+          {
+            startRatio: 0.5,
+            endRatio: 1,
+            value: [
+              [0, 1, 1, 0, 100, 100],
+              [1, 0, 0, 1, 100, 100],
+            ],
+          },
+        ],
+      },
     ],
   };
 
