@@ -2,6 +2,7 @@
   "name": "ec_community_front",
   "version": "0.1.0",
   "private": true,
+  "homepage": "endless-creation.com",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -28,8 +29,10 @@
     "codemirror": "^5.64.0",
     "next": "12.0.3",
     "next-redux-wrapper": "^7.0.5",
+    "next-seo": "^5.1.0",
     "qs": "^6.10.2",
     "react": "17.0.2",
+    "react-countup": "^6.1.1",
     "react-dom": "17.0.2",
     "react-google-login": "^5.2.2",
     "react-images-uploading": "^3.1.3",
