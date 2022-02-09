@@ -15,12 +15,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from 'react';
 import InboxIcon from '@mui/icons-material/Inbox';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import ActiveLink from './ActiveLink';
 
 type MainNavProps = {};
 
 const index = [
   { title: '소개', url: '/about' },
-  { title: '멤버', url: '/member' },
   { title: '프로젝트', url: '/project' },
   { title: '블로그', url: '/blog' },
   { title: '활동일정', url: '/schedule' },
@@ -31,6 +32,7 @@ const index = [
 const MainNav = ({}: MainNavProps) => {
   const isScrolled = useScrollTrigger({ disableHysteresis: true, threshold: 50 });
   const [open, setOpen] = useState(false);
+  const route = useRouter();
 
   const toggleMenu = (open: boolean) => (event: any) => {
     if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -41,12 +43,14 @@ const MainNav = ({}: MainNavProps) => {
 
   return (
     <Header isScrolled={isScrolled} elevation={isScrolled ? 1 : 0}>
-      <Link href="/">Endless Creation</Link>
+      <Link href="/">
+        <a>Endless Creation</a>
+      </Link>
       <LinkList isScrolled={isScrolled}>
         {index.map((item) => (
-          <Link key={item.url} href={item.url}>
-            {item.title}
-          </Link>
+          <ActiveLink key={item.url} href={item.url} activeClassName="active">
+            <a className="nav-link">{item.title}</a>
+          </ActiveLink>
         ))}
       </LinkList>
       <IconButton
@@ -66,7 +70,7 @@ const MainNav = ({}: MainNavProps) => {
         <Box onClick={toggleMenu(false)} onKeyDown={toggleMenu(false)}>
           <List>
             {index.map((item) => (
-              <ListItem key={item.url} button>
+              <ListItem key={item.url} button onClick={() => route.push(item.url)}>
                 <ListItemIcon>
                   <InboxIcon />
                 </ListItemIcon>
@@ -84,7 +88,7 @@ export default MainNav;
 
 const Header = styled(Box)<any>(
   ({ isScrolled }: any) => css`
-    width: 100%;
+    width: 100vw;
     height: 4rem;
     padding: 0 2rem;
     border-radius: 0px;
@@ -124,14 +128,19 @@ const LinkList = styled(Box)<any>(
   ({ isScrolled }: any) => css`
     display: flex;
     height: 100%;
-    & a {
+    font-size: 14px;
+    & .nav-link {
       height: 100%;
       line-height: 4rem;
       width: 5.9375rem;
-      color: ${isScrolled ? '#1a1a1a' : '#ededed'};
+      color: ${isScrolled ? '#1a1a1a' : '#ffffff'};
       &:hover {
-        color: ${isScrolled ? 'black' : '#ffffff'};
-        font-weight: bold;
+        color: ${isScrolled ? '#1a1a1a' : '#ededed'};
+        font-weight: 900;
+      }
+      &.active {
+        text-decoration: underline;
+        font-weight: 900;
       }
     }
     @media screen and (max-width: 768px) {
