@@ -7,6 +7,7 @@ export const Text = styled('p')(css``);
 type ResponsiveLayoutProps = {
   bgColor?: string;
 };
+
 export const ResponsiveLayout = styled(Box)<ResponsiveLayoutProps>(
   ({ bgColor }) => css`
     width: 100%;
@@ -34,6 +35,16 @@ export const SlideBox = styled(Box)(css`
   position: relative;
   z-index: 1;
 `);
+
+export const InteractionLayout = styled(Box)(
+  css`
+    width: 100vw;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+  `,
+);
 
 export { default as PostCard } from '../Card/PostCard';
 export { default as TagList } from './TagList';

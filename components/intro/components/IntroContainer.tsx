@@ -1,28 +1,26 @@
 /** @jsxImportSource @emotion/react */
 
 import React from 'react';
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
-type IntroLayout = {
+type IntroContainer = {
   children: Array<React.ReactChild> | React.ReactChild;
   id: string;
 };
 
-const IntroLayout = ({ children, id, ...props }: IntroLayout) => {
+const IntroContainer = ({ children, id, ...props }: IntroContainer) => {
   return (
-    <MainLayout id={id} {...props}>
+    <IntroLayout id={id} {...props}>
       {children}
-    </MainLayout>
+    </IntroLayout>
   );
 };
 
-export default IntroLayout;
+export default IntroContainer;
 
-const MainLayout = styled.div`
+const IntroLayout = styled.div`
   position: relative;
   top: 0;
   left: 0;
-  z-index: -2;
   background-color: grey;
 `;

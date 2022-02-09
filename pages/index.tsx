@@ -1,5 +1,5 @@
 import React from 'react';
-import Main from '../components/home/Main';
+import IntroMain from '../components/intro/Main';
 import MainLayout from '../components/layouts/HomeLayout';
 import IntroInterAction from '../components/intro';
 
@@ -7,9 +7,7 @@ const MainPage = () => {
   return (
     <MainLayout>
       <>
-        <IntroInterAction>
-          <>{/* <Main /> */}</>
-        </IntroInterAction>
+        <IntroMain />
       </>
     </MainLayout>
   );
