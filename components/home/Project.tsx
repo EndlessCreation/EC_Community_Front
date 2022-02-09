@@ -1,28 +1,18 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { Box, Grid, styled } from '@mui/material';
-import { ResponsiveLayout, Section, Text } from '../common';
+import { Box, Grid } from '@mui/material';
+import { CustomSlider, ResponsiveLayout, Section, SlideBox, Text } from '../common';
 import HomeHead from './HomeHead';
-import Slider from 'react-slick';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import { testActivity1, testActivity2 } from '../../types';
+import { testActivity1, testActivity2, testActivity3, testActivity4 } from '../../types';
 import { ActivityCard, ActivityDetailCard } from '../Card';
+import Head from 'next/head';
 
 const Project = () => {
-  const settings = {
-    dots: true,
-    fade: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    nextArrow: <ArrowForwardIosIcon />,
-    prevArrow: <ArrowBackIosIcon />,
-  };
-
   return (
     <Box>
+      <Head>
+        <title>EC: 프로젝트</title>
+      </Head>
       <HomeHead
         title="Project"
         description="Endless Creation의 멋진 프로젝트를 만나보세요"
@@ -31,14 +21,14 @@ const Project = () => {
       <ResponsiveLayout>
         <Section>
           <Text className="title">EC Pick</Text>
-          <StyledSlider {...settings}>
-            <div>
+          <CustomSlider>
+            <SlideBox>
               <ActivityDetailCard activity={testActivity1} />
-            </div>
-            <div>
+            </SlideBox>
+            <SlideBox>
               <ActivityDetailCard activity={testActivity2} />
-            </div>
-          </StyledSlider>
+            </SlideBox>
+          </CustomSlider>
         </Section>
 
         <Section>
@@ -51,13 +41,10 @@ const Project = () => {
               <ActivityCard activity={testActivity2} />
             </Grid>
             <Grid item xs={6} md={4}>
-              <ActivityCard activity={testActivity2} />
+              <ActivityCard activity={testActivity3} />
             </Grid>
             <Grid item xs={6} md={4}>
-              <ActivityCard activity={testActivity2} />
-            </Grid>
-            <Grid item xs={6} md={4}>
-              <ActivityCard activity={testActivity2} />
+              <ActivityCard activity={testActivity4} />
             </Grid>
           </Grid>
         </Section>
@@ -67,14 +54,3 @@ const Project = () => {
 };
 
 export default Project;
-
-const StyledSlider = styled(Slider)(css`
-  margin: 0 4rem;
-  & .slick-arrow {
-    color: black;
-
-    &:hover {
-      color: black;
-    }
-  }
-`);

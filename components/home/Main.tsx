@@ -2,143 +2,114 @@
 import { css } from '@emotion/react';
 import { Box, styled } from '@mui/material';
 import { CooperationIcon, GrowthIcon, SharingIcon } from '../../public/svgs';
-import { ResponsiveLayout, Text } from '../common';
-import { testActivity1, testActivity2 } from '../../types';
+import { CustomSlider, ResponsiveLayout, Section, SlideBox, Text } from '../common';
+import { testActivity1, testActivity2, testActivity3, testActivity4 } from '../../types';
 import { ActivityDetailCard } from '../Card';
-import Slider from 'react-slick';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import Head from 'next/head';
 
 type MainProps = {};
 
 const Main = ({}: MainProps) => {
-  const settings = {
-    dots: true,
-    fade: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    nextArrow: <ArrowForwardIosIcon />,
-    prevArrow: <ArrowBackIosIcon />,
-  };
   return (
     <>
+      <Head>
+        <title>Endless Creation</title>
+      </Head>
       <Top id="back-to-top-anchor">
         <Box>
           <Text css={{ fontSize: '3.25rem' }}>성장하는 즐거움</Text>
           <Text css={{ fontSize: '4rem' }}>Endless Creation</Text>
-          <Text css={{ fontSize: '1.75rem' }}>신입 기수 모집중(~4.21)</Text>
+          <Text css={{ fontSize: '1.75rem' }}>신입 기수 모집중(~3.6)</Text>
           <Text css={{ fontSize: '1.75rem' }}>32기 여러분들을 기다리고 있어요!</Text>
         </Box>
       </Top>
 
       <ResponsiveLayout>
-        <About>
+        <Section>
           <Text className="title">
             <span>A</span>bout
           </Text>
-          <Box className="content">
+          <About>
             <Text>
               <span>Endless Creation</span>은 사람과 컴퓨터를 사랑하는 동아리로, 개발하는 재미와
               함께 성장하는 즐거움을 알아갈 수 있는 다양한 활동을 준비하고 있습니다.{' '}
             </Text>
-            {/* <iframe
-              src="https://www.youtube.com/embed/6QosveEmeqg"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            /> */}
-          </Box>
-        </About>
+          </About>
+        </Section>
       </ResponsiveLayout>
 
-      <ResponsiveLayout
-        css={{
-          background: '#f2f2f2',
-        }}
-      >
-        <Identity>
-          <Box className="content">
-            <GrowthIcon width="7.5rem" height="7.5rem" className="icon" />
-            <Text className="title">Growth</Text>
-            <Text className="description">EC는 동아리원 모두의 성장을 격려하고 응원합니다.</Text>
-          </Box>
+      <ResponsiveLayout bgColor="#f2f2f2">
+        <Section>
+          <Identity>
+            <Box className="content">
+              <GrowthIcon width="7.5rem" height="7.5rem" className="icon" />
+              <Text className="title">Growth</Text>
+              <Text className="description">EC는 동아리원 모두의 성장을 격려하고 응원합니다.</Text>
+            </Box>
 
-          <Box className="content">
-            <SharingIcon width="7.5rem" height="7.5rem" className="icon" />
-            <Text className="title">Sharing</Text>
-            <Text className="description">EC는 개인의 지식과 경험을 공유하는 장이 되어줍니다.</Text>
-          </Box>
+            <Box className="content">
+              <SharingIcon width="7.5rem" height="7.5rem" className="icon" />
+              <Text className="title">Sharing</Text>
+              <Text className="description">
+                EC는 개인의 지식과 경험을 공유하는 장이 되어줍니다.
+              </Text>
+            </Box>
 
-          <Box className="content">
-            <CooperationIcon width="7.5rem" height="7.5rem" className="icon" />
-            <Text className="title">Cooperation</Text>
-            <Text className="description">
-              EC는 더 나은 학습 환경을 위해 함께 고민하고 협력합니다.
-            </Text>
-          </Box>
-        </Identity>
+            <Box className="content">
+              <CooperationIcon width="7.5rem" height="7.5rem" className="icon" />
+              <Text className="title">Cooperation</Text>
+              <Text className="description">
+                EC는 더 나은 학습 환경을 위해 함께 고민하고 협력합니다.
+              </Text>
+            </Box>
+          </Identity>
+        </Section>
       </ResponsiveLayout>
 
       <ResponsiveLayout
         css={css`
+          height: 25vw;
           background-attachment: fixed;
           background-image: url('/img/dividerBackground.jpg');
           background-repeat: no-repeat;
           background-size: cover;
           background-position: center;
         `}
-      >
-        <Divider>
-          <Box className="content">
-            <Text className="title">1991</Text>
-            <Text className="description">Since</Text>
-          </Box>
-
-          <Box className="content">
-            <Text className="title">60</Text>
-            <Text className="description">활동 멤버</Text>
-          </Box>
-
-          <Box className="content">
-            <Text className="title">123</Text>
-            <Text className="description">누적 프로젝트</Text>
-          </Box>
-        </Divider>
-      </ResponsiveLayout>
+      ></ResponsiveLayout>
 
       <ResponsiveLayout>
-        <Project>
+        <Section>
           <Text className="title">
             <span>P</span>roject
-            <StyledSlider {...settings}>
-              <div>
-                <ActivityDetailCard activity={testActivity1} />
-              </div>
-              <div>
-                <ActivityDetailCard activity={testActivity2} />
-              </div>
-            </StyledSlider>
           </Text>
-        </Project>
+          <CustomSlider>
+            <SlideBox>
+              <ActivityDetailCard activity={testActivity1} />
+            </SlideBox>
+            <SlideBox>
+              <ActivityDetailCard activity={testActivity2} />
+            </SlideBox>
+            <SlideBox>
+              <ActivityDetailCard activity={testActivity3} />
+            </SlideBox>
+          </CustomSlider>
+        </Section>
       </ResponsiveLayout>
 
       <ResponsiveLayout css={{ backgroundColor: '#F2F2F2' }}>
-        <Activity>
+        <Section>
           <Text className="title">
             <span>A</span>ctivity
           </Text>
-          <Box className="wrapper">
+          <Activity className="wrapper">
             <Text className="title">잘 하는데</Text>
             <Text className="description">스터디, 세미나, EC어드밴스...</Text>
-          </Box>
-          <Box className="wrapper">
+          </Activity>
+          <Activity className="wrapper">
             <Text className="title">잘 놀기까지</Text>
             <Text className="description">신입생 환영회, 봄 소풍, 창립기념일, MT...</Text>
-          </Box>
-        </Activity>
+          </Activity>
+        </Section>
       </ResponsiveLayout>
     </>
   );
@@ -174,29 +145,16 @@ const Top = styled(Box)<any>(
 
 const About = styled(Box)<any>(
   css`
-    width: 100%;
-    padding: 3rem 2rem;
+    margin-top: 0.625rem;
+    font-size: 1.125rem;
     display: flex;
-    flex-direction: column;
-    & .title {
-      font-size: 2.5rem;
+    justify-content: space-between;
+    align-items: center;
+    & span {
       font-weight: bold;
-      & span {
-        color: #64cca2;
-      }
     }
-    & .content {
-      margin-top: 0.625rem;
-      font-size: 1.125rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      & span {
-        font-weight: bold;
-      }
-      & iframe {
-        margin-left: 2.5rem;
-      }
+    & iframe {
+      margin-left: 2.5rem;
     }
   `,
 );
@@ -233,97 +191,28 @@ const Identity = styled(Box)<any>(
   `,
 );
 
-const Divider = styled(Box)<any>(
-  css`
-    width: 100%;
-    padding: 2rem;
-    height: 10rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    & .content {
-      width: 12.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    & .title {
-      font-size: 2.8rem;
-      color: white;
-    }
-
-    & .description {
-      font-size: 1.6rem;
-      color: white;
-    }
-  `,
-);
-
-const Project = styled(Box)<any>(
-  css`
-    width: 100%;
-    padding: 3rem 2rem;
-    display: flex;
-    flex-direction: column;
-    & .title {
-      font-size: 2.5rem;
-      font-weight: bold;
-      & span {
-        color: #64cca2;
-      }
-    }
-  `,
-);
-
-const StyledSlider = styled(Slider)(css`
-  margin: 0 4rem;
-  & .slick-arrow {
-    color: black;
-
-    &:hover {
-      color: black;
-    }
-  }
-`);
-
 const Activity = styled(Box)<any>(
   css`
     width: 100%;
-    padding: 3rem 2rem;
     display: flex;
-    flex-direction: column;
-    & > .title {
-      font-size: 2.5rem;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 2rem;
+
+    & .title {
+      display: flex;
+      align-items: center;
+      width: 9rem;
+      height: 4rem;
+      border-right: 2px solid #64cca2;
+      margin-right: 1rem;
       font-weight: bold;
-      & span {
-        color: #64cca2;
-      }
+      font-size: 1.5rem;
     }
 
-    & .wrapper {
-      width: 37.5rem;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      margin-top: 2rem;
-
-      & .title {
-        display: flex;
-        align-items: center;
-        width: 9rem;
-        height: 4rem;
-        border-right: 2px solid #64cca2;
-        margin-right: 1rem;
-        font-weight: bold;
-        font-size: 1.5rem;
-      }
-
-      & .description {
-        font-size: 1rem;
-        color: #5a5a5a;
-      }
+    & .description {
+      font-size: 1rem;
+      color: #5a5a5a;
     }
   `,
 );

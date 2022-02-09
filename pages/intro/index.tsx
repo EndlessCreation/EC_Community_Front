@@ -33,11 +33,11 @@ const Intro = () => {
       <IntroLayout id="root">
         {isRender ? (
           <>
-            <ProgressRatioBar />
-            <Title playId={0} />
+            <ProgressRatioBar playId={0} />
+            <Title playId={1} />
             <Contents playId={2} />
-            <Matrix playId={1} />
-            <Background playId={3} />
+            <Matrix playId={3} />
+            <Background playId={4} />
           </>
         ) : (
           <div></div>
