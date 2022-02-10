@@ -2,17 +2,20 @@
 import React, { ReactChild, useEffect, useRef } from 'react';
 import { css } from '@emotion/react';
 import { componentInit, componentSetting } from '../../source/settings/setComponent';
-import { interActionProp } from '../../source/utils/type';
 
 const Scene = ({
   playId,
   startPoint,
   playLength,
   children,
+  firstScene = false,
+  lastScene = false,
 }: {
   playId: string;
   startPoint: number;
   playLength: number;
+  firstScene?: boolean;
+  lastScene?: boolean;
   children: ReactChild | Array<ReactChild>;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -34,8 +37,9 @@ const Scene = ({
   useEffect(() => {
     componentSetting({ playId, ref });
   });
+
   return (
-    <div ref={ref} id={playId} css={sceneStyle}>
+    <div ref={ref} id={playId} css={sceneStyle(firstScene, lastScene)}>
       {children}
     </div>
   );
@@ -43,9 +47,9 @@ const Scene = ({
 
 export default Scene;
 
-const sceneStyle = css`
-  /* display: none; */
-  position: fixed;
+const sceneStyle = (firstScene: boolean, lastScene: boolean) => css`
+  visibility: ${firstScene ? 'visible' : 'hidden'};
+  position: ${lastScene ? 'relative' : 'fixed'};
   top: 0;
   left: 0;
   width: 100%;

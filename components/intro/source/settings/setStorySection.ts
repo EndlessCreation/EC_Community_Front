@@ -33,12 +33,14 @@ export default function setStorySection() {
 
   //포인트배열 전체 순회
   pointArr.forEach((point, index) => {
-    // console.log(point, index);
+    console.log(point, index);
     //첫번째 point 처리
     if (index === 0) {
       check.startPoint = point.point;
       temp.push(point.id);
     }
+    // else if (index === pointArr.length - 1) {
+    // }
     //나머지 점 처리
     else {
       //구간의 endpoint값에, 지금 조회하는 point값을 넣고 idList 섹션에 추가
@@ -52,14 +54,14 @@ export default function setStorySection() {
         temp.push(point.id);
       } else {
         //포인트가 끝점이었을 경우 temp에서 해당 Id값 제거
-        // console.log('cut', point.id);
+        // console.log('cut', point.id, point.point);
         temp = temp.filter((id) => id !== point.id);
       }
       //다음구간 서치를 위해 현재 포인트를 다시 시작점으로 만들기
       check.startPoint = point.point;
       check.endPoint = 0;
     }
-    // console.log(index, temp);
+    console.log(index, temp);
   });
   // console.log(section);
 

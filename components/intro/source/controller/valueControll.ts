@@ -17,7 +17,10 @@ export const runInteractionByType = (story: storyBoard) => {
     for (let interActionProp of action.interActionProps) {
       const { startRatio, endRatio } = interActionProp;
       if (startRatio < progressRatio && progressRatio < endRatio) {
-        DOM && (DOM.style.display = 'flex');
+        if (DOM) {
+          DOM.style.visibility = 'visible';
+          DOM.style.zIndex = '0';
+        }
         const cssUpdateProps: cssUpdateProps = { DOM, interActionProp, progressRatio };
         switch (action.type) {
           case 'blur': {
@@ -47,5 +50,8 @@ export const runInteractionByType = (story: storyBoard) => {
 
 export const concealInteraction = (story: storyBoard) => {
   const { DOM } = story!;
-  DOM && (DOM.style.display = 'none');
+  if (DOM) {
+    DOM.style.zIndex = '-1';
+    DOM.style.visibility = 'hidden';
+  }
 };

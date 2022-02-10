@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
+import { css, keyframes } from '@emotion/react';
 import { Box, Button, Card, Grid, styled } from '@mui/material';
 import { CooperationIcon, GrowthIcon, SharingIcon } from '../../public/svgs';
 import { ResponsiveLayout, InteractionLayout, Section, Text } from '../common';
@@ -11,8 +11,18 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { useEffect, useState } from 'react';
 import { addEvent, initSettingAfterRender, initSettingBeforeRender } from './source/settings';
 import playData from './source/utils/playData';
-import IntroContainer from './components/IntroContainer';
+import IntroContainer from './components/commonAction/IntroContainer';
 import CountUp from 'react-countup';
+import {
+  PlayBackground,
+  PlayBlur,
+  PlayContactUs,
+  PlayFloatAction,
+  PlayOpacity,
+  PlayScale,
+  PlayTitleAction,
+} from './components';
+import { PlayScene } from './components/commonAction';
 
 type MainProps = {};
 
@@ -27,6 +37,18 @@ const Main = ({}: MainProps) => {
     nextArrow: <ArrowForwardIosIcon />,
     prevArrow: <ArrowBackIosIcon />,
   };
+
+  //씬별로 startPoint, length 설정할것 모아두기
+  const p = {
+    scene1: { s: 0, l: 3 },
+    scene2: { s: 3, l: 6 },
+    scene3: { s: 9, l: 3 },
+    scene4: { s: 12, l: 3 },
+    scene5: { s: 15, l: 3 },
+    scene6: { s: 18, l: 3 },
+    scene7: { s: 21, l: 3 },
+  };
+
   const [isRender, setIsRender] = useState<boolean>(false);
   // console.log('index');
 
@@ -60,252 +82,468 @@ const Main = ({}: MainProps) => {
         {isRender ? (
           <>
             {/* 첫 화면*/}
-            <InteractionLayout>
-              <Top id="back-to-top-anchor">
-                <Box>
-                  <Text className="title">Endless Creation</Text>
-                  <Box>
-                    <Text>신입 기수 모집중(~4.21)</Text>
-                    <Text>32기 여러분들을 기다리고 있어요!</Text>
-                    <Button className="recruit">모집 내용 자세히 보기</Button>
-                  </Box>
+            <PlayScene
+              playId="scene-1"
+              startPoint={p.scene1.s}
+              playLength={p.scene1.l}
+              firstScene={true}
+            >
+              <InteractionLayout>
+                <Box css={TopWrap}>
+                  <PlayBlur
+                    playId="scene-1-background"
+                    startPoint={p.scene1.s}
+                    playLength={p.scene1.l}
+                  >
+                    <Top id="back-to-top-anchor">
+                      <Box>
+                        <PlayTitleAction
+                          playId="scene-1-title"
+                          startPoint={p.scene1.s}
+                          playLength={p.scene1.l * 4}
+                        >
+                          <Text className="title">Endless Creation</Text>
+                        </PlayTitleAction>
+                        <PlayOpacity
+                          playId="scene-1-content"
+                          startPoint={p.scene1.s}
+                          playLength={p.scene1.l * 0.3}
+                        >
+                          <Box>
+                            <Text>신입 기수 모집중(~4.21)</Text>
+                            <Text>32기 여러분들을 기다리고 있어요!</Text>
+                            <Button
+                              className="recruit"
+                              css={css`
+                                animation: ${wiggle} 2s linear infinite;
+                              `}
+                            >
+                              모집 내용 자세히 보기
+                            </Button>
+                          </Box>
+                        </PlayOpacity>
+                      </Box>
+                    </Top>
+                  </PlayBlur>
                 </Box>
-              </Top>
-            </InteractionLayout>
+              </InteractionLayout>
+            </PlayScene>
 
             {/* EC 소개*/}
-            <InteractionLayout>
-              <Introduction>
-                <Text className="title">
-                  <span>E</span>
-                  ndless
-                  <span> C</span>reation
-                </Text>
+            <PlayScene playId="scene-2" startPoint={p.scene2.s} playLength={p.scene2.l}>
+              <InteractionLayout>
+                <Introduction>
+                  <PlayBackground
+                    playId="scene-2-background"
+                    startPoint={p.scene2.s}
+                    playLength={p.scene2.l * 0.1}
+                    color={['#000000', '#ffffff']}
+                  >
+                    <Box css={bgBox} />
+                  </PlayBackground>
 
-                <Box className="content">
-                  <Text className="text">
-                    사람과 컴퓨터를 사랑하는 동아리로,
-                    <Text>창립한지 32년째 되는 역사깊은 동아리입니다</Text>
-                  </Text>
+                  <PlayFloatAction
+                    playId="scene-2-title"
+                    startPoint={p.scene2.s + p.scene2.l * 0.1}
+                    playLength={p.scene2.l}
+                    floatRatio={0.15}
+                  >
+                    <Text className="title">
+                      <span>E</span>
+                      ndless
+                      <span> C</span>reation
+                    </Text>
+                  </PlayFloatAction>
+                  <Box className="content">
+                    <PlayFloatAction
+                      playId="scene-2-content-1"
+                      startPoint={p.scene2.s + p.scene2.l * 0.3}
+                      playLength={p.scene2.l}
+                      floatRatio={0.15}
+                    >
+                      <Text className="text">
+                        사람과 컴퓨터를 사랑하는 동아리로,
+                        <Text>창립한지 32년째 되는 역사깊은 동아리입니다</Text>
+                      </Text>
+                    </PlayFloatAction>
 
-                  <Text className="text">
-                    올해 2022년부터는
-                    <Text>컴퓨터 공학과 학생들을 대상으로 하는</Text>
-                    <Text>개발 관련 학술동아리가 아닌</Text>
-                  </Text>
+                    <PlayFloatAction
+                      playId="scene-2-content-2"
+                      startPoint={p.scene2.s + p.scene2.l * 0.5}
+                      playLength={p.scene2.l}
+                      floatRatio={0.15}
+                    >
+                      <Text className="text">
+                        올해 2022년부터는
+                        <Text>컴퓨터 공학과 학생들을 대상으로 하는</Text>
+                        <Text>개발 관련 학술동아리가 아닌</Text>
+                      </Text>
+                    </PlayFloatAction>
+                    <PlayFloatAction
+                      playId="scene-2-content-3"
+                      startPoint={p.scene2.s + p.scene2.l * 0.7}
+                      playLength={p.scene2.l}
+                      floatRatio={0.2}
+                    >
+                      <Text className="text">
+                        서울과학기술대학교 전교생을 대상으로
+                        <Text>
+                          사용자를 위한 서비스를 기획하고 제작하는 동아리로 나아가고자 합니다.
+                        </Text>
+                      </Text>
+                    </PlayFloatAction>
 
-                  <Text className="text">
-                    서울과학기술대학교 전교생을 대상으로
-                    <Text>사용자를 위한 서비스를 기획하고 제작하는 동아리로 나아가고자 합니다</Text>
-                  </Text>
-
-                  {/* <iframe
+                    {/* <iframe
               src="https://www.youtube.com/embed/6QosveEmeqg"
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             /> */}
-                </Box>
-              </Introduction>
-            </InteractionLayout>
+                  </Box>
+                </Introduction>
+              </InteractionLayout>
+            </PlayScene>
 
             {/* About */}
-            <InteractionLayout
-              css={css`
-                background-attachment: fixed;
-                background-image: url('/img/dividerBackground.jpg');
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
-              `}
-            >
-              <About>
-                <Text className="title">
-                  <span>A</span>bout
-                  <Text className="subTitle">32년 째 멈추지 않는 열정</Text>
-                </Text>
-
-                <Grid container spacing={8} css={{ marginTop: '2rem' }} className="content">
-                  <Grid item xs={12} md={4} container justifyContent="center">
-                    <StatusCard elevation={2}>
-                      <CountUp
-                        duration={2}
-                        start={new Date().getFullYear()}
-                        end={1991}
-                        className="cardTitle"
-                        suffix="년"
-                      />
-                      <Text className="description">창립일</Text>
-                    </StatusCard>
-                  </Grid>
-                  <Grid item xs={12} md={4} container justifyContent="center">
-                    <StatusCard elevation={2}>
-                      <CountUp duration={2} end={45} className="cardTitle" suffix="명" />
-                      <Text className="description">활동 멤버</Text>
-                    </StatusCard>
-                  </Grid>
-                  <Grid item xs={12} md={4} container justifyContent="center">
-                    <StatusCard elevation={2}>
-                      <CountUp duration={2} end={80} className="cardTitle" suffix="개" />
-                      <Text className="description">누적 프로젝트</Text>
-                    </StatusCard>
-                  </Grid>
-                </Grid>
-              </About>
-            </InteractionLayout>
-
-            <InteractionLayout>
-              <ResponsiveLayout
-                css={{
-                  background: '#f2f2f2',
-                }}
+            <PlayScene playId="scene-3" startPoint={p.scene3.s} playLength={p.scene3.l}>
+              <InteractionLayout
+                css={css`
+                  background-attachment: fixed;
+                  background-image: url('/img/dividerBackground.jpg');
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  background-position: center;
+                `}
               >
-                {/*다음과 같은 가치를 추구합니다*/}
-                <Identity>
-                  <Text className="title">
-                    <span>I</span>dentity
-                    <Text className="subTitle">다음과 같은 가치를 추구합니다</Text>
-                  </Text>
-                  <Box className="content">
-                    <Box className="symbol">
-                      <GrowthIcon width="7.5rem" height="7.5rem" className="icon" />
-                      <Text className="iconTitle">Growth</Text>
-                      <Text className="description">
-                        EC는 동아리원 모두의 성장을 격려하고 응원합니다.
-                      </Text>
+                <About>
+                  <PlayFloatAction
+                    playId="scene-3-title"
+                    startPoint={p.scene3.s}
+                    playLength={p.scene3.l}
+                    floatRatio={0.15}
+                  >
+                    <Text className="title">
+                      <span>A</span>bout
+                      <Text className="subTitle">32년 째 멈추지 않는 열정</Text>
+                    </Text>
+                  </PlayFloatAction>
+                  <PlayFloatAction
+                    playId="scene-3-card-1"
+                    startPoint={p.scene3.s + p.scene3.l * 0.15}
+                    playLength={p.scene3.l}
+                    floatRatio={0.3}
+                  >
+                    <Box style={{ width: '100vw' }}>
+                      <Grid container spacing={8} css={{ marginTop: '2rem' }} className="content">
+                        <Grid item xs={12} md={4} container justifyContent="center">
+                          <StatusCard elevation={2}>
+                            <CountUp
+                              duration={2}
+                              start={new Date().getFullYear()}
+                              end={1991}
+                              className="cardTitle"
+                              suffix="년"
+                            />
+                            <Text className="description">창립일</Text>
+                          </StatusCard>
+                        </Grid>
+                        <Grid item xs={12} md={4} container justifyContent="center">
+                          <StatusCard elevation={2}>
+                            <CountUp duration={2} end={45} className="cardTitle" suffix="명" />
+                            <Text className="description">활동 멤버</Text>
+                          </StatusCard>
+                        </Grid>
+                        <Grid item xs={12} md={4} container justifyContent="center">
+                          <StatusCard elevation={2}>
+                            <CountUp duration={2} end={80} className="cardTitle" suffix="개" />
+                            <Text className="description">누적 프로젝트</Text>
+                          </StatusCard>
+                        </Grid>
+                      </Grid>
                     </Box>
+                  </PlayFloatAction>
+                </About>
+              </InteractionLayout>
+            </PlayScene>
 
-                    <Box className="symbol">
-                      <SharingIcon width="7.5rem" height="7.5rem" className="icon" />
-                      <Text className="iconTitle">Sharing</Text>
-                      <Text className="description">
-                        EC는 개인의 지식과 경험을 공유하는 장이 되어줍니다.
+            <PlayScene playId="scene-4" startPoint={p.scene4.s} playLength={p.scene4.l}>
+              <InteractionLayout>
+                <ResponsiveLayout
+                  css={{
+                    background: '#f2f2f2',
+                  }}
+                >
+                  {/*다음과 같은 가치를 추구합니다*/}
+
+                  <Identity>
+                    <PlayFloatAction
+                      playId="scene-4-title"
+                      startPoint={p.scene4.s}
+                      playLength={p.scene4.l}
+                      floatRatio={0.15}
+                    >
+                      <Text className="title">
+                        <span>I</span>dentity
+                        <Text className="subTitle">다음과 같은 가치를 추구합니다</Text>
                       </Text>
+                    </PlayFloatAction>
+                    <Box className="content">
+                      <PlayScale
+                        playId="scene-4-icon-1"
+                        startPoint={p.scene4.s + p.scene4.l * 0.1}
+                        playLength={p.scene4.l}
+                        scale={[0, 1]}
+                        scaleRatio={0.15}
+                      >
+                        <Box className="symbol">
+                          <GrowthIcon width="7.5rem" height="7.5rem" className="icon" />
+                          <Text className="iconTitle">Growth</Text>
+                          <Text className="description">
+                            EC는 동아리원 모두의 성장을 격려하고 응원합니다.
+                          </Text>
+                        </Box>
+                      </PlayScale>
+                      <PlayScale
+                        playId="scene-4-icon-2"
+                        startPoint={p.scene4.s + p.scene4.l * 0.3}
+                        playLength={p.scene4.l}
+                        scale={[0, 1]}
+                        scaleRatio={0.15}
+                      >
+                        <Box className="symbol">
+                          <SharingIcon width="7.5rem" height="7.5rem" className="icon" />
+                          <Text className="iconTitle">Sharing</Text>
+                          <Text className="description">
+                            EC는 개인의 지식과 경험을 공유하는 장이 되어줍니다.
+                          </Text>
+                        </Box>
+                      </PlayScale>
+                      <PlayScale
+                        playId="scene-4-icon-3"
+                        startPoint={p.scene4.s + p.scene4.l * 0.5}
+                        playLength={p.scene4.l}
+                        scale={[0, 1]}
+                        scaleRatio={0.15}
+                      >
+                        <Box className="symbol">
+                          <CooperationIcon width="7.5rem" height="7.5rem" className="icon" />
+                          <Text className="iconTitle">Cooperation</Text>
+                          <Text className="description">
+                            EC는 더 나은 학습 환경을 위해 함께 고민하고 협력합니다.
+                          </Text>
+                        </Box>
+                      </PlayScale>
                     </Box>
-
-                    <Box className="symbol">
-                      <CooperationIcon width="7.5rem" height="7.5rem" className="icon" />
-                      <Text className="iconTitle">Cooperation</Text>
-                      <Text className="description">
-                        EC는 더 나은 학습 환경을 위해 함께 고민하고 협력합니다.
-                      </Text>
-                    </Box>
-                  </Box>
-                </Identity>
-              </ResponsiveLayout>
-            </InteractionLayout>
-
+                  </Identity>
+                </ResponsiveLayout>
+              </InteractionLayout>
+            </PlayScene>
             {/*  액티비티 */}
-            <InteractionLayout>
-              <ResponsiveLayout css={{ backgroundColor: '#F2F2F2' }}>
-                <Activity>
-                  <Text className="title">
-                    <span>A</span>ctivity
-                  </Text>
-                  <Grid container spacing={6} className="wrapper">
-                    <Grid item xs={12} md={6} container justifyContent="center">
-                      <ActivityCard
-                        src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                        elevation={2}
-                      >
-                        <Box className="filter">
-                          <Text className="title">Networking</Text>
-                          <Text className="description">
-                            다양한 분야의 사람들과 정보를 공유합니다.
-                          </Text>
-                        </Box>
-                      </ActivityCard>
+            <PlayScene playId="scene-5" startPoint={p.scene5.s} playLength={p.scene5.l}>
+              <InteractionLayout>
+                <ResponsiveLayout css={{ backgroundColor: '#F2F2F2' }}>
+                  <Activity>
+                    <PlayFloatAction
+                      playId="scene-5-title"
+                      startPoint={p.scene5.s}
+                      playLength={p.scene5.l}
+                      floatRatio={0.15}
+                    >
+                      <Text className="title">
+                        <span>A</span>ctivity
+                      </Text>
+                    </PlayFloatAction>
+                    <Grid container spacing={6} className="wrapper">
+                      <Grid item xs={12} md={6} container justifyContent="center">
+                        <PlayFloatAction
+                          playId="scene-5-card-1"
+                          startPoint={p.scene5.s}
+                          playLength={p.scene5.l}
+                          floatRatio={0.15}
+                        >
+                          <ActivityCard
+                            src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                            elevation={2}
+                            css={css`
+                              width: 100%;
+                            `}
+                          >
+                            <Box className="filter">
+                              <Text className="title">Networking</Text>
+                              <Text className="description">
+                                다양한 분야의 사람들과 정보를 공유합니다.
+                              </Text>
+                            </Box>
+                          </ActivityCard>
+                        </PlayFloatAction>
+                      </Grid>
+                      <Grid item xs={12} md={6} container justifyContent="center">
+                        <PlayFloatAction
+                          playId="scene-5-card-2"
+                          startPoint={p.scene5.s + p.scene5.l * 0.08}
+                          playLength={p.scene5.l}
+                          floatRatio={0.15}
+                        >
+                          <ActivityCard
+                            src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                            elevation={2}
+                          >
+                            <Box className="filter">
+                              <Text className="title">Project</Text>
+                              <Text className="description">
+                                팀 프로젝트를 통해 협업 능력을 키웁니다.
+                              </Text>
+                            </Box>
+                          </ActivityCard>
+                        </PlayFloatAction>
+                      </Grid>
+                      <Grid item xs={12} md={6} container justifyContent="center">
+                        <PlayFloatAction
+                          playId="scene-5-card-3"
+                          startPoint={p.scene5.s + p.scene5.l * 0.08}
+                          playLength={p.scene5.l}
+                          floatRatio={0.15}
+                        >
+                          <ActivityCard
+                            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80"
+                            elevation={2}
+                          >
+                            <Box className="filter">
+                              <Text className="title">Seminar</Text>
+                              <Text className="description">
+                                회원들과 서로의 지식과 경험을 공유합니다.
+                              </Text>
+                            </Box>
+                          </ActivityCard>
+                        </PlayFloatAction>
+                      </Grid>
+                      <Grid item xs={12} md={6} container justifyContent="center">
+                        <PlayFloatAction
+                          playId="scene-5-card-4"
+                          startPoint={p.scene5.s}
+                          playLength={p.scene5.l}
+                          floatRatio={0.15}
+                        >
+                          <ActivityCard
+                            src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+                            elevation={2}
+                          >
+                            <Box className="filter">
+                              <Text className="title">Study</Text>
+                              <Text className="description">
+                                뜻이 맞는 사람들과 함께 공부합니다.
+                                <br />
+                              </Text>
+                            </Box>
+                          </ActivityCard>
+                        </PlayFloatAction>
+                      </Grid>
                     </Grid>
-                    <Grid item xs={12} md={6} container justifyContent="center">
-                      <ActivityCard
-                        src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                        elevation={2}
-                      >
-                        <Box className="filter">
-                          <Text className="title">Project</Text>
-                          <Text className="description">
-                            팀 프로젝트를 통해 협업 능력을 키웁니다.
-                          </Text>
-                        </Box>
-                      </ActivityCard>
-                    </Grid>
-                    <Grid item xs={12} md={6} container justifyContent="center">
-                      <ActivityCard
-                        src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80"
-                        elevation={2}
-                      >
-                        <Box className="filter">
-                          <Text className="title">Seminar</Text>
-                          <Text className="description">
-                            회원들과 서로의 지식과 경험을 공유합니다.
-                          </Text>
-                        </Box>
-                      </ActivityCard>
-                    </Grid>
-                    <Grid item xs={12} md={6} container justifyContent="center">
-                      <ActivityCard
-                        src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-                        elevation={2}
-                      >
-                        <Box className="filter">
-                          <Text className="title">Study</Text>
-                          <Text className="description">뜻이 맞는 사람들과 함께 공부합니다.</Text>
-                        </Box>
-                      </ActivityCard>
-                    </Grid>
-                  </Grid>
-                </Activity>
-              </ResponsiveLayout>
-            </InteractionLayout>
+                  </Activity>
+                </ResponsiveLayout>
+              </InteractionLayout>
+            </PlayScene>
 
             {/* 프로젝트 */}
-            <InteractionLayout>
-              <ResponsiveLayout>
-                <Project>
-                  <Text className="title">
-                    <span>P</span>roject
-                  </Text>
-
-                  <StyledSlider {...settings} className="content">
-                    <div>
-                      <ActivityDetailCard activity={testActivity1} />
-                    </div>
-                    <div>
-                      <ActivityDetailCard activity={testActivity2} />
-                    </div>
-                  </StyledSlider>
-                  <Button className="more">자세히 보기</Button>
-                </Project>
-              </ResponsiveLayout>
-            </InteractionLayout>
+            <PlayScene playId="scene-6" startPoint={p.scene6.s} playLength={p.scene6.l}>
+              <InteractionLayout>
+                <ResponsiveLayout>
+                  <Project>
+                    <PlayFloatAction
+                      playId="scene-6-title"
+                      startPoint={p.scene6.s}
+                      playLength={p.scene6.l}
+                      floatRatio={0.15}
+                    >
+                      <Text className="title">
+                        <span>P</span>roject
+                      </Text>
+                    </PlayFloatAction>
+                    <PlayFloatAction
+                      playId="scene-6-slider"
+                      startPoint={p.scene6.s + p.scene6.l * 0.2}
+                      playLength={p.scene6.l}
+                      floatRatio={0.15}
+                    >
+                      <Box
+                        css={css`
+                          margin-top: 2rem;
+                        `}
+                      >
+                        <StyledSlider {...settings} className="content">
+                          <div>
+                            <ActivityDetailCard activity={testActivity1} />
+                          </div>
+                          <div>
+                            <ActivityDetailCard activity={testActivity2} />
+                          </div>
+                        </StyledSlider>
+                      </Box>
+                    </PlayFloatAction>
+                    <PlayFloatAction
+                      playId="scene-6-button"
+                      startPoint={p.scene6.s + p.scene6.l * 0.2}
+                      playLength={p.scene6.l}
+                      floatRatio={0.15}
+                    >
+                      <Box className="moreBox">
+                        <Button
+                          className="more"
+                          css={css`
+                            animation: ${float} 2s ease-in-out infinite;
+                          `}
+                        >
+                          자세히 보기
+                        </Button>
+                      </Box>
+                    </PlayFloatAction>
+                  </Project>
+                </ResponsiveLayout>
+              </InteractionLayout>
+            </PlayScene>
 
             {/* contact us */}
-            <InteractionLayout>
-              <ResponsiveLayout>
+            <PlayScene playId="scene-7" startPoint={p.scene7.s} playLength={p.scene7.l * 1.2}>
+              <InteractionLayout>
                 <Contact>
-                  <Text className="title">
-                    <span>C</span>ontact us
-                  </Text>
-                  <Box className="content">
-                    <Box className="link">
-                      <Text className="title">깃헙</Text>
-                      <Text className="description">Github</Text>
-                    </Box>
+                  <PlayContactUs
+                    playId="scene-7-title"
+                    startPoint={p.scene7.s}
+                    playLength={p.scene7.l}
+                    floatRatio={0.15}
+                  >
+                    <Text className="title">
+                      <span>C</span>ontact us
+                    </Text>
+                  </PlayContactUs>
+                  <PlayOpacity
+                    playId="scene-7-content"
+                    startPoint={p.scene7.s + p.scene7.l * 0.7}
+                    playLength={p.scene7.l * 0.3}
+                    up={true}
+                    opacityRatio={0.5}
+                  >
+                    <Box className="content">
+                      <Box className="link">
+                        <Box className="logo github" />
+                        <Text className="description">Github</Text>
+                      </Box>
 
-                    <Box className="link">
-                      <Text className="title">인스타</Text>
-                      <Text className="description">Instagram</Text>
-                    </Box>
+                      <Box className="link">
+                        <Box className=" logo instagram" />
+                        <Text className="description">Instagram</Text>
+                      </Box>
 
-                    <Box className="link">
-                      <Text className="title">카카오톡 채널</Text>
-                      <Text className="description">KakaoTalk</Text>
+                      <Box className="link">
+                        <Box className="logo kakaoTalk" />
+                        <Text className="description">KakaoTalk</Text>
+                      </Box>
                     </Box>
-                  </Box>
+                  </PlayOpacity>
                 </Contact>
-              </ResponsiveLayout>
-            </InteractionLayout>
+              </InteractionLayout>
+            </PlayScene>
           </>
         ) : (
           <></>
@@ -317,18 +555,21 @@ const Main = ({}: MainProps) => {
 
 export default Main;
 
+const TopWrap = css`
+  width: 100%;
+  height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+`;
 const Top = styled(Box)<any>(
   css`
-    display: none;
     width: 100%;
     height: 100vh;
     text-align: center;
     color: white;
     font-size: 2rem;
-    background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     & > .MuiBox-root {
       user-select: none;
       width: 100%;
@@ -346,14 +587,15 @@ const Top = styled(Box)<any>(
       & .recruit {
         bottom: -4rem;
         padding: 0.25rem 1.5rem;
-        background-color: #ffffff75;
+        background-color: #eeeeee92;
         border-radius: 0.25rem;
         border-bottom: 2px solid white;
         font-weight: bold;
         font-size: 2rem;
         color: #000000;
         :hover {
-          background-color: #ffffffda;
+          background-color: #c9c9c992;
+          transition: 0.4s ease;
         }
       }
     }
@@ -361,14 +603,14 @@ const Top = styled(Box)<any>(
       height: 100vh;
       & > .MuiBox-root {
         padding: 0;
-        & > .title {
+        & .title {
           font-size: 3.5rem;
           font-weight: bold;
         }
         & > p {
           font-size: 1.75rem;
         }
-        & > .recruit {
+        & .recruit {
           font-weight: bold;
         }
       }
@@ -382,7 +624,7 @@ const Top = styled(Box)<any>(
 const Introduction = styled(Box)<any>(
   css`
     display: flex;
-    display: none;
+    /* display: none; */
     width: 100%;
     height: 100vh;
     padding: 3rem 5rem;
@@ -390,7 +632,6 @@ const Introduction = styled(Box)<any>(
 
     @media screen and (max-width: 768px) {
       display: flex;
-      display: none;
       align-items: center;
       justify-content: center;
       text-align: center;
@@ -403,6 +644,11 @@ const Introduction = styled(Box)<any>(
       font-size: 2.5rem;
       font-weight: bold;
       white-space: pre;
+      @media screen and (max-width: 768px) {
+        position: absolute;
+        left: 0;
+        width: 100vw;
+      }
       & span {
         color: #0eb371;
       }
@@ -429,11 +675,18 @@ const Introduction = styled(Box)<any>(
     }
   `,
 );
+const bgBox = css`
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+`;
 
 const About = styled(Box)<any>(
   css`
     display: flex;
-    display: none;
+    /* display: none; */
 
     width: 100%;
     height: 100vh;
@@ -466,13 +719,20 @@ const About = styled(Box)<any>(
       margin-top: 0;
       font-size: 1.5rem;
     }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 900px) {
       text-align: center;
       word-break: keep-all;
       flex-direction: column;
       & .title {
+        margin-top: auto;
+
         position: static;
         left: 0;
+      }
+      & .content {
+        /* position: absolute;
+        left: 0px;
+        width: 100vw; */
       }
     }
   `,
@@ -558,13 +818,13 @@ const Identity = styled(Box)<any>(
 
 const Activity = styled(Box)<any>(
   css`
-    /* display: flex; */
-    display: none;
+    display: flex;
+    /* display: none; */
     height: 100vh;
     width: 100%;
     padding: 3rem 5rem;
     flex-direction: column;
-    & > .title {
+    & .title {
       font-size: 2.5rem;
       font-weight: bold;
       & span {
@@ -595,16 +855,16 @@ const Activity = styled(Box)<any>(
 const Project = styled(Box)<any>(
   css`
     display: flex;
-    display: none;
     width: 100%;
     height: 100vh;
     padding: 3rem 5rem;
-
+    display: flex;
+    background-color: white;
     justify-content: center;
     flex-direction: column;
-    & > .title {
-      /* position: fixed; */
-      /* top: calc(25% - 2.5rem); */
+    & .title {
+      position: fixed;
+      top: calc(25% - 2.5rem);
       font-size: 2.5rem;
       font-weight: bold;
       & span {
@@ -615,20 +875,28 @@ const Project = styled(Box)<any>(
       margin: 4rem 5rem;
       font-size: 1.5rem;
     }
-    & > .more {
+    & .moreBox {
+      position: fixed;
+      display: flex;
+      justify-content: center;
+      width: calc(100% - 10rem);
+      bottom: 4rem;
+    }
+    & .more {
       max-width: 320px;
       margin: 0 auto;
       padding: 0.25rem 1.5rem;
-      background-color: #ffffff75;
       border-radius: 0.5rem;
-      border-bottom: 1px solid white;
-      font-weight: bold;
-      font-size: 2rem;
-      position: relative;
-      bottom: -4rem;
-      color: #000000;
+      border-top: 0px;
+      font-size: 1.75rem;
+      background-color: #eeeded21;
+      color: #3a3a3a;
+      box-shadow: 0px 8px 12px 2px rgba(26, 228, 155, 0.14);
+      transition: 2s infinite;
       :hover {
-        background-color: #ffffffda;
+        background-color: #1ae49b;
+        color: #ffffff;
+        transition: 0.4s ease;
       }
     }
   `,
@@ -645,16 +913,15 @@ const StyledSlider = styled(Slider)(css`
 const Contact = styled(Box)<any>(
   css`
     display: flex;
-    display: none;
     width: 100%;
-    padding: 2rem 5rem;
+    height: 100vh;
+    padding: 3rem 5rem;
+    display: flex;
+    background-color: white;
+    justify-content: center;
     flex-direction: column;
 
-    /* align-items: center; */
-
-    & > .title {
-      /* position: fixed; */
-      /* top: calc(25% - 2.5rem); */
+    & .title {
       left: 5rem;
       font-size: 2.5rem;
       font-weight: bold;
@@ -673,15 +940,40 @@ const Contact = styled(Box)<any>(
       display: flex;
       justify-content: space-between;
       align-items: center;
+      text-align: center;
       & > .link {
+        display: flex;
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         width: 12.5rem;
-        & > .title {
-          font-size: 2.8rem;
-          color: white;
+        & .logo {
+          width: 7rem;
+          height: 7rem;
+          display: flex;
+
+          &.github {
+            background-image: url('https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+          &.instagram {
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/264px-Instagram_logo_2016.svg.png');
+          }
+          &.kakaoTalk {
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/KakaoTalk_logo.svg/200px-KakaoTalk_logo.svg.png');
+          }
         }
+
         & > .description {
+          margin-top: 1rem;
           font-size: 1.6rem;
-          color: white;
+          color: #000000;
         }
       }
     }
@@ -722,6 +1014,10 @@ const ActivityCard = styled(Card)<any>(
       height: 100%;
       & .filter {
         padding: 1rem;
+        display: flex;
+        & .description {
+          flex: 1;
+        }
       }
     }
     &:hover {
@@ -729,6 +1025,9 @@ const ActivityCard = styled(Card)<any>(
         font-size: 2rem;
       }
       & .description {
+        flex: 1;
+        min-width: 300px;
+
         visibility: visible;
         transform: translateY(0);
       }
@@ -757,6 +1056,7 @@ const ActivityCard = styled(Card)<any>(
     }
 
     & .description {
+      min-width: 300px;
       font-size: 1.3rem;
       color: #dddddd;
       transition: all 0.4s ease;
@@ -765,3 +1065,46 @@ const ActivityCard = styled(Card)<any>(
     }
   `,
 );
+const float = keyframes`
+0% {
+  box-shadow: 0 7px 10px 0px rgba(26, 228, 155, 0.4);
+
+  transform: translatey(0px);
+}
+50% {
+
+  box-shadow: 0 15px 25px 0px rgba(26, 228, 155, 0.4);
+  transform: translatey(-5px);
+}
+100% {
+  box-shadow: 0 7px 10px 0px rgba(26, 228, 155, 0.4);
+  transform: translatey(0px);
+}
+}
+
+`;
+
+const wiggle = keyframes`
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-8deg);
+  }
+  20% {
+    transform: rotateZ(6deg);
+  }
+  25% {
+    transform: rotateZ(-7deg);
+  }
+  30% {
+    transform: rotateZ(5deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
+
+`;
