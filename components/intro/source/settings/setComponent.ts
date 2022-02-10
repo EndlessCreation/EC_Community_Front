@@ -9,7 +9,7 @@ export const componentInit = ({
   playLength,
   actionList,
 }: {
-  playId: number;
+  playId: string;
   startPoint: number;
   playLength: number;
   actionList: Array<action>;
@@ -31,12 +31,13 @@ export const componentSetting = ({
   playId,
   ref,
 }: {
-  playId: number;
+  playId: string;
   ref: RefObject<HTMLDivElement>;
 }) => {
   //content 컴포넌트의 기본 정보 세팅,
   const displayData = playData.displayData;
   const thisStory = playData.storyBoard[playId];
+
   //storyBoard에 인터랙션 등록
   if (ref && ref.current && thisStory) {
     thisStory.DOM = ref.current;
