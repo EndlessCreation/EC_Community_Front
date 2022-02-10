@@ -100,17 +100,17 @@
 
 ## Contributors
 
-<table>
-   <tr>
-      <td colspan="1" align="center"><strong>Front-End Developer</strong></td>
-      <td colspan="1" align="center"><strong>Back-End Developer</strong></td>
-   </tr>
+<table height="200px">
   <tr>
     <td align="center">
-    <a href="https://github.com/sjsjsj1246"><img src="https://avatars.githubusercontent.com/u/24623403?v=4" width="150px;" alt="김성태"/><br /><sub><b>황인서</b></sub></a><br />
+    <a href="https://github.com/sjsjsj1246"><img src="https://avatars.githubusercontent.com/u/24623403?v=4" width="150px;" alt="황인서"/><br /><sub><b>황인서</b></sub></a><br />
     </td>
      <td align="center">
-        <a href="https://github.com/DNATUNA"><img src="https://avatars.githubusercontent.com/u/28949165?v=4" width="150px" alt="황인서"/><br /><sub><b>김건훈</b></sub></a>
+        <a href="https://github.com/DNATUNA"><img src="https://avatars.githubusercontent.com/u/33178048?v=4" width="150px" alt="오정진"/><br /><sub><b>오정진</b></sub></a>
+     </td>
+     </td>
+     <td align="center">
+        <a href="https://github.com/DNATUNA"><img src="https://avatars.githubusercontent.com/u/66112027?v=4" width="150px" alt="이상준"/><br /><sub><b>이상준</b></sub></a>
      </td>
   <tr>
 </table>
