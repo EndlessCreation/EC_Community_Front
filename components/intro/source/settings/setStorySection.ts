@@ -33,6 +33,7 @@ export default function setStorySection() {
 
   //포인트배열 전체 순회
   pointArr.forEach((point, index) => {
+    // console.log(point, index);
     //첫번째 point 처리
     if (index === 0) {
       check.startPoint = point.point;
@@ -42,14 +43,16 @@ export default function setStorySection() {
     else {
       //구간의 endpoint값에, 지금 조회하는 point값을 넣고 idList 섹션에 추가
       check.endPoint = point.point;
+      // console.log(check);
       section.push({ ...check, idList: [...temp] });
+      // console.log(section);
       if (point.type === 'start') {
         //포인트가 시작점이었을 경우, temp에 id 추가
-        // console.log("push" ,point.id)
+        // console.log('push', point.id);
         temp.push(point.id);
       } else {
         //포인트가 끝점이었을 경우 temp에서 해당 Id값 제거
-        // console.log("cut", point.id)
+        // console.log('cut', point.id);
         temp = temp.filter((id) => id !== point.id);
       }
       //다음구간 서치를 위해 현재 포인트를 다시 시작점으로 만들기
