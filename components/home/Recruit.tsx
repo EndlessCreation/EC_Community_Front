@@ -61,27 +61,6 @@ const QnAList = [
     summary: '[공통] 2학기에도 동아리원 모집이 있나요?',
     detail: 'EC:Advance를 진행하기 위한 팀원이 부족한 경우 추가 모집을 할 계획이에요.',
   },
-  {
-    id: 600,
-    summary: '[개발부] 프로젝트 진행 시 팀 매칭은 어떻게 이루어지나요?',
-    detail: '아이디어 피칭 후 팀 구성이 이루어져요. 더욱 자세한 프로세스는 추가 문의 부탁드려요.',
-  },
-  {
-    id: 700,
-    summary: '[개발부] 팀 매칭이 되지 않을 경우 프로젝트를 할 수 없나요?',
-    detail:
-      '그런 일이 없었으면 좋겠지만, 모든 인원이 팀에 매칭될 수 있도록 동아리 차원에서 최대한 지원할 예정이에요',
-  },
-  {
-    id: 800,
-    summary: '[학술부] ',
-    detail: '',
-  },
-  // {
-  //   id: 900,
-  //   summary: '',
-  //   detail: '',
-  // },
 ];
 const steps1 = [
   { id: 100, label: '모집일정 공개 및 서류 접수', date: '2022. 2. 12. ~ 2. 27.' },
@@ -90,7 +69,7 @@ const steps1 = [
 ];
 const steps2 = [
   { id: 100, label: '모집일정 공개 및 서류 접수', date: '2022. 2. 28. ~ 3. 6.' },
-  { id: 200, label: '면접 일정', date: '2022. 2. 28. ~ 3. 6.' },
+  { id: 200, label: '면접 일정', date: '2022. 2. 28. ~ 3. 6. (예정)' },
   { id: 300, label: '최종합격', date: '2022. 3. 7.' },
 ];
 type RecruitProps = {};
@@ -116,9 +95,20 @@ const Recruit = ({}: RecruitProps) => {
       <ResponsiveLayout>
         <Section>
           <Text className="title">🌟 지원 절차</Text>
-          <Box className="recruit" sx={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
+          <Box className="recruit" sx={{ display: 'flex', flexDirection: 'column', gap: '50px' }}>
             <Box className="process" sx={{ display: 'flex' }}>
-              <Text>개발부 모집</Text>
+              <Text
+                sx={{
+                  fontSize: '1.25rem',
+                  alignSelf: 'center',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                }}
+              >
+                <span>개발부</span>
+                <span>지원</span>
+              </Text>
               <Stepper
                 alternativeLabel
                 activeStep={steps1.length}
@@ -136,7 +126,18 @@ const Recruit = ({}: RecruitProps) => {
               </Stepper>
             </Box>
             <Box className="process" sx={{ display: 'flex' }}>
-              <Text>학술부 모집</Text>
+              <Text
+                sx={{
+                  fontSize: '1.25rem',
+                  alignSelf: 'center',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                }}
+              >
+                <span>학술부</span>
+                <span>지원</span>
+              </Text>
               <Stepper
                 alternativeLabel
                 activeStep={steps1.length}
@@ -214,13 +215,13 @@ const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.active}`]: {
     [`& .${stepConnectorClasses.line}`]: {
       backgroundImage:
-        'linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)',
+        'linear-gradient(95deg, rgba(119,184,50,1) 5%, rgba(30,153,41,1) 52%, rgba(59,186,113,1) 98%)',
     },
   },
   [`&.${stepConnectorClasses.completed}`]: {
     [`& .${stepConnectorClasses.line}`]: {
       backgroundImage:
-        'linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)',
+        'linear-gradient(95deg, rgba(119,184,50,1) 5%, rgba(30,153,41,1) 52%, rgba(59,186,113,1) 98%)',
     },
   },
   [`& .${stepConnectorClasses.line}`]: {
@@ -245,12 +246,12 @@ const ColorlibStepIconRoot = styled('div')<{
   alignItems: 'center',
   ...(ownerState.active && {
     backgroundImage:
-      'linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)',
+      'linear-gradient(95deg, rgba(119,184,50,1) 5%, rgba(30,153,41,1) 52%, rgba(59,186,113,1) 98%)',
     boxShadow: '0 4px 10px 0 rgba(0,0,0,.25)',
   }),
   ...(ownerState.completed && {
     backgroundImage:
-      'linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)',
+      'linear-gradient(95deg, rgba(119,184,50,1) 5%, rgba(30,153,41,1) 52%, rgba(59,186,113,1) 98%)',
   }),
 }));
 
