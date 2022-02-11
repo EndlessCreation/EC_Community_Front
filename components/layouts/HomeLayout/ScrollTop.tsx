@@ -8,10 +8,14 @@ function ScrollTop() {
   });
 
   const handleClick = (event: any) => {
-    window.scrollTo({
-      behavior: 'smooth',
-      top: 0,
-    });
+    const anchor = (event.target.ownerDocument || document).querySelector('#back-to-top-anchor');
+
+    if (anchor) {
+      anchor.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+      });
+    }
   };
 
   return (

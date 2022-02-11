@@ -339,6 +339,7 @@ const Main = ({}: MainProps) => {
                 </ResponsiveLayout>
               </InteractionLayout>
             </PlayScene>
+
             {/*  액티비티 */}
             <PlayScene playId="scene-5" startPoint={p.scene5.s} playLength={p.scene5.l}>
               <InteractionLayout>

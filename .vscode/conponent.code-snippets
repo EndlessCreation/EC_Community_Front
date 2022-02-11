@@ -10,7 +10,7 @@
 			"  ",
 			"};",
 			"",
-			"const ${1:${TM_FILENAME_BASE}} = ({}: ${1:${TM_FILENAME_BASE}}Props) => {",
+			"const ${1:${TM_FILENAME_BASE}}: React.FunctionComponent<${1:${TM_FILENAME_BASE}}Props> = () => {",
 			"  return <Box></Box>;",
 			"};",
 			"",
