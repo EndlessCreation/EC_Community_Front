@@ -14,6 +14,18 @@ import * as ga from '../lib/scripts/ga';
 const WrappedApp: FC<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter();
 
+  const handleResize = () => {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  };
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   useEffect(() => {
     const handleRouteChange = (url: string) => {
       ga.pageview(url);

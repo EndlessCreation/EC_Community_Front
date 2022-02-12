@@ -339,6 +339,7 @@ const Main = ({}: MainProps) => {
                 </ResponsiveLayout>
               </InteractionLayout>
             </PlayScene>
+
             {/*  액티비티 */}
             <PlayScene playId="scene-5" startPoint={p.scene5.s} playLength={p.scene5.l}>
               <InteractionLayout>
@@ -558,6 +559,8 @@ export default Main;
 const TopWrap = css`
   width: 100%;
   height: 100vh;
+  height: -webkit-fill-available;
+  height: fill-available;
   background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80');
   background-position: center;
   background-repeat: no-repeat;
@@ -567,6 +570,8 @@ const Top = styled(Box)<any>(
   css`
     width: 100%;
     height: 100vh;
+    height: -webkit-fill-available;
+    height: fill-available;
     text-align: center;
     color: white;
     font-size: 2rem;
@@ -601,6 +606,8 @@ const Top = styled(Box)<any>(
     }
     @media screen and (max-width: 768px) {
       height: 100vh;
+      height: -webkit-fill-available;
+      height: fill-available;
       & > .MuiBox-root {
         padding: 0;
         & .title {
@@ -627,6 +634,8 @@ const Introduction = styled(Box)<any>(
     /* display: none; */
     width: 100%;
     height: 100vh;
+    height: -webkit-fill-available;
+    height: fill-available;
     padding: 3rem 5rem;
     background-color: white;
 
@@ -690,6 +699,8 @@ const About = styled(Box)<any>(
 
     width: 100%;
     height: 100vh;
+    height: -webkit-fill-available;
+    height: fill-available;
     background-color: white;
     align-items: center;
     justify-content: center;
@@ -744,6 +755,8 @@ const Identity = styled(Box)<any>(
     /* display: none; */
 
     height: 100vh;
+    height: -webkit-fill-available;
+    height: fill-available;
     width: 100%;
     padding: 0 2rem;
     align-items: center;
@@ -821,6 +834,8 @@ const Activity = styled(Box)<any>(
     display: flex;
     /* display: none; */
     height: 100vh;
+    height: -webkit-fill-available;
+    height: fill-available;
     width: 100%;
     padding: 3rem 5rem;
     flex-direction: column;
@@ -838,6 +853,8 @@ const Activity = styled(Box)<any>(
       align-items: center;
       margin-top: 0rem;
       max-height: 100vh;
+      height: -webkit-fill-available;
+      height: fill-available;
       & .title {
         display: flex;
         align-items: center;
@@ -857,6 +874,8 @@ const Project = styled(Box)<any>(
     display: flex;
     width: 100%;
     height: 100vh;
+    height: -webkit-fill-available;
+    height: fill-available;
     padding: 3rem 5rem;
     display: flex;
     background-color: white;
@@ -915,6 +934,8 @@ const Contact = styled(Box)<any>(
     display: flex;
     width: 100%;
     height: 100vh;
+    height: -webkit-fill-available;
+    height: fill-available;
     padding: 3rem 5rem;
     display: flex;
     background-color: white;

@@ -41,7 +41,7 @@ export type sectionElem = {
 };
 
 export type cssUpdateProps = {
-  DOM: HTMLElement | null;
+  DOM: any;
   progressRatio: number;
   interActionProp: interActionProp;
 };

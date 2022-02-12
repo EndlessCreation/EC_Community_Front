@@ -10,7 +10,7 @@ const contributor = [
   },
   {
     role: '프론트엔드',
-    author: ['황인서'],
+    author: ['황인서', '이상준', '오정진'],
   },
   {
     role: '백엔드',
@@ -26,7 +26,7 @@ const Footer = () => (
         <Box className="contributor" key={i}>
           <Text className="role">{item.role}</Text>
           {item.author.map((name, i2) => (
-            <Text className="name" key={i2}>
+            <Text className="name" key={i2} css={{ marginRight: '1rem' }}>
               {name}
             </Text>
           ))}
