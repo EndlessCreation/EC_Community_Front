@@ -49,6 +49,10 @@ const settings = {
   nextArrow: <SlickArrowRight />,
 };
 
-export default function CustomSlider({ children }: any) {
-  return <StyledSlider {...settings}>{children}</StyledSlider>;
+export default function CustomSlider({ children, ...props }: any) {
+  return (
+    <StyledSlider {...settings} {...props}>
+      {children}
+    </StyledSlider>
+  );
 }

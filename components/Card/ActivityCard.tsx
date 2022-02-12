@@ -27,7 +27,7 @@ const CardWrapper = styled(Card)(css`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  width: 18.75rem;
+  width: 100%;
   height: 25rem;
   transition: all 0.5s ease;
   cursor: pointer;

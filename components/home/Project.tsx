@@ -20,30 +20,18 @@ const Project = () => {
       />
       <ResponsiveLayout>
         <Section>
-          <Text className="title">EC Pick</Text>
-          <CustomSlider>
-            <SlideBox>
-              <ActivityDetailCard activity={testActivity1} />
-            </SlideBox>
-            <SlideBox>
-              <ActivityDetailCard activity={testActivity2} />
-            </SlideBox>
-          </CustomSlider>
-        </Section>
-
-        <Section>
           <Text className="title">Project</Text>
           <Grid container spacing={4}>
-            <Grid item xs={6} md={4}>
+            <Grid item xs={12} sm={6} md={4}>
               <ActivityCard activity={testActivity1} />
             </Grid>
-            <Grid item xs={6} md={4}>
+            <Grid item xs={12} sm={6} md={4}>
               <ActivityCard activity={testActivity2} />
             </Grid>
-            <Grid item xs={6} md={4}>
+            <Grid item xs={12} sm={6} md={4}>
               <ActivityCard activity={testActivity3} />
             </Grid>
-            <Grid item xs={6} md={4}>
+            <Grid item xs={12} sm={6} md={4}>
               <ActivityCard activity={testActivity4} />
             </Grid>
           </Grid>

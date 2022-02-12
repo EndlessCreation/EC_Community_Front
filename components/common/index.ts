@@ -20,6 +20,10 @@ export const Section = styled(Box)<any>(
   ({ bgColor }) => css`
     padding: 6rem 4rem 6rem 4rem;
     background-color: ${bgColor ? bgColor : 'inherit'};
+
+    @media screen and (max-width: 768px) {
+      padding: 4rem 2.5rem 4rem 2.5rem;
+    }
     & > .title {
       font-size: 2.5rem;
       font-weight: bold;

@@ -63,14 +63,14 @@ const QnAList = [
   },
 ];
 const steps1 = [
-  { id: 100, label: '모집일정 공개 및 서류 접수', date: '2022. 2. 12. ~ 2. 25.' },
-  { id: 200, label: '면접 일정', date: '2022. 2. 20. or 2. 27.' },
-  { id: 300, label: '최종합격', date: '2022. 2. 21. or 2. 28' },
+  { id: 100, label: '서류 접수', date: '2. 12. ~ 2. 25.' },
+  { id: 200, label: '면접 일정', date: '2. 20. or 2. 27.' },
+  { id: 300, label: '최종합격', date: '2. 21. or 2. 28' },
 ];
 const steps2 = [
-  { id: 100, label: '모집일정 공개 및 서류 접수', date: '2022. 2. 28. ~ 3. 4.' },
-  { id: 200, label: '면접 일정', date: '2022. 3. 6.' },
-  { id: 300, label: '최종합격', date: '2022. 3. 7.' },
+  { id: 100, label: '서류 접수', date: '2. 28. ~ 3. 4.' },
+  { id: 200, label: '면접 일정', date: '3. 6.' },
+  { id: 300, label: '최종합격', date: '3. 7.' },
 ];
 type RecruitProps = {};
 const Recruit = ({}: RecruitProps) => {
@@ -94,21 +94,10 @@ const Recruit = ({}: RecruitProps) => {
 
       <ResponsiveLayout>
         <Section>
-          <Text className="title">🌟 지원 절차</Text>
+          <Text className="title">2022년도 모집 일정</Text>
           <Box className="recruit" sx={{ display: 'flex', flexDirection: 'column', gap: '50px' }}>
-            <Box className="process" sx={{ display: 'flex' }}>
-              <Text
-                sx={{
-                  fontSize: '1.25rem',
-                  alignSelf: 'center',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                }}
-              >
-                <span>개발부</span>
-                <span>지원</span>
-              </Text>
+            <Process>
+              <Text className="title">개발부 절차</Text>
               <Stepper
                 alternativeLabel
                 activeStep={steps1.length}
@@ -118,26 +107,15 @@ const Recruit = ({}: RecruitProps) => {
                 {steps1.map((item, index) => (
                   <Step key={index}>
                     <StepLabel StepIconComponent={ColorlibStepIcon}>
-                      <Text>{item.label}</Text>
+                      <Text css={{ fontWeight: 'bold' }}>{item.label}</Text>
                       <Text>{item.date}</Text>
                     </StepLabel>
                   </Step>
                 ))}
               </Stepper>
-            </Box>
-            <Box className="process" sx={{ display: 'flex' }}>
-              <Text
-                sx={{
-                  fontSize: '1.25rem',
-                  alignSelf: 'center',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                }}
-              >
-                <span>학술부</span>
-                <span>지원</span>
-              </Text>
+            </Process>
+            <Process>
+              <Text className="title">학술부 절차</Text>
               <Stepper
                 alternativeLabel
                 activeStep={steps1.length}
@@ -147,13 +125,13 @@ const Recruit = ({}: RecruitProps) => {
                 {steps2.map((item, index) => (
                   <Step key={index}>
                     <StepLabel StepIconComponent={ColorlibStepIcon}>
-                      <Text>{item.label}</Text>
+                      <Text css={{ fontWeight: 'bold' }}>{item.label}</Text>
                       <Text>{item.date}</Text>
                     </StepLabel>
                   </Step>
                 ))}
               </Stepper>
-            </Box>
+            </Process>
           </Box>
         </Section>
 
@@ -198,6 +176,23 @@ const Recruit = ({}: RecruitProps) => {
 
 export default Recruit;
 
+const Process = styled(Box)(css`
+  display: flex;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  & .title {
+    font-weight: bold;
+    font-size: 1.25rem;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+`);
+
 const WantList = styled(Box)(css`
   display: flex;
   flex-direction: column;
@@ -208,6 +203,7 @@ const WantList = styled(Box)(css`
     margin-bottom: 1rem;
   }
 `);
+
 const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
     top: 17,

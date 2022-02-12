@@ -13,19 +13,22 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from 'react';
-import InboxIcon from '@mui/icons-material/Inbox';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import ActiveLink from './ActiveLink';
 
+import InboxIcon from '@mui/icons-material/Inbox';
+import BookIcon from '@mui/icons-material/Book';
+import EventAvailableIcon from '@mui/icons-material/EventAvailable';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
+
 type MainNavProps = {};
 
 const index = [
-  { title: '프로젝트', url: '/project' },
-  { title: '블로그', url: '/blog' },
-  { title: '활동일정', url: '/schedule' },
-  { title: '지원하기', url: '/recruit' },
-  { title: '커뮤니티', url: '/community' },
+  { title: '프로젝트', url: '/project', icon: <InboxIcon /> },
+  { title: '블로그', url: '/blog', icon: <BookIcon /> },
+  { title: '활동일정', url: '/schedule', icon: <EventAvailableIcon /> },
+  { title: '지원하기', url: '/recruit', icon: <AccountBoxIcon /> },
 ];
 
 const MainNav = ({}: MainNavProps) => {
@@ -69,12 +72,10 @@ const MainNav = ({}: MainNavProps) => {
         <Box onClick={toggleMenu(false)} onKeyDown={toggleMenu(false)}>
           <List>
             {index.map((item) => (
-              <ListItem key={item.url} button onClick={() => route.push(item.url)}>
-                <ListItemIcon>
-                  <InboxIcon />
-                </ListItemIcon>
+              <StyledListItem key={item.url} button onClick={() => route.push(item.url)}>
+                <ListItemIcon css={{ minWidth: '1.25rem' }}>{item.icon}</ListItemIcon>
                 <ListItemText primary={item.title} />
-              </ListItem>
+              </StyledListItem>
             ))}
           </List>
         </Box>
@@ -138,7 +139,6 @@ const LinkList = styled(Box)<any>(
         font-weight: 900;
       }
       &.active {
-        text-decoration: underline;
         font-weight: 900;
       }
     }
@@ -146,6 +146,18 @@ const LinkList = styled(Box)<any>(
       & {
         display: none;
       }
+    }
+  `,
+);
+
+const StyledListItem = styled(ListItem)<any>(
+  css`
+    & .MuiListItemIcon-root {
+      min-width: 2rem;
+    }
+
+    & .MuiTypography-root {
+      font-weight: bold;
     }
   `,
 );

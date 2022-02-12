@@ -108,7 +108,15 @@ const Schedule = ({}: ScheduleProps) => {
         </Section>
 
         <Section>
-          <Grid container spacing={8}>
+          <Grid
+            container
+            spacing={8}
+            css={css`
+              @media screen and (max-width: 768px) {
+                flex-wrap: wrap-reverse;
+              }
+            `}
+          >
             <Grid xs={12} md={6} item>
               <ContentBox>
                 <img src="/img/개발부활동사진2.png" />
