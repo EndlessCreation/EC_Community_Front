@@ -14,17 +14,16 @@ import * as ga from '../lib/scripts/ga';
 const WrappedApp: FC<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter();
 
-  function setScreenSize() {
-    let vh = window.innerHeight * 0.01;
+  const handleResize = () => {
+    const vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
-    console.log(vh);
-  }
+  };
 
   useEffect(() => {
-    window.addEventListener('resize', setScreenSize);
-    return () => {
-      window.removeEventListener('resize', setScreenSize);
-    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {

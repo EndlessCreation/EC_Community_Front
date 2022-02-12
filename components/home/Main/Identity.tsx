@@ -98,6 +98,8 @@ export default Identity;
 
 const Wrapper = styled(Box)(css`
   height: 100vh;
+  height: -webkit-fill-available;
+  height: fill-available;
   display: flex;
   flex-direction: column;
 `);

@@ -62,6 +62,8 @@ const Wrapper = styled(Box)<any>(
   css`
     width: 100%;
     height: 100vh;
+    height: -webkit-fill-available;
+    height: fill-available;
     background-color: white;
 
     @media screen and (max-width: 768px) {

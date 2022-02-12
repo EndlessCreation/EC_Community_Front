@@ -24,6 +24,8 @@ const Wrapper = styled(Box)<any>(
   css`
     width: 100%;
     height: 100vh;
+    height: -webkit-fill-available;
+    height: fill-available;
     display: flex;
     align-items: center;
     justify-content: center;
