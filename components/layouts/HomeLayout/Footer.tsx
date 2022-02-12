@@ -49,6 +49,10 @@ const Wrapper = styled(Box)<any>(
     display: flex;
     justify-content: space-between;
     padding: 2rem calc((100% - 91.5rem) / 2);
+    @media screen and (max-width: 768px) {
+      height: 12rem;
+    }
+
     & .main {
       padding-left: 2rem;
       display: flex;

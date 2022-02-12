@@ -60,9 +60,8 @@ const ContactUs: React.FunctionComponent<ContactUsProps> = () => {
 export default ContactUs;
 
 const Wrapper = styled(Box)(css`
-  height: 100vh;
-  height: -webkit-fill-available;
-  height: fill-available;
+  height: calc(var(--vh, 1vh) * 100);
+
   display: flex;
   flex-direction: column;
 `);
@@ -78,7 +77,7 @@ const Content = styled(Box)<any>(
     & .title {
       font-size: 2.5rem;
       font-weight: bold;
-      margin-bottom: 4rem;
+      margin-bottom: 2rem;
 
       & span {
         color: #0eb371;
@@ -107,6 +106,10 @@ const Content = styled(Box)<any>(
           width: 7rem;
           height: 7rem;
           display: flex;
+          @media screen and (max-width: 768px) {
+            width: 4.5rem;
+            height: 4.5rem;
+          }
 
           &.github {
             background-image: url('https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png');

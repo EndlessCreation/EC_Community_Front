@@ -12,7 +12,6 @@ const MainPage = () => {
       </Head>
       <MainNav />
       <Main />
-      <ScrollTop />
     </>
   );
 };

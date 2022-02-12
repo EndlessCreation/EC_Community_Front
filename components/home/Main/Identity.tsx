@@ -16,12 +16,11 @@ const Identity: React.FunctionComponent<AboutProps> = () => {
         <Content>
           <Text className="title">
             <span>I</span>dentity
-            <Text className="subTitle">다음과 같은 가치를 추구합니다</Text>
           </Text>
           <Box className="container">
             <ScrollRevealSlideAnimation startPosition={1}>
               <Box className="symbol">
-                <GrowthIcon width="7.5rem" height="7.5rem" className="icon" />
+                <GrowthIcon width="100%" height="100%" className="icon" />
                 <Text className="iconTitle">Growth</Text>
                 <Text className="description">
                   EC는 동아리원 모두의 성장을 격려하고 응원합니다.
@@ -30,7 +29,7 @@ const Identity: React.FunctionComponent<AboutProps> = () => {
             </ScrollRevealSlideAnimation>
             <ScrollRevealSlideAnimation startPosition={2}>
               <Box className="symbol">
-                <SharingIcon width="7.5rem" height="7.5rem" className="icon" />
+                <SharingIcon width="100%" height="100%" className="icon" />
                 <Text className="iconTitle">Sharing</Text>
                 <Text className="description">
                   EC는 개인의 지식과 경험을 공유하는 장이 되어줍니다.
@@ -39,7 +38,7 @@ const Identity: React.FunctionComponent<AboutProps> = () => {
             </ScrollRevealSlideAnimation>
             <ScrollRevealSlideAnimation startPosition={3}>
               <Box className="symbol">
-                <CooperationIcon width="7.5rem" height="7.5rem" className="icon" />
+                <CooperationIcon width="100%" height="100%" className="icon" />
                 <Text className="iconTitle">Cooperation</Text>
                 <Text className="description">
                   EC는 더 나은 학습 환경을 위해 함께 고민하고 협력합니다.
@@ -97,9 +96,7 @@ const Identity: React.FunctionComponent<AboutProps> = () => {
 export default Identity;
 
 const Wrapper = styled(Box)(css`
-  height: 100vh;
-  height: -webkit-fill-available;
-  height: fill-available;
+  height: calc(var(--vh, 1vh) * 100);
   display: flex;
   flex-direction: column;
 `);
@@ -111,9 +108,9 @@ const Content = styled(Box)<any>(
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-top: 4rem;
 
     @media screen and (max-width: 768px) {
-      margin-top: 1rem;
       text-align: center;
     }
 
@@ -124,21 +121,18 @@ const Content = styled(Box)<any>(
       & span {
         color: #0eb371;
       }
-      & .subTitle {
-        font-size: 2rem;
-        color: #363636;
-      }
     }
 
     & .container {
       font-size: 1.5rem;
-      margin-top: 2rem;
+      margin-top: 6rem;
       width: 100%;
       display: flex;
       justify-content: space-around;
       align-items: center;
 
       @media screen and (max-width: 768px) {
+        margin-top: 1rem;
         flex-direction: column;
       }
 
@@ -149,12 +143,16 @@ const Content = styled(Box)<any>(
         align-items: center;
 
         @media screen and (max-width: 768px) {
-          margin-top: 1rem;
+          margin-top: 1.5rem;
         }
 
         & .icon {
           width: 7.5rem;
           height: 7.5rem;
+          @media screen and (max-width: 768px) {
+            width: 4.5rem;
+            height: 4.5rem;
+          }
         }
 
         & .iconTitle {
@@ -165,6 +163,11 @@ const Content = styled(Box)<any>(
           margin-top: 0.625rem;
           padding-bottom: 0.5rem;
           margin-bottom: 1.25rem;
+          @media screen and (max-width: 768px) {
+            margin-top: 0.3rem;
+            padding-bottom: 0.2rem;
+            margin-bottom: 0.6rem;
+          }
         }
       }
 
