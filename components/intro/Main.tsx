@@ -1121,5 +1121,4 @@ const wiggle = keyframes`
   40%, 100% {
     transform: rotateZ(0);
   }
-
 `;

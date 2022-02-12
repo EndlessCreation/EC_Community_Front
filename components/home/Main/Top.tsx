@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
-import { Box, styled } from '@mui/material';
+import { css, keyframes } from '@emotion/react';
+import { Box, Button, styled } from '@mui/material';
 import { Text } from '../../common';
 
 type TopProps = {};
@@ -13,6 +13,20 @@ const Top = ({}: TopProps) => {
         <Text css={{ fontSize: '4rem' }}>Endless Creation</Text>
         <Text css={{ fontSize: '1.75rem' }}>신입 기수 모집중(~3.6)</Text>
         <Text css={{ fontSize: '1.75rem' }}>32기 여러분들을 기다리고 있어요!</Text>
+        <Button
+          className="recruit"
+          css={css`
+            animation: ${wiggle} 2s linear infinite;
+          `}
+        >
+          <a
+            href="https://aluminum-taker-8e2.notion.site/Endless-Creation-32-c4befab271c0452bb26523ea3749afa6"
+            target="_blank"
+            rel="noreferrer"
+          >
+            모집 내용 자세히 보기
+          </a>
+        </Button>
       </Box>
     </Wrapper>
   );
@@ -33,11 +47,56 @@ const Wrapper = styled(Box)<any>(
     background-repeat: no-repeat;
     background-size: cover;
 
+    @media screen and (max-width: 768px) {
+      text-align: center;
+    }
+
     & > .MuiBox-root {
       user-select: none;
       & > p {
         color: white;
+        font-weight: bold;
+      }
+    }
+
+    & .recruit {
+      bottom: -4rem;
+      padding: 0.25rem 1.5rem;
+      background-color: #eeeeeec0;
+      border-radius: 0.25rem;
+      border-bottom: 1px solid white;
+      font-weight: bold;
+      font-size: 2rem;
+      color: #000000;
+
+      :hover {
+        background-color: #c9c9c9;
+        transition: 0.4s ease;
       }
     }
   `,
 );
+
+const wiggle = keyframes`
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-7deg);
+  }
+  20% {
+    transform: rotateZ(5deg);
+  }
+  25% {
+    transform: rotateZ(-6deg);
+  }
+  30% {
+    transform: rotateZ(4deg);
+  }
+  35% {
+    transform: rotateZ(-3deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
+`;
