@@ -49,7 +49,7 @@ const Activity: React.FunctionComponent<ActivityProps> = () => {
                 >
                   <Box className="filter">
                     <Text className="title">Seminar</Text>
-                    <Text className="description">회원들과 서로의 지식과 경험을 공유합니다.</Text>
+                    <Text className="description">회원들과 서로 지식과 경험을 공유합니다.</Text>
                   </Box>
                 </ActivityCard>
               </ScrollRevealSlideAnimation>
@@ -77,9 +77,7 @@ const Activity: React.FunctionComponent<ActivityProps> = () => {
 export default Activity;
 
 const Wrapper = styled(Box)(css`
-  height: 100vh;
-  height: -webkit-fill-available;
-  height: fill-available;
+  height: calc(var(--vh, 1vh) * 100);
   display: flex;
   flex-direction: column;
 `);
@@ -114,7 +112,7 @@ const ActivityCard = styled(Card)<any>(
     background-size: cover;
     border-radius: 10px;
     @media screen and (max-width: 768px) {
-      height: 30vw;
+      height: 25vw;
     }
 
     &:hover {
@@ -135,6 +133,9 @@ const ActivityCard = styled(Card)<any>(
       flex-direction: column;
       justify-content: flex-start;
       background: linear-gradient(90deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.1) 100%);
+      @media screen and (max-width: 768px) {
+        padding: 1rem;
+      }
 
       &:hover {
         background: linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.3) 100%);
@@ -147,11 +148,15 @@ const ActivityCard = styled(Card)<any>(
       color: white;
       transition: all 0.4s ease;
       margin-bottom: 1rem;
+
+      @media screen and (max-width: 768px) {
+        margin-bottom: 0.2rem;
+      }
     }
 
     & .description {
       font-size: 1.3rem;
-      color: #dddddd;
+      color: #ebeaea;
       transition: all 0.4s ease;
       visibility: hidden;
       transform: translateY(12rem);

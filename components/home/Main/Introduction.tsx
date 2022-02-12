@@ -61,9 +61,8 @@ export default Introduction;
 const Wrapper = styled(Box)<any>(
   css`
     width: 100%;
-    height: 100vh;
-    height: -webkit-fill-available;
-    height: fill-available;
+    height: calc(var(--vh, 1vh) * 100);
+
     background-color: white;
 
     @media screen and (max-width: 768px) {
