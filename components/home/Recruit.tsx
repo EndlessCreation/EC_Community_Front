@@ -196,10 +196,6 @@ const Process = styled(Box)(css`
   @media screen and (max-width: 768px) {
     margin-top: 2rem;
     flex-direction: column;
-
-    & .MuiStepper-root {
-      width: 100%;
-    }
   }
 
   & .head {
@@ -215,6 +211,14 @@ const Process = styled(Box)(css`
     & .title {
       font-weight: bold;
       font-size: 1.25rem;
+    }
+  }
+
+  & .MuiStepper-root {
+    flex: 1;
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
     }
   }
 `);
