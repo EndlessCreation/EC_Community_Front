@@ -116,7 +116,6 @@ const Recruit: React.FunctionComponent<RecruitProps> = () => {
                 alternativeLabel
                 activeStep={steps1.length}
                 connector={<ColorlibConnector />}
-                sx={{ flex: 1 }}
               >
                 {steps1.map((item, index) => (
                   <Step key={index}>
@@ -136,7 +135,6 @@ const Recruit: React.FunctionComponent<RecruitProps> = () => {
                 alternativeLabel
                 activeStep={steps1.length}
                 connector={<ColorlibConnector />}
-                sx={{ flex: 1 }}
               >
                 {steps2.map((item, index) => (
                   <Step key={index}>
@@ -152,7 +150,7 @@ const Recruit: React.FunctionComponent<RecruitProps> = () => {
         </Section>
 
         <Section>
-          <Text className="title">🤝 이런 분을 찾아요</Text>
+          <Text className="title">이런 분을 찾아요</Text>
           <WantList>
             {wantList.map((item, index) => (
               <Text key={index}>
@@ -164,7 +162,7 @@ const Recruit: React.FunctionComponent<RecruitProps> = () => {
         </Section>
 
         <Section>
-          <Text className="title">💭 자주 묻는 질문</Text>
+          <Text className="title">자주 묻는 질문</Text>
           <div>
             {QnAList.map((item) => {
               const { id, summary, detail } = item;
@@ -196,7 +194,12 @@ const Process = styled(Box)(css`
   display: flex;
   align-items: center;
   @media screen and (max-width: 768px) {
+    margin-top: 2rem;
     flex-direction: column;
+
+    & .MuiStepper-root {
+      width: 100%;
+    }
   }
 
   & .head {
@@ -205,6 +208,9 @@ const Process = styled(Box)(css`
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media screen and (max-width: 768px) {
+      margin-bottom: 1.5rem;
+    }
 
     & .title {
       font-weight: bold;
