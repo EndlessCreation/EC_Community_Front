@@ -26,6 +26,7 @@ const wantList = [
   '협업하며 창작하는 즐거움을 경험하고 싶으신 분',
   '다양한 사람들과 폭넓고 깊이 있는 네트워킹을 원하시는 분',
 ];
+
 const QnAList = [
   {
     id: 100,
@@ -62,18 +63,22 @@ const QnAList = [
     detail: 'EC:Advance를 진행하기 위한 팀원이 부족한 경우 추가 모집을 할 계획이에요.',
   },
 ];
+
 const steps1 = [
   { id: 100, label: '서류 접수', date: '2. 12. ~ 2. 25.' },
   { id: 200, label: '면접 일정', date: '2. 20. or 2. 27.' },
   { id: 300, label: '최종합격', date: '2. 21. or 2. 28' },
 ];
+
 const steps2 = [
   { id: 100, label: '서류 접수', date: '2. 28. ~ 3. 4.' },
   { id: 200, label: '면접 일정', date: '3. 6.' },
   { id: 300, label: '최종합격', date: '3. 7.' },
 ];
+
 type RecruitProps = {};
-const Recruit = ({}: RecruitProps) => {
+
+const Recruit: React.FunctionComponent<RecruitProps> = () => {
   const [expanded, setExpanded] = useState<string | false>(false);
 
   const handleChange = useCallback((panel: string) => {
@@ -97,7 +102,16 @@ const Recruit = ({}: RecruitProps) => {
           <Text className="title">2022년도 모집 일정</Text>
           <Box className="recruit" sx={{ display: 'flex', flexDirection: 'column', gap: '50px' }}>
             <Process>
-              <Text className="title">개발부 절차</Text>
+              <Box className="head">
+                <Text className="title">개발부</Text>
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSd3B49FzoEf-oUrxeC8vOMOkR1ubfbfv-0SaiGdbxnCYvQeqQ/viewform?usp=sf_link"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  지원하러 가기
+                </a>
+              </Box>
               <Stepper
                 alternativeLabel
                 activeStep={steps1.length}
@@ -115,7 +129,9 @@ const Recruit = ({}: RecruitProps) => {
               </Stepper>
             </Process>
             <Process>
-              <Text className="title">학술부 절차</Text>
+              <Box className="head">
+                <Text className="title">학술부</Text>
+              </Box>
               <Stepper
                 alternativeLabel
                 activeStep={steps1.length}
@@ -178,18 +194,22 @@ export default Recruit;
 
 const Process = styled(Box)(css`
   display: flex;
+  align-items: center;
   @media screen and (max-width: 768px) {
     flex-direction: column;
   }
 
-  & .title {
-    font-weight: bold;
-    font-size: 1.25rem;
-    align-self: center;
+  & .head {
+    width: 8rem;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 1.5rem;
+
+    & .title {
+      font-weight: bold;
+      font-size: 1.25rem;
+    }
   }
 `);
 
