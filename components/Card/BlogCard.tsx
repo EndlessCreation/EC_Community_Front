@@ -25,7 +25,7 @@ const BlogCard = ({ blog, ...props }: { blog: Blog; [k: string]: any }) => {
           <TagList tags={blog.tags} />
         </Box>
       </Grid>
-      <Grid item xs={0} md={2} sx={{ display: { xs: 'none', md: 'block' } }}>
+      <Grid item xs={0} md={2} sx={{ display: { xs: 'none', md: 'flex' } }}>
         <Box className="author">
           <Avatar className="icon" src={blog.author.image} />
           <Text className="name">{blog.author.name}</Text>
@@ -77,15 +77,15 @@ const CardWrapper = styled(Grid)<any>(css`
   }
 
   & .author {
-    height: calc(100% - 4rem);
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 
     & .icon {
-      width: auto;
-      height: 50%;
+      width: 5rem;
+      height: 5rem;
     }
 
     & .name {
