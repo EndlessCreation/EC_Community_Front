@@ -65,15 +65,15 @@ const QnAList = [
 ];
 
 const steps1 = [
-  { id: 100, label: '서류 접수', date: '2. 12. ~ 2. 25.' },
-  { id: 200, label: '면접 일정', date: '2. 20. or 2. 27.' },
-  { id: 300, label: '최종합격', date: '2. 21. or 2. 28' },
+  { id: 100, label: '서류 접수', date: '2.12 ~ 2.25' },
+  { id: 200, label: '면접 일정', date: '2.20 or 2.27 or 3.6' },
+  { id: 300, label: '최종합격', date: '2.21 or 2.28 or 3.7' },
 ];
 
 const steps2 = [
-  { id: 100, label: '서류 접수', date: '2. 28. ~ 3. 4.' },
-  { id: 200, label: '면접 일정', date: '3. 6.' },
-  { id: 300, label: '최종합격', date: '3. 7.' },
+  { id: 100, label: '서류 접수', date: '2.28 ~ 3.4' },
+  { id: 200, label: '면접 일정', date: '3.6' },
+  { id: 300, label: '최종합격', date: '3.7' },
 ];
 
 type RecruitProps = {};

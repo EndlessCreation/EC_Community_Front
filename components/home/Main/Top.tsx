@@ -11,7 +11,7 @@ const Top = ({}: TopProps) => {
       <Box>
         <Text css={{ fontSize: '3.25rem' }}>성장하는 즐거움</Text>
         <Text css={{ fontSize: '4rem' }}>Endless Creation</Text>
-        <Text css={{ fontSize: '1.75rem' }}>신입 기수 모집중(~3.6)</Text>
+        <Text css={{ fontSize: '1.75rem' }}>신입 기수 모집중(~3.4)</Text>
         <Text css={{ fontSize: '1.75rem' }}>32기 여러분들을 기다리고 있어요!</Text>
         <Button
           className="recruit"
