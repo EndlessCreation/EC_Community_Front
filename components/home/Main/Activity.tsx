@@ -1,12 +1,9 @@
-/** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { Box, Card, Grid, styled } from '@mui/material';
-import { ResponsiveLayout, Text } from '../../common';
-import ScrollRevealSlideAnimation from '../../common/ScrollRevealSlideAnimation';
+import { ResponsiveLayout, Text } from '@components/common';
+import ScrollRevealSlideAnimation from '@components/common/ScrollRevealSlideAnimation';
 
-type ActivityProps = {};
-
-const Activity: React.FunctionComponent<ActivityProps> = () => {
+const Activity: React.FC = () => {
   return (
     <Wrapper>
       <ResponsiveLayout css={{ height: '100%', display: 'flex', flexDirection: 'column' }}>

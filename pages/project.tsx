@@ -1,6 +1,5 @@
-import React from 'react';
-import Project from '../components/home/Project';
-import MainLayout from '../components/layouts/HomeLayout';
+import Project from '@components/home/Project';
+import MainLayout from '@components/layouts/HomeLayout';
 
 const ProjectPage = () => {
   return (

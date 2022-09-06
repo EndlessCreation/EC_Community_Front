@@ -8,7 +8,8 @@ type ActiveLinkProps = {
   href: string;
   as?: string;
 };
-const ActiveLink = ({ children, activeClassName, ...props }: ActiveLinkProps) => {
+
+const ActiveLink: React.FC<ActiveLinkProps> = ({ children, activeClassName, ...props }) => {
   const { asPath } = useRouter();
   const child = Children.only(children);
   const childClassName = child?.props.className || '';

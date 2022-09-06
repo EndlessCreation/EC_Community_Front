@@ -1,13 +1,11 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
 import { Box, Grid } from '@mui/material';
-import { CustomSlider, ResponsiveLayout, Section, SlideBox, Text } from '../common';
+import { ResponsiveLayout, Section, Text } from '@components/common';
 import HomeHead from './HomeHead';
 import { testActivity1, testActivity2, testActivity3, testActivity4 } from '../../types';
-import { ActivityCard, ActivityDetailCard } from '../Card';
+import { ActivityCard } from '@components/Card';
 import Head from 'next/head';
 
-const Project = () => {
+const Project: React.FC = () => {
   return (
     <Box>
       <Head>

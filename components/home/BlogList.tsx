@@ -1,16 +1,13 @@
-/** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { Box, InputAdornment, OutlinedInput, styled } from '@mui/material';
-import { ResponsiveLayout, Section } from '../common';
+import { ResponsiveLayout, Section } from '@components/common';
 import HomeHead from './HomeHead';
 import SearchIcon from '@mui/icons-material/Search';
 import { testBlog1, testBlog2 } from '../../types';
-import { BlogCard } from '../Card';
+import { BlogCard } from '@components/Card';
 import Head from 'next/head';
 
-type BlogListProps = {};
-
-const BlogList = ({}: BlogListProps) => {
+const BlogList: React.FC = () => {
   return (
     <Box>
       <Head>

@@ -1,12 +1,9 @@
-/** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { Box, styled } from '@mui/material';
-import { ResponsiveLayout, Section, Text } from '../../common';
-import ScrollRevealSlideAnimation from '../../common/ScrollRevealSlideAnimation';
+import { ResponsiveLayout, Text } from '@components/common';
+import ScrollRevealSlideAnimation from '@components/common/ScrollRevealSlideAnimation';
 
-type IntroductionProps = {};
-
-const Introduction: React.FunctionComponent<IntroductionProps> = () => {
+const Introduction: React.FC = () => {
   return (
     <Wrapper>
       <ResponsiveLayout css={{ height: '100%', display: 'flex' }}>
@@ -19,14 +16,17 @@ const Introduction: React.FunctionComponent<IntroductionProps> = () => {
           <ScrollRevealSlideAnimation startPosition={1}>
             <Text className="text">
               사람과 컴퓨터를 사랑하는 동아리로,
-              <Text>창립한지 32년째 되는 역사깊은 동아리입니다</Text>
+              <br />
+              창립한지 32년째 되는 역사깊은 동아리입니다
             </Text>
           </ScrollRevealSlideAnimation>
           <ScrollRevealSlideAnimation startPosition={2}>
             <Text className="text">
               올해 2022년부터는
-              <Text>컴퓨터 공학과 학생들을 대상으로 하는</Text>
-              <Text>개발 관련 학술동아리가 아닌</Text>
+              <br />
+              컴퓨터 공학과 학생들을 대상으로 하는
+              <br />
+              개발 관련 학술동아리가 아닌
             </Text>
           </ScrollRevealSlideAnimation>
           <ScrollRevealSlideAnimation startPosition={3}>

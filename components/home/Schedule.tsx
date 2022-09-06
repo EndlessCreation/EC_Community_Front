@@ -1,9 +1,8 @@
-/** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { Box, Button, Grid, Step, StepContent, StepLabel, Stepper, styled } from '@mui/material';
 import Head from 'next/head';
 import { useState } from 'react';
-import { ResponsiveLayout, Section, Text } from '../common';
+import { ResponsiveLayout, Section, Text } from '@components/common';
 import HomeHead from './HomeHead';
 
 const scheduleStpes = {
@@ -38,9 +37,7 @@ const scheduleStpes = {
   ],
 };
 
-type ScheduleProps = {};
-
-const Schedule = ({}: ScheduleProps) => {
+const Schedule: React.FC = () => {
   const [studyStep, setStudyStep] = useState(0);
   const [developStep, setDevelopStep] = useState(0);
 

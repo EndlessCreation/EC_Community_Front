@@ -1,15 +1,12 @@
-/** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { Box, styled } from '@mui/material';
-import { ResponsiveLayout, Text } from '../../common';
-import { CooperationIcon, GrowthIcon, SharingIcon } from '../../../public/svgs';
-import ScrollRevealSlideAnimation from '../../common/ScrollRevealSlideAnimation';
+import { ResponsiveLayout, Text } from '@components/common';
+import { CooperationIcon, GrowthIcon, SharingIcon } from '@public/svgs';
+import ScrollRevealSlideAnimation from '@components/common/ScrollRevealSlideAnimation';
 import CountUp from 'react-countup';
-import ScrollRevealRender from '../../common/ScrollRevealRender';
+import ScrollRevealRender from '@components/common/ScrollRevealRender';
 
-type AboutProps = {};
-
-const Identity: React.FunctionComponent<AboutProps> = () => {
+const Identity: React.FC = () => {
   return (
     <Wrapper>
       <ResponsiveLayout css={{ flex: 1, paddingTop: 0, paddingBottom: 0 }}>
@@ -77,13 +74,13 @@ const Identity: React.FunctionComponent<AboutProps> = () => {
           </ScrollRevealRender>
           <ScrollRevealRender>
             <Box className="content">
-              <CountUp duration={1.7} end={45} className="title" suffix="명" />
+              <CountUp duration={1.7} end={68} className="title" suffix="명" />
               <Text className="description">활동 멤버</Text>
             </Box>
           </ScrollRevealRender>
           <ScrollRevealRender>
             <Box className="content">
-              <CountUp duration={1.7} end={80} className="title" suffix="개" />
+              <CountUp duration={1.7} end={84} className="title" suffix="개" />
               <Text className="description">누적 프로젝트</Text>
             </Box>
           </ScrollRevealRender>

@@ -1,8 +1,11 @@
-/** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { Box, styled } from '@mui/material';
 
-export const TagList = ({ tags }: { tags: Array<string> }) => {
+type TagListProps = {
+  tags: Array<string>;
+};
+
+export const TagList: React.FC<TagListProps> = ({ tags }) => {
   return (
     <TagListWrapper>
       <Box className="list">

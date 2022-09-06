@@ -1,4 +1,3 @@
-import React from 'react';
 import { Editor as TuiEditor, EditorProps } from '@toast-ui/react-editor';
 
 export interface TuiEditorWithForwardedProps extends EditorProps {

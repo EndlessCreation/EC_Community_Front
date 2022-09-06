@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { css, keyframes } from '@emotion/react';
 import { styled } from '@mui/material';
-
-import { useWindowScrollEvent } from '../../lib/hooks/useWindowScrollEvent';
-import { checkIsInViewport } from '../../lib/util/checkIsInViewport';
+import { useWindowScrollEvent } from '@lib/hooks/useWindowScrollEvent';
+import { checkIsInViewport } from '@lib/util/checkIsInViewport';
 
 export type DirectionType = 'top' | 'bottom' | 'right' | 'left';
 
@@ -37,9 +36,9 @@ function ScrollRevealSlideAnimation({
   return (
     <Wrapper
       ref={elemRef}
-      isInViewPort={isInViewPort}
+      isinviewport={+isInViewPort}
       direction={direction}
-      startPosition={startPosition}
+      startposition={startPosition}
       speed={speed}
     >
       {children}
@@ -50,12 +49,12 @@ function ScrollRevealSlideAnimation({
 export default ScrollRevealSlideAnimation;
 
 const Wrapper = styled('div')<{
-  isInViewPort: boolean;
+  isinviewport: number;
   direction: DirectionType;
-  startPosition: number;
+  startposition: number;
   speed: number;
 }>`
-  ${({ isInViewPort, direction, startPosition, speed }) => {
+  ${({ isinviewport, direction, startposition, speed }) => {
     const axis = direction === 'top' || direction === 'bottom' ? 'Y' : 'X';
     const dir = direction === 'bottom' || direction === 'right' ? -1 : 1;
 
@@ -66,19 +65,19 @@ const Wrapper = styled('div')<{
     `;
     const keyframe = keyframes`
         0% { transform: ${translateFrom}; opacity: 0; }
-        ${(100 * (startPosition - 1)) / startPosition}% { transform: ${translateFrom}; opacity: 0; }
+        ${(100 * (startposition - 1)) / startposition}% { transform: ${translateFrom}; opacity: 0; }
         100% { transform: ${translateTo}; opacity: 1; }
     `;
 
     const animationRule = css`
-      ${keyframe} ${startPosition / speed}s ease
+      ${keyframe} ${startposition / speed}s ease
     `;
 
-    // isInViewPort가 true라면
+    // isinviewport가 true라면
     // 방향에 따라 translate(이동) 애니메이션을 실행한다.
     return css`
-      ${!isInViewPort && defaultStyle}
-      animation: ${isInViewPort && animationRule};
+      ${!isinviewport && defaultStyle}
+      animation: ${isinviewport && animationRule};
       width: 100%;
     `;
   }}

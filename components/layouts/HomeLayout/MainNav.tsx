@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import {
   Box,
@@ -16,13 +15,10 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import ActiveLink from './ActiveLink';
-
 import InboxIcon from '@mui/icons-material/Inbox';
 import BookIcon from '@mui/icons-material/Book';
 import EventAvailableIcon from '@mui/icons-material/EventAvailable';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
-
-type MainNavProps = {};
 
 const index = [
   { title: '프로젝트', url: '/project', icon: <InboxIcon /> },
@@ -31,7 +27,7 @@ const index = [
   { title: '지원하기', url: '/recruit', icon: <AccountBoxIcon /> },
 ];
 
-const MainNav = ({}: MainNavProps) => {
+const MainNav: React.FC = () => {
   const isScrolled = useScrollTrigger({ disableHysteresis: true, threshold: 50 });
   const [open, setOpen] = useState(false);
   const route = useRouter();
@@ -44,11 +40,11 @@ const MainNav = ({}: MainNavProps) => {
   };
 
   return (
-    <Header isScrolled={isScrolled} elevation={isScrolled ? 1 : 0}>
+    <Header isscrolled={+isScrolled} elevation={+isScrolled}>
       <Link href="/">
         <a>Endless Creation</a>
       </Link>
-      <LinkList isScrolled={isScrolled}>
+      <LinkList isscrolled={+isScrolled}>
         {index.map((item) => (
           <ActiveLink key={item.url} href={item.url} activeClassName="active">
             <a className="nav-link">{item.title}</a>
@@ -87,7 +83,7 @@ const MainNav = ({}: MainNavProps) => {
 export default MainNav;
 
 const Header = styled(Box)<any>(
-  ({ isScrolled }: any) => css`
+  ({ isscrolled }: any) => css`
     width: 100vw;
     height: 4rem;
     padding: 0 2rem;
@@ -97,12 +93,12 @@ const Header = styled(Box)<any>(
     align-items: center;
     justify-content: space-between;
     transition: all 0.3s ease;
-    background-color: ${isScrolled ? '#ffffffc7' : 'transparent'};
-    backdrop-filter: ${isScrolled && 'blur(5px)'};
+    background-color: ${isscrolled ? '#ffffffc7' : 'transparent'};
+    backdrop-filter: ${isscrolled && 'blur(5px)'};
     z-index: 1000;
     & .menu {
       display: none;
-      color: ${isScrolled ? 'black' : 'white'};
+      color: ${isscrolled ? 'black' : 'white'};
       & .icon {
         width: 1.7rem;
         height: 1.7rem;
@@ -114,7 +110,7 @@ const Header = styled(Box)<any>(
     }
     & > a {
       font-weight: bold;
-      color: ${isScrolled ? '#1a1a1a' : '#FFF'};
+      color: ${isscrolled ? '#1a1a1a' : '#FFF'};
     }
     @media screen and (max-width: 768px) {
       & .menu {
@@ -125,7 +121,7 @@ const Header = styled(Box)<any>(
 );
 
 const LinkList = styled(Box)<any>(
-  ({ isScrolled }: any) => css`
+  ({ isscrolled }: any) => css`
     display: flex;
     height: 100%;
     font-size: 14px;
@@ -133,9 +129,9 @@ const LinkList = styled(Box)<any>(
       height: 100%;
       line-height: 4rem;
       width: 5.9375rem;
-      color: ${isScrolled ? '#1a1a1a' : '#ffffff'};
+      color: ${isscrolled ? '#1a1a1a' : '#ffffff'};
       &:hover {
-        color: ${isScrolled ? '#1a1a1a' : '#ededed'};
+        color: ${isscrolled ? '#1a1a1a' : '#ededed'};
         font-weight: 900;
       }
       &.active {

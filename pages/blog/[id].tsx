@@ -1,6 +1,5 @@
 import { useRouter } from 'next/dist/client/router';
-import React from 'react';
-import BlogContainer from '../../containers/home/BlogContainer';
+import BlogContainer from '@containers/home/BlogContainer';
 
 const BlogPage = () => {
   const { query }: any = useRouter();

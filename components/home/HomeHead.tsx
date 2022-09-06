@@ -1,8 +1,6 @@
-/** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { Box, styled } from '@mui/material';
-import React from 'react';
-import { Text } from '../common';
+import { Text } from '@components/common';
 
 type HomeHeadProps = {
   title: string;
@@ -10,7 +8,7 @@ type HomeHeadProps = {
   src?: string;
 };
 
-const HomeHead = ({ title, description, src }: HomeHeadProps) => {
+const HomeHead: React.FC<HomeHeadProps> = ({ title, description, src }) => {
   return (
     <HomeHeadWrapper
       id="back-to-top-anchor"

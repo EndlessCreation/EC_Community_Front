@@ -1,22 +1,21 @@
-/** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { Box, Card, IconButton, styled } from '@mui/material';
-import { Blog } from '../../types';
+import { Blog as BlogType } from '../../types';
 import dynamic from 'next/dynamic';
-import { TuiViewerWithForwardedProps } from '../common/Viewer';
-import { Text } from '../common';
+import { TuiViewerWithForwardedProps } from '@components/common/Viewer';
+import { Text } from '@components/common';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useRouter } from 'next/dist/client/router';
 
 type BlogProps = {
-  blog: Blog;
+  blog: BlogType;
 };
 
 const Viewer = dynamic<TuiViewerWithForwardedProps>(() => import('../common/Viewer'), {
   ssr: false,
 });
 
-const Blog = ({ blog }: BlogProps) => {
+const Blog: React.FC<BlogProps> = ({ blog }) => {
   const router = useRouter();
 
   return (
