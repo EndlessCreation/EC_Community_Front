@@ -41,13 +41,11 @@ const MainNav: React.FC = () => {
 
   return (
     <Header isscrolled={+isScrolled} elevation={+isScrolled}>
-      <Link href="/">
-        <a>Endless Creation</a>
-      </Link>
+      <Link href="/">Endless Creation</Link>
       <LinkList isscrolled={+isScrolled}>
         {index.map((item) => (
           <ActiveLink key={item.url} href={item.url} activeClassName="active">
-            <a className="nav-link">{item.title}</a>
+            <p className="nav-link">{item.title}</p>
           </ActiveLink>
         ))}
       </LinkList>
