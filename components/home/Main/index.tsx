@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import Top from './Top';
 import Identity from './Identity';
 import Activity from './Activity';

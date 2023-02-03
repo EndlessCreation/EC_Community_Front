@@ -1,6 +1,5 @@
-import React from 'react';
-import Schedule from '../components/home/Schedule';
-import MainLayout from '../components/layouts/HomeLayout';
+import Schedule from '@components/home/Schedule';
+import MainLayout from '@components/layouts/HomeLayout';
 
 const SchedulePage = () => {
   return (

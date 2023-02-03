@@ -1,4 +1,4 @@
-import { uploadImage } from '../../module/api/image';
+import { uploadImage } from '../../modules/api/image';
 import { css } from '@emotion/react';
 
 const renderer = {

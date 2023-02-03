@@ -1,19 +1,15 @@
-/** @jsxImportSource @emotion/react */
 import { css, keyframes } from '@emotion/react';
-import { Box, Button, styled } from '@mui/material';
-import { Text } from '../../common';
+import { Box, styled } from '@mui/material';
+import { Text } from '@components/common';
 
-type TopProps = {};
-
-const Top = ({}: TopProps) => {
+const Top: React.FC = () => {
   return (
     <Wrapper id="back-to-top-anchor">
       <Box>
         <Text css={{ fontSize: '3.25rem' }}>성장하는 즐거움</Text>
         <Text css={{ fontSize: '4rem' }}>Endless Creation</Text>
-        <Text css={{ fontSize: '1.75rem' }}>신입 기수 모집중(~3.4)</Text>
-        <Text css={{ fontSize: '1.75rem' }}>32기 여러분들을 기다리고 있어요!</Text>
-        <Button
+        <Text css={{ fontSize: '1.75rem' }}>32기 본격 활동중!</Text>
+        {/* <Button
           className="recruit"
           css={css`
             animation: ${wiggle} 2s linear infinite;
@@ -26,7 +22,7 @@ const Top = ({}: TopProps) => {
           >
             모집 내용 자세히 보기
           </a>
-        </Button>
+        </Button> */}
       </Box>
     </Wrapper>
   );

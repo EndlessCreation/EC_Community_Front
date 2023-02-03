@@ -1,8 +1,7 @@
-/** @jsxImportSource @emotion/react */
 import { useCallback, useState } from 'react';
 import { css } from '@emotion/react';
 import { Box, styled } from '@mui/material';
-import { ResponsiveLayout, Section, Text } from '../common';
+import { ResponsiveLayout, Section, Text } from '@components/common';
 import HomeHead from './HomeHead';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';

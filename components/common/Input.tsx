@@ -1,9 +1,9 @@
-/** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { styled, TextField } from '@mui/material';
 
 type InputProps<T = any> = { value: T; onChange: (e?: any) => void; [k: string]: any };
-const Input = ({ value, onChange, ...props }: InputProps) => (
+
+const Input: React.FC<InputProps> = ({ value, onChange, ...props }) => (
   <StyledTextField
     className="input"
     size="small"

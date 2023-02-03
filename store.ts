@@ -1,19 +1,21 @@
-import { applyMiddleware, compose, createStore, Store } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import logger from 'redux-logger';
+import { createLogger } from 'redux-logger';
 import penderMiddleware from 'redux-pender/lib/middleware';
-import rootReducer, { RootState } from './module';
+import { configureStore } from '@reduxjs/toolkit';
+import { useDispatch } from 'react-redux';
+import rootReducer from './modules';
 import { createWrapper } from 'next-redux-wrapper';
 
-const store = (): any => {
-  const middlewares = [penderMiddleware(), logger];
-  const enhancer =
-    process.env.NODE_ENV === 'production'
-      ? compose(applyMiddleware(...middlewares))
-      : composeWithDevTools(applyMiddleware(...middlewares));
-  const store = createStore(rootReducer, enhancer);
-  return store;
-};
+const middlewares = [createLogger(), penderMiddleware()];
 
+const store = configureStore({
+  reducer: rootReducer,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(middlewares),
+  devTools: process.env.NODE_ENV !== 'production',
+});
+
+const makeStore = () => store;
+
+export const useAppDispatch = () => useDispatch<typeof store.dispatch>();
+export type RootState = ReturnType<typeof store.getState>;
+export const wrapper = createWrapper(makeStore, { debug: true });
 export default store;
-export const wrapper = createWrapper<Store<RootState>>(store, { debug: true });
