@@ -21,20 +21,17 @@
     "incremental": true,
     "jsxImportSource": "@emotion/react",
     "paths": {
-      "react": [
-        "./node_modules/@types/react"
-      ],
       "@pages/*": [
         "pages/*"
       ],
       "@pages": [
         "pages"
       ],
-      "@containers/*": [
-        "containers/*"
+      "@data/*": [
+        "data/*"
       ],
-      "@containers": [
-        "containers"
+      "@data": [
+        "data"
       ],
       "@components/*": [
         "components/*"
@@ -53,12 +50,6 @@
       ],
       "@constants": [
         "constants"
-      ],
-      "@modules/*": [
-        "modules/*"
-      ],
-      "@modules": [
-        "modules"
       ],
       "@public/*": [
         "public/*"
