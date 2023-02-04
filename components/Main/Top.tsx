@@ -1,7 +1,7 @@
 import { css, keyframes } from '@emotion/react';
 import { Box, Button, styled } from '@mui/material';
 import { Text } from '@components/common';
-import data from 'metadata';
+import { clubData } from '@data/local/metadata';
 
 const Top: React.FC = () => {
   return (
@@ -9,10 +9,10 @@ const Top: React.FC = () => {
       <Box>
         <Text css={{ fontSize: '3.25rem' }}>성장하는 즐거움</Text>
         <Text css={{ fontSize: '4rem' }}>Endless Creation</Text>
-        {data.isRecruiting ? (
+        {clubData.isRecruiting ? (
           <>
             <Text css={{ fontSize: '1.75rem' }}>
-              {data.currentGeneration}기 모집중! ({data.recruitPeriod})
+              {clubData.currentGeneration}기 모집중! ({clubData.recruitPeriod})
             </Text>
             <Button
               className="recruit"
@@ -20,13 +20,13 @@ const Top: React.FC = () => {
                 animation: ${wiggle} 2s linear infinite;
               `}
             >
-              <a href={data.recruitNoticeAddress} target="_blank" rel="noreferrer">
+              <a href={clubData.recruitNoticeAddress} target="_blank" rel="noreferrer">
                 모집 내용 자세히 보기
               </a>
             </Button>
           </>
         ) : (
-          <Text css={{ fontSize: '1.75rem' }}>{data.currentGeneration - 1}기 본격 활동중!</Text>
+          <Text css={{ fontSize: '1.75rem' }}>{clubData.currentGeneration - 1}기 본격 활동중!</Text>
         )}
       </Box>
     </Wrapper>

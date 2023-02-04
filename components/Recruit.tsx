@@ -15,65 +15,10 @@ import StepLabel from '@mui/material/StepLabel';
 import PersonSearchRoundedIcon from '@mui/icons-material/PersonSearchRounded';
 import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
 import HowToRegRoundedIcon from '@mui/icons-material/HowToRegRounded';
-
 import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
 import { StepIconProps } from '@mui/material/StepIcon';
 import Head from 'next/head';
-
-const wantList = [
-  '소속에 상관없이, 개발자 / 디자이너로 활동이 가능한 분',
-  '협업하며 창작하는 즐거움을 경험하고 싶으신 분',
-  '다양한 사람들과 폭넓고 깊이 있는 네트워킹을 원하시는 분',
-];
-
-const QnAList = [
-  {
-    id: 100,
-    summary: '[공통] 활동 기간은 어떻게 되나요?',
-    detail:
-      '3월부터 시작하여 12월까지 활동하게 되어요. 크게 1학기와 2학기 활동으로 나누어져 있고, 세부 활동 계획은 추후 모집 공고를 통해 확인하실 수 있어요!',
-  },
-  {
-    id: 150,
-    summary: '[공통] 개발부와 학술부 모집의 차이가 무엇인가요?',
-    detail:
-      '개발부는 주로 팀 프로젝트 위주로 진행하고, 학술부는 세미나와 스터디 위주로 진행합니다.',
-  },
-  {
-    id: 200,
-    summary: '[공통] 시험 기간에도 활동하나요?',
-    detail: '시험 기간 2주간은 동아리 활동을 하지 않아요. ',
-  },
-  {
-    id: 300,
-    summary: '[공통] 개발하는 분야가 정해져 있나요?',
-    detail:
-      '개발 분야가 정해져 있지 않아요! 웹, 앱, 게임, 보안 등 다양한 분야의 개발을 하고 있어요!',
-  },
-  {
-    id: 400,
-    summary: '[공통] 대회에도 참여하나요?',
-    detail:
-      '2학기 활동인 EC:Advance 활동을 대회를 목표로 프로젝트를 진행 할 수 있어요. 1학기에 대회에 참가 하고싶으신 분은 마음이 맞는 팀원과 함께 대회에 참가하셔도 좋아요.',
-  },
-  {
-    id: 500,
-    summary: '[공통] 2학기에도 동아리원 모집이 있나요?',
-    detail: 'EC:Advance를 진행하기 위한 팀원이 부족한 경우 추가 모집을 할 계획이에요.',
-  },
-];
-
-const steps1 = [
-  { id: 100, label: '서류 접수', date: '2.12 ~ 2.25' },
-  { id: 200, label: '면접 일정', date: '2.20 or 2.27 or 3.6' },
-  { id: 300, label: '최종합격', date: '2.21 or 2.28 or 3.7' },
-];
-
-const steps2 = [
-  { id: 100, label: '서류 접수', date: '2.28 ~ 3.4' },
-  { id: 200, label: '면접 일정', date: '3.6' },
-  { id: 300, label: '최종합격', date: '3.7' },
-];
+import { developSteps, QnAList, studySteps, wantList } from '@data/local/metadata';
 
 type RecruitProps = {};
 
@@ -98,9 +43,9 @@ const Recruit: React.FunctionComponent<RecruitProps> = () => {
 
       <ResponsiveLayout>
         <Section>
-          <Text className="title">2022년도 모집 일정</Text>
+          <Text className="title">{new Date().getFullYear()}년도 모집 일정</Text>
           <Box className="recruit" sx={{ display: 'flex', flexDirection: 'column', gap: '50px' }}>
-            <Process>
+            {/* <Process>
               <Box className="head">
                 <Text className="title">개발부</Text>
                 <a
@@ -125,17 +70,17 @@ const Recruit: React.FunctionComponent<RecruitProps> = () => {
                   </Step>
                 ))}
               </Stepper>
-            </Process>
+            </Process> */}
             <Process>
               <Box className="head">
                 <Text className="title">학술부</Text>
               </Box>
               <Stepper
                 alternativeLabel
-                activeStep={steps1.length}
+                activeStep={developSteps.length}
                 connector={<ColorlibConnector />}
               >
-                {steps2.map((item, index) => (
+                {studySteps.map((item, index) => (
                   <Step key={index}>
                     <StepLabel StepIconComponent={ColorlibStepIcon}>
                       <Text css={{ fontWeight: 'bold' }}>{item.label}</Text>
@@ -162,25 +107,20 @@ const Recruit: React.FunctionComponent<RecruitProps> = () => {
 
         <Section>
           <Text className="title">자주 묻는 질문</Text>
-          <div>
-            {QnAList.map((item) => {
-              const { id, summary, detail } = item;
-              return (
-                <Accordion
-                  key={id}
-                  expanded={expanded === `panel${id}`}
-                  onChange={handleChange(`panel${id}`)}
-                >
-                  <AccordionSummary aria-controls={`panel${id}d-content`} id={`panel${id}d-header`}>
-                    <Typography>Q : {summary}</Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    <Typography>A : {detail}</Typography>
-                  </AccordionDetails>
-                </Accordion>
-              );
-            })}
-          </div>
+          {QnAList.map((item, index) => (
+            <Accordion
+              key={index}
+              expanded={expanded === `panel${index}`}
+              onChange={handleChange(`panel${index}`)}
+            >
+              <AccordionSummary>
+                <Typography>Q : {item.summary}</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography>A : {item.detail}</Typography>
+              </AccordionDetails>
+            </Accordion>
+          ))}
         </Section>
       </ResponsiveLayout>
     </Box>

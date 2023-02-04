@@ -5,7 +5,7 @@ import { CooperationIcon, GrowthIcon, SharingIcon } from 'public/svgs';
 import ScrollRevealSlideAnimation from '@components/common/ScrollRevealSlideAnimation';
 import CountUp from 'react-countup';
 import ScrollRevealRender from '@components/common/ScrollRevealRender';
-import clubData from 'metadata';
+import { clubData } from '@data/local/metadata';
 
 const identities = [
   {
