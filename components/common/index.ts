@@ -49,6 +49,5 @@ export const InteractionLayout = styled(Box)(
   `,
 );
 
-export { default as PostCard } from '../Card/PostCard';
+export { default as PostCard } from './Card/PostCard';
 export { default as TagList } from './TagList';
-export { default as CustomSlider } from './CustomSlider';

@@ -7,4 +7,3 @@ Host: https://endless-creation.com/
 
 # Sitemaps
 Sitemap: https://endless-creation.com/sitemap.xml
-Sitemap: https://endless-creation.com/sitemap-0.xml

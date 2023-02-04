@@ -1,5 +1,5 @@
-import Project from '@components/home/Project';
-import MainLayout from '@components/layouts/HomeLayout';
+import Project from '@components/Project';
+import MainLayout from '@components/layouts';
 
 const ProjectPage = () => {
   return (

@@ -1,7 +1,6 @@
-import { uploadImage } from '../../modules/api/image';
 import { css } from '@emotion/react';
 
-const renderer = {
+export const renderer = {
   question(node: any, context: any) {
     return [
       { type: 'openTag', tagName: 'div', outerNewLine: true, classNames: ['question'] },
@@ -17,16 +16,8 @@ const renderer = {
     ];
   },
 };
-const hooks = {
-  addImageBlobHook: async function (blob: any, callback: any) {
-    let formData = new FormData();
-    formData.append('files', blob);
-    const uploadedImageUrl = await uploadImage(formData);
-    callback(uploadedImageUrl, 'alt text');
-  },
-};
 
-const editorCss = css`
+export const editorCss = css`
   .toastui-editor-contents > div {
     display: flex;
     flex-direction: column;
@@ -102,9 +93,3 @@ const editorCss = css`
     border-radius: 5px;
   }
 `;
-
-export default {
-  renderer,
-  hooks,
-  editorCss,
-};

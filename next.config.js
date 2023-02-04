@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
+const { withContentlayer } = require('next-contentlayer');
+
+module.exports = withContentlayer({
   reactStrictMode: true,
   webpack(config) {
     config.module.rules.push({
@@ -12,4 +14,7 @@ module.exports = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-};
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+});

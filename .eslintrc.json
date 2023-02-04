@@ -1,6 +1,18 @@
 {
-  "plugins": [
+  "extends": [
+    "next/core-web-vitals",
+    "airbnb",
+    "airbnb-typescript",
+    "airbnb-typescript/base",
     "prettier"
   ],
-  "extends": "next/core-web-vitals"
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/function-component-definition": "off",
+    "arrow-body-style": "off",
+    "@next/next/no-img-element": "off"
+  }
 }
