@@ -21,6 +21,9 @@
     "incremental": true,
     "jsxImportSource": "@emotion/react",
     "paths": {
+      "contentlayer/generated": [
+        "./.contentlayer/generated"
+      ],
       "@pages/*": [
         "pages/*"
       ],
@@ -64,6 +67,7 @@
     "**/*.ts",
     "**/*.tsx",
     "lib/scripts/sitemap-common.js",
+    ".contentlayer/generated"
   ],
   "exclude": [
     "node_modules"

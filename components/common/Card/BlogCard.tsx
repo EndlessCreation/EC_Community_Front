@@ -1,35 +1,27 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { Avatar, Box, Card, Grid, styled } from '@mui/material';
+import { Post } from 'contentlayer/generated';
 import { useRouter } from 'next/dist/client/router';
-import { Blog } from '../../../lib/types';
 import { TagList, Text } from '..';
 
-const BlogCard = ({ blog, ...props }: { blog: Blog; [k: string]: any }) => {
+const BlogCard = ({ post, ...props }: { post: Post; [k: string]: any }) => {
   const router = useRouter();
 
   return (
-    <CardWrapper
-      container
-      component={Card}
-      elevation={2}
-      onClick={() => {
-        router.push(`/blog/${blog.id}`);
-      }}
-      {...props}
-    >
+    <CardWrapper container component={Card} elevation={2} {...props}>
       <Grid item xs={12} md={10} css={{ height: '100%' }}>
         <Box className="info">
-          <Text className="title">{blog.title}</Text>
-          <Text className="content">{blog.content}</Text>
-          <TagList tags={blog.tags} />
+          <Text className="title">{post.title}</Text>
+          <Text className="content">{post.body.raw}</Text>
+          <TagList tags={post.tags} />
         </Box>
       </Grid>
       <Grid item xs={0} md={2} sx={{ display: { xs: 'none', md: 'flex' } }}>
         <Box className="author">
-          <Avatar className="icon" src={blog.author.image} />
-          <Text className="name">{blog.author.name}</Text>
-          <Text className="date">{blog.createdAt.toLocaleDateString()}</Text>
+          <Avatar className="icon" src={post.author.image} />
+          <Text className="name">{post.author.name}</Text>
+          <Text className="date">{post.createdAt}</Text>
         </Box>
       </Grid>
     </CardWrapper>

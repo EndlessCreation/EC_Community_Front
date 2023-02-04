@@ -5,9 +5,14 @@ import HomeHead from './HomeHead';
 import SearchIcon from '@mui/icons-material/Search';
 import Head from 'next/head';
 import { BlogCard } from './common/Card';
-import { testBlog1, testBlog2 } from '@lib/types';
+import { Post } from 'contentlayer/generated';
+import Link from 'next/link';
 
-const BlogList: React.FC = () => {
+interface BlogListProps {
+  posts: Post[];
+}
+
+const BlogList = ({ posts }: BlogListProps) => {
   return (
     <Box>
       <Head>
@@ -30,8 +35,11 @@ const BlogList: React.FC = () => {
         />
         <Section css={{ paddingTop: '2rem' }}>
           <List>
-            <BlogCard className="blogCard" blog={testBlog2} />
-            <BlogCard className="blogCard" blog={testBlog1} />
+            {posts.map((post) => (
+              <Link key={post._id} href={`/blog/${post._raw.flattenedPath}`} passHref>
+                <BlogCard key={post._id} className="blogCard" post={post} />
+              </Link>
+            ))}
           </List>
         </Section>
       </ResponsiveLayout>
@@ -49,8 +57,5 @@ const Search = styled(OutlinedInput)(css`
 const List = styled(Box)(css`
   display: flex;
   flex-direction: column;
-
-  & .blogCard + .blogCard {
-    margin-top: 2.5rem;
-  }
+  gap: 2rem;
 `);

@@ -1,37 +1,37 @@
 import { css } from '@emotion/react';
 import { Box, Card, IconButton, styled } from '@mui/material';
-import { Blog as BlogType } from '../lib/types';
 import dynamic from 'next/dynamic';
 import { TuiViewerWithForwardedProps } from '@components/common/Viewer';
 import { Text } from '@components/common';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useRouter } from 'next/dist/client/router';
+import { Post } from 'contentlayer/generated';
 
 type BlogProps = {
-  blog: BlogType;
+  post: Post;
 };
 
 const Viewer = dynamic<TuiViewerWithForwardedProps>(() => import('./common/Viewer'), {
   ssr: false,
 });
 
-const Blog: React.FC<BlogProps> = ({ blog }) => {
+const Blog: React.FC<BlogProps> = ({ post }) => {
   const router = useRouter();
 
   return (
     <Wrapper>
       <InnerWrapper elevation={3}>
         <Head>
-          <IconButton>
-            <ArrowBackIcon
-              onClick={() => {
-                router.push('/blog');
-              }}
-            />
+          <IconButton
+            onClick={() => {
+              router.push('/blog');
+            }}
+          >
+            <ArrowBackIcon />
           </IconButton>
-          <Text className="title">{blog.title}</Text>
+          <Text className="title">{post.title}</Text>
         </Head>
-        <Viewer initialValue={blog.content} />
+        <Viewer initialValue={post.body.raw} />
       </InnerWrapper>
     </Wrapper>
   );
