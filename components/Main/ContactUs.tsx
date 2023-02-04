@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import { Box, styled } from '@mui/material';
 import { ResponsiveLayout, Text } from '@components/common';
 import ScrollRevealSlideAnimation from '@components/common/ScrollRevealSlideAnimation';
-import Footer from '@components/layouts/HomeLayout/Footer';
+import Footer from '@components/layouts/Footer';
 
 const ContactUs: React.FC = () => {
   return (
@@ -49,7 +49,7 @@ const ContactUs: React.FC = () => {
           </Box>
         </Content>
       </ResponsiveLayout>
-      <Footer></Footer>
+      <Footer />
     </Wrapper>
   );
 };

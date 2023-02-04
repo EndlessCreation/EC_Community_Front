@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import { Box, Card, IconButton, styled } from '@mui/material';
-import { Blog as BlogType } from '../../types';
+import { Blog as BlogType } from '../lib/types';
 import dynamic from 'next/dynamic';
 import { TuiViewerWithForwardedProps } from '@components/common/Viewer';
 import { Text } from '@components/common';
@@ -11,7 +11,7 @@ type BlogProps = {
   blog: BlogType;
 };
 
-const Viewer = dynamic<TuiViewerWithForwardedProps>(() => import('../common/Viewer'), {
+const Viewer = dynamic<TuiViewerWithForwardedProps>(() => import('./common/Viewer'), {
   ssr: false,
 });
 

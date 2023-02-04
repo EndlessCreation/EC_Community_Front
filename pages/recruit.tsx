@@ -1,5 +1,5 @@
-import Recruit from '@components/home/Recruit';
-import MainLayout from '@components/layouts/HomeLayout';
+import Recruit from '@components/Recruit';
+import MainLayout from '@components/layouts';
 
 const RecruitPage = () => {
   return (

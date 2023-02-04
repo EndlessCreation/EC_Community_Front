@@ -1,181 +1,24 @@
-export type Token = {
-  accessToken: string;
-};
-
 export type User = {
   id: number;
-  year: number | null;
-  name: string | null;
+  /** 유저 이름입니다. */
+  name: string;
+  /** 유저 이메일입니다. */
   email: string;
-  skills: Array<string>;
-  isActive: boolean;
-  role: Array<string> | null; // 한글로 ex) 회장, 부회장, 총무, 인사부장, 프론트 리더, 백엔드 리더, ...
-  status: 'auth' | 'wait' | 'login';
-  isAdmin: boolean;
-  isLeader: boolean;
+  /** 유저 프로필 사진입니다. */
   image: string;
 };
 
-export const testUser1: User = {
-  id: 1,
-  year: 28,
-  name: '황인서',
-  email: 'sjsjsj1246@gmail.com',
-  skills: ['react', 'react-native', 'next', 'typescript'],
-  isActive: true,
-  role: ['회장'],
-  status: 'login',
-  isAdmin: true,
-  isLeader: true,
-  image: 'https://avatars.githubusercontent.com/u/24623403?v=4',
-};
-
-export const testUser2: User = {
-  id: 2,
-  year: 28,
-  name: '김윤성',
-  email: 'kysagoo@gmail.com',
-  skills: ['express', 'nest', 'typescript', 'devOps'],
-  isActive: true,
-  role: ['인사부장'],
-  status: 'login',
-  isAdmin: true,
-  isLeader: false,
-  image: 'https://avatars.githubusercontent.com/u/77562357?v=4',
-};
-
-export const testUser3: User = {
-  id: 3,
-  year: 31,
-  name: '이상준',
-  email: 'lsj96412@gmail.com',
-  skills: ['express', 'nest', 'typescript', 'devOps'],
-  isActive: true,
-  role: ['홍보부장'],
-  status: 'login',
-  isAdmin: true,
-  isLeader: false,
-  image: 'https://avatars.githubusercontent.com/u/66112027?v=4',
-};
-
-export const testUser4: User = {
-  id: 4,
-  year: 28,
-  name: '조재영',
-  email: 'jdyj1235@gmail.com',
-  skills: ['express', 'nest', 'typescript', 'devOps'],
-  isActive: true,
-  role: ['재정부장'],
-  status: 'login',
-  isAdmin: true,
-  isLeader: false,
-  image: 'https://avatars.githubusercontent.com/u/41135099?v=4',
-};
-
-export const testUser5: User = {
-  id: 5,
-  year: 27,
-  name: '김건훈',
-  email: 'dnatuna123@gmail.com',
-  skills: ['express', 'nest', 'typescript', 'devOps'],
-  isActive: true,
-  role: ['개발부장'],
-  status: 'login',
-  isAdmin: true,
-  isLeader: true,
-  image: 'https://avatars.githubusercontent.com/u/28949165?v=4',
-};
-
-export const testUser6: User = {
-  id: 6,
-  year: 28,
-  name: '오정진',
-  email: 'ojj991123@gmail.com',
-  skills: ['react', 'next', 'typescript'],
-  isActive: true,
-  role: ['학술부장'],
-  status: 'login',
-  isAdmin: true,
-  isLeader: false,
-  image: 'https://avatars.githubusercontent.com/u/33178048?v=4',
-};
-
-export type Activity = {
+export type Project = {
   id: number;
   title: string;
   category: 'study' | 'competition' | 'advance';
   status: 'recruit' | 'progress' | 'finish';
-  member: Array<User>;
-  startDate: Date | null;
-  endDate: Date | null;
-  image: string | null;
-  source: string | null;
-  description: string | null;
+  startDate: string;
+  endDate: string;
+  image: string;
+  source: string;
+  description: string;
   skills: Array<string>;
-};
-
-export const testActivity1: Activity = {
-  id: 1,
-  title: '모여런',
-  category: 'competition',
-  status: 'finish',
-  member: [testUser1, testUser2],
-  startDate: new Date('2021-09-12'),
-  endDate: new Date('2021-11-12'),
-  image:
-    'https://user-images.githubusercontent.com/24623403/146597330-b4cafe41-c5c8-406f-a28f-3080024d11d1.png',
-  source: 'https://github.com/MoyeoRun',
-  description:
-    'MoyeoRun은 실시간으로 같이 달릴 수 있는 모바일 앱 플랫폼입니다. 같은 공간에서 달리지 않아도 앱 서비스를 통해 함께 달릴 수 있도록 지원합니다.',
-  skills: ['react', 'react-native', 'nest', 'docker', 'kafka', 'k8s', 'FCM'],
-};
-
-export const testActivity2: Activity = {
-  id: 2,
-  title: 'Upgle',
-  category: 'competition',
-  status: 'finish',
-  member: [testUser1],
-  startDate: new Date('2021-08-12'),
-  endDate: new Date('2021-10-12'),
-  image:
-    'https://user-images.githubusercontent.com/24623403/146601381-9eac6210-0f45-46b2-bbfe-d8ebc2355f11.png',
-  source: 'https://github.com/Jandy-SeoulTech/Jandy_Web_Front',
-  description:
-    'Upgle은 웹 사이트 환경에서 자신이 잘하는 분야를 공유하는 공유자와 배우고 싶은 분야를 배우는 사람들이 실시간으로 인터렉션 할 수 있게 도와주는 사이트입니다.',
-  skills: ['react', 'Redux', 'material-ui'],
-};
-
-export const testActivity3: Activity = {
-  id: 3,
-  title: 'Gamp',
-  category: 'competition',
-  status: 'finish',
-  member: [testUser1],
-  startDate: new Date('2021-08-12'),
-  endDate: new Date('2021-10-12'),
-  image:
-    'https://user-images.githubusercontent.com/28949165/128905429-1cdcc41c-e570-4819-a112-608936563d79.png',
-  source: 'https://github.com/junction-hippy/Gamp_Front',
-  description:
-    'Gamp는 음성 채팅 서비스가 없는 게임에서 게임이 시작되면 팀원들과 자동으로 음성 매칭을 해주는 서비스입니다.',
-  skills: ['react', 'Redux', 'material-ui'],
-};
-
-export const testActivity4: Activity = {
-  id: 4,
-  title: 'JOIN',
-  category: 'competition',
-  status: 'finish',
-  member: [testUser1, testUser2],
-  startDate: new Date('2021-09-12'),
-  endDate: new Date('2021-11-12'),
-  image:
-    'https://user-images.githubusercontent.com/24623403/152966700-aa767bc2-9e36-41c3-aa09-e5e3a87640e9.png',
-  source: '',
-  description:
-    'JOIN은 교육용 플랫폼으로 소통과 정보전달이 수월해 학생 간 협업을 증진시킬 수 있고 자동 평가를 통해 선생님과 교수님의 부담을 덜어드릴 수 있는 과제 협업, 평가 학습 블로그입니다.',
-  skills: ['react', 'redux', 'koa', 'docker'],
 };
 
 export type Blog = {
@@ -506,7 +349,12 @@ gatsby-config.js 에 다음 설정을 추가해줍니다.
   `,
   createdAt: new Date('2021-04-12'),
   tags: ['react', 'gatsby'],
-  author: testUser1,
+  author: {
+    id: 1,
+    name: '황인서',
+    email: 'sjsjsj1246@gmail.com',
+    image: 'https://avatars.githubusercontent.com/u/24623403?v=4',
+  },
   image:
     'https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1373&q=80',
 };
@@ -660,7 +508,12 @@ export const testBlog2: Blog = {
   `,
   createdAt: new Date('2021-04-12'),
   tags: ['network', 'http'],
-  author: testUser5,
+  author: {
+    id: 2,
+    name: '김건훈',
+    email: 'dnatuna123@gmail.com',
+    image: 'https://avatars.githubusercontent.com/u/28949165?v=4',
+  },
   image:
     'https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1373&q=80',
 };

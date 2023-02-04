@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { Avatar, Box, Card, styled } from '@mui/material';
-import { User } from '../../types';
-import { TagList, Text } from '../common';
+import { User } from '../../../lib/types';
+import { TagList, Text } from '..';
 
 const UserCard = ({ user, ...props }: { user: User; [k: string]: any }) => {
   return (

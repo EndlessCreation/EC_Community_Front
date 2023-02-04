@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { Avatar, Box, Card, styled } from '@mui/material';
-import { User } from '../../types';
-import { Text } from '../common';
+import { User } from '../../../lib/types';
+import { Text } from '..';
 
 type PannelCardProps = {
   list: Array<{ title: string; author: User; createdAt: Date }>;

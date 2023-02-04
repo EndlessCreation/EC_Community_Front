@@ -3,9 +3,9 @@ import { Box, InputAdornment, OutlinedInput, styled } from '@mui/material';
 import { ResponsiveLayout, Section } from '@components/common';
 import HomeHead from './HomeHead';
 import SearchIcon from '@mui/icons-material/Search';
-import { testBlog1, testBlog2 } from '../../types';
-import { BlogCard } from '@components/Card';
 import Head from 'next/head';
+import { BlogCard } from './common/Card';
+import { testBlog1, testBlog2 } from '@lib/types';
 
 const BlogList: React.FC = () => {
   return (

@@ -2,8 +2,8 @@
 import { css } from '@emotion/react';
 import { Avatar, Box, Card, Grid, styled } from '@mui/material';
 import { useRouter } from 'next/dist/client/router';
-import { Blog } from '../../types';
-import { TagList, Text } from '../common';
+import { Blog } from '../../../lib/types';
+import { TagList, Text } from '..';
 
 const BlogCard = ({ blog, ...props }: { blog: Blog; [k: string]: any }) => {
   const router = useRouter();

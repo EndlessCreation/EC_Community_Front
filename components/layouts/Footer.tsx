@@ -11,10 +11,6 @@ const contributor = [
     role: '프론트엔드',
     author: ['황인서', '이상준', '오정진'],
   },
-  {
-    role: '백엔드',
-    author: ['김건훈'],
-  },
 ];
 
 const Footer: React.FC = () => (

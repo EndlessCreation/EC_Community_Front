@@ -1,11 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { Box, Card, styled } from '@mui/material';
-import { Activity } from '../../types';
-import { TagList, Text } from '../common';
+import { Project } from '../../../lib/types';
+import { TagList, Text } from '..';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
-const ProjectCard = ({ activity, ...props }: { activity: Activity; [k: string]: any }) => {
+const ProjectCard = ({ activity, ...props }: { activity: Project; [k: string]: any }) => {
   return (
     <CardWrapper {...props} elevation={4}>
       <img className="image" src={activity.image || ''} alt=""></img>

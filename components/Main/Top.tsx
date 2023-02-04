@@ -1,6 +1,7 @@
 import { css, keyframes } from '@emotion/react';
-import { Box, styled } from '@mui/material';
+import { Box, Button, styled } from '@mui/material';
 import { Text } from '@components/common';
+import data from 'metadata';
 
 const Top: React.FC = () => {
   return (
@@ -8,21 +9,25 @@ const Top: React.FC = () => {
       <Box>
         <Text css={{ fontSize: '3.25rem' }}>성장하는 즐거움</Text>
         <Text css={{ fontSize: '4rem' }}>Endless Creation</Text>
-        <Text css={{ fontSize: '1.75rem' }}>32기 본격 활동중!</Text>
-        {/* <Button
-          className="recruit"
-          css={css`
-            animation: ${wiggle} 2s linear infinite;
-          `}
-        >
-          <a
-            href="https://aluminum-taker-8e2.notion.site/Endless-Creation-32-c4befab271c0452bb26523ea3749afa6"
-            target="_blank"
-            rel="noreferrer"
-          >
-            모집 내용 자세히 보기
-          </a>
-        </Button> */}
+        {data.isRecruiting ? (
+          <>
+            <Text css={{ fontSize: '1.75rem' }}>
+              {data.currentGeneration}기 모집중! ({data.recruitPeriod})
+            </Text>
+            <Button
+              className="recruit"
+              css={css`
+                animation: ${wiggle} 2s linear infinite;
+              `}
+            >
+              <a href={data.recruitNoticeAddress} target="_blank" rel="noreferrer">
+                모집 내용 자세히 보기
+              </a>
+            </Button>
+          </>
+        ) : (
+          <Text css={{ fontSize: '1.75rem' }}>{data.currentGeneration - 1}기 본격 활동중!</Text>
+        )}
       </Box>
     </Wrapper>
   );

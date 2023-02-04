@@ -1,9 +1,9 @@
 import { Box, Grid } from '@mui/material';
 import { ResponsiveLayout, Section, Text } from '@components/common';
 import HomeHead from './HomeHead';
-import { testActivity1, testActivity2, testActivity3, testActivity4 } from '../../types';
-import { ActivityCard } from '@components/Card';
 import Head from 'next/head';
+import { ActivityCard } from './common/Card';
+import projects from '@data/local/projects.json';
 
 const Project: React.FC = () => {
   return (
@@ -20,18 +20,11 @@ const Project: React.FC = () => {
         <Section>
           <Text className="title">Project</Text>
           <Grid container spacing={4}>
-            <Grid item xs={12} sm={6} md={4}>
-              <ActivityCard activity={testActivity1} />
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <ActivityCard activity={testActivity2} />
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <ActivityCard activity={testActivity3} />
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <ActivityCard activity={testActivity4} />
-            </Grid>
+            {projects.map((project: any, index) => (
+              <Grid key={index} item xs={12} sm={6} md={4}>
+                <ActivityCard activity={project} />
+              </Grid>
+            ))}
           </Grid>
         </Section>
       </ResponsiveLayout>

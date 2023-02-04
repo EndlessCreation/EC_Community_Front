@@ -23,9 +23,9 @@ function ScrollTop() {
       <Box
         onClick={handleClick}
         role="presentation"
-        sx={{ position: 'fixed', bottom: 16, right: 16 }}
+        sx={{ position: 'fixed', bottom: 32, right: 32 }}
       >
-        <Fab size="small">
+        <Fab>
           <KeyboardArrowUpIcon />
         </Fab>
       </Box>
