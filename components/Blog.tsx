@@ -6,6 +6,7 @@ import { Text } from '@components/common';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useRouter } from 'next/dist/client/router';
 import { Post } from 'contentlayer/generated';
+import Head from 'next/head';
 
 type BlogProps = {
   post: Post;
@@ -20,8 +21,11 @@ const Blog: React.FC<BlogProps> = ({ post }) => {
 
   return (
     <Wrapper>
+      <Head>
+        <title>EC: {post.title}</title>
+      </Head>
       <InnerWrapper elevation={3}>
-        <Head>
+        <Header>
           <IconButton
             onClick={() => {
               router.push('/blog');
@@ -30,7 +34,7 @@ const Blog: React.FC<BlogProps> = ({ post }) => {
             <ArrowBackIcon />
           </IconButton>
           <Text className="title">{post.title}</Text>
-        </Head>
+        </Header>
         <Viewer initialValue={post.body.raw} />
       </InnerWrapper>
     </Wrapper>
@@ -46,7 +50,7 @@ const Wrapper = styled(Box)(css`
   background: #f0f0f0;
 `);
 
-const Head = styled(Box)(css`
+const Header = styled(Box)(css`
   display: flex;
   margin-bottom: 1.5rem;
   padding-bottom: 0.8rem;
