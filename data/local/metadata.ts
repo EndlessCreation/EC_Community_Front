@@ -14,13 +14,13 @@ export const clubData = {
    * @type {boolean}
    * @example true
    */
-  isRecruiting: true,
+  isRecruiting: false,
   /**
    * 동아리 모집 기간입니다.
    * @type {string}
    * @example "02. 13 ~ 02. 26"
    */
-  recruitPeriod: '~ 02. 26',
+  recruitPeriod: '~ 03. 3',
   /**
    * 동아리 모집 공고 주소입니다.
    * @type {string}
