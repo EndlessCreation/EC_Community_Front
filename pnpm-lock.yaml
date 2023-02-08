@@ -7,16 +7,20 @@ specifiers:
   '@mui/icons-material': ^5.11.0
   '@mui/material': ^5.11.7
   '@svgr/webpack': ^6.5.1
+  '@toast-ui/editor-plugin-code-syntax-highlight': ^3.1.0
   '@toast-ui/react-editor': ^3.2.2
   '@types/node': 18.11.18
+  '@types/prismjs': ^1.26.0
   '@types/react': 18.0.27
   '@types/react-slick': ^0.23.10
   '@types/redux-actions': ^2.6.2
   '@types/redux-logger': ^3.0.9
   '@typescript-eslint/eslint-plugin': ^5.50.0
   '@typescript-eslint/parser': ^5.50.0
+  Prism: ^2.0.0
   contentlayer: ^0.3.0
   cross-env: ^7.0.3
+  editor-plugin-code-syntax-highlight: link:@types/@toast-ui/editor-plugin-code-syntax-highlight
   eslint: ^8.33.0
   eslint-config-airbnb: ^19.0.4
   eslint-config-airbnb-typescript: ^17.0.0
@@ -25,6 +29,7 @@ specifiers:
   next: 13.1.6
   next-contentlayer: ^0.3.0
   next-sitemap: ^3.1.49
+  prismjs: ^1.29.0
   react: 18.2.0
   react-countup: ^6.4.1
   react-dom: 18.2.0
@@ -38,11 +43,14 @@ dependencies:
   '@mui/icons-material': 5.11.0_m3y2ykptchyoygtoroit6l3ehq
   '@mui/material': 5.11.7_rqh7qj4464ntrqrt6banhaqg4q
   '@svgr/webpack': 6.5.1
+  '@toast-ui/editor-plugin-code-syntax-highlight': 3.1.0
   '@toast-ui/react-editor': 3.2.2_react@18.2.0
+  Prism: 2.0.0
   contentlayer: 0.3.0
   cross-env: 7.0.3
   next: 13.1.6_biqbaboplfbrettd7655fr4n2y
   next-contentlayer: 0.3.0_3vryta7zmbcsw4rrqf4axjqggm
+  prismjs: 1.29.0
   react: 18.2.0
   react-countup: 6.4.1_react@18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -50,12 +58,14 @@ dependencies:
 
 devDependencies:
   '@types/node': 18.11.18
+  '@types/prismjs': 1.26.0
   '@types/react': 18.0.27
   '@types/react-slick': 0.23.10
   '@types/redux-actions': 2.6.2
   '@types/redux-logger': 3.0.9
   '@typescript-eslint/eslint-plugin': 5.50.0_go4drrxstycfikanvu45pi4vgq
   '@typescript-eslint/parser': 5.50.0_4vsywjlpuriuw3tl5oq6zy5a64
+  editor-plugin-code-syntax-highlight: link:@types/@toast-ui/editor-plugin-code-syntax-highlight
   eslint: 8.33.0
   eslint-config-airbnb: 19.0.4_eslint@8.33.0
   eslint-config-airbnb-typescript: 17.0.0_ygig7seai22oeqkcy7s77pnrb4
@@ -2735,6 +2745,12 @@ packages:
     dependencies:
       tslib: 2.5.0
 
+  /@toast-ui/editor-plugin-code-syntax-highlight/3.1.0:
+    resolution: {integrity: sha512-OgX5pZiTnHREoTTXDAFu1k6RzEspGOxeJNRlt/Lnoi1GvLbIpUTTbBcls9becpXT/Qdls++8G3r5C60cVdellA==}
+    dependencies:
+      prismjs: 1.29.0
+    dev: false
+
   /@toast-ui/editor/3.2.1:
     resolution: {integrity: sha512-05nKfqK2n/6Mq8WpO1E7OnOjlhiFfxr1G2i/DpG/pFjKlY3E7uOtSAyuz7rybKWHgUzXRzRGv7MqDL6lXfqnWg==}
     dependencies:
@@ -2826,6 +2842,10 @@ packages:
   /@types/parse5/6.0.3:
     resolution: {integrity: sha512-SuT16Q1K51EAVPz1K29DJ/sXjhSQ0zjvsypYJ6tlwVsRV9jwW5Adq2ch8Dq8kDBCkYnELS7N7VNCSB5nC56t/g==}
     dev: false
+
+  /@types/prismjs/1.26.0:
+    resolution: {integrity: sha512-ZTaqn/qSqUuAq1YwvOFQfVW1AR/oQJlLSZVustdjwI+GZ8kr0MSHBj0tsXPW1EqHubx50gtBEjbPGsdZwQwCjQ==}
+    dev: true
 
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
@@ -3009,6 +3029,11 @@ packages:
       '@typescript-eslint/types': 5.50.0
       eslint-visitor-keys: 3.3.0
     dev: true
+
+  /Prism/2.0.0:
+    resolution: {integrity: sha512-dTOa0BgdoPQWUfdpbQceKkwg4oDk6ZY7cK9VVYVVlLKCWQwKxFnTThsM9qZgIGF+xquGBXTUaFh/n9SLXZ6IiA==}
+    deprecated: Package abandoned, contact support@npmjs.com for more info.
+    dev: false
 
   /acorn-jsx/5.3.2_acorn@8.8.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -5863,6 +5888,11 @@ packages:
     dependencies:
       fast-diff: 1.2.0
     dev: true
+
+  /prismjs/1.29.0:
+    resolution: {integrity: sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==}
+    engines: {node: '>=6'}
+    dev: false
 
   /prop-types/15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}

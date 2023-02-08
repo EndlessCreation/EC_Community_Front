@@ -25,14 +25,6 @@ const BlogList = ({ posts }: BlogListProps) => {
       />
 
       <ResponsiveLayout>
-        <Search
-          placeholder="Search..."
-          endAdornment={
-            <InputAdornment position="end">
-              <SearchIcon />
-            </InputAdornment>
-          }
-        />
         <Section css={{ paddingTop: '2rem' }}>
           <List>
             {posts.map((post) => (

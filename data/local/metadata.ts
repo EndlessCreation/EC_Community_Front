@@ -99,7 +99,7 @@ export const developSteps = [
 ];
 
 export const studySteps = [
-  { id: 100, label: '서류 접수', date: '2.13 ~ 2.24' },
-  { id: 200, label: '면접 일정', date: '2.19, 2.26' },
-  { id: 300, label: '최종합격', date: '2.27' },
+  { id: 100, label: '서류 접수', date: '2.20 ~ 3.3' },
+  { id: 200, label: '면접 일정', date: '2.26, 3.5' },
+  { id: 300, label: '최종합격', date: '3.6' },
 ];
