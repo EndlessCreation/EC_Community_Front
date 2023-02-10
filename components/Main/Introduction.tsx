@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 import { Box, styled } from '@mui/material';
 import { ResponsiveLayout, Text } from '@components/common';
 import ScrollRevealSlideAnimation from '@components/common/ScrollRevealSlideAnimation';
+import { clubData } from '@data/local/metadata';
 
 const Introduction: React.FC = () => {
   return (
@@ -17,7 +18,7 @@ const Introduction: React.FC = () => {
             <Text className="text">
               사람과 컴퓨터를 사랑하는 동아리로,
               <br />
-              창립한지 32년째 되는 역사깊은 동아리입니다
+              창립한지 {clubData.currentGeneration}년째 되는 역사깊은 동아리입니다
             </Text>
           </ScrollRevealSlideAnimation>
           <ScrollRevealSlideAnimation startPosition={2}>
