@@ -23,7 +23,7 @@ const Introduction: React.FC = () => {
           </ScrollRevealSlideAnimation>
           <ScrollRevealSlideAnimation startPosition={2}>
             <Text className="text">
-              올해 2022년부터는
+              2022년부터는
               <br />
               컴퓨터 공학과 학생들을 대상으로 하는
               <br />
