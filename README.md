@@ -5,7 +5,7 @@
    <img src='https://img.shields.io/github/package-json/v/EndlessCreation/EC_Community_Front'>
      <a href="https://github.com/EndlessCreation/EC_Community_Front/issues"><img src='https://img.shields.io/github/issues/EndlessCreation/EC_Community_Front'></a>
       <a href="https://github.com/EndlessCreation/EC_Community_Front/graphs/contributors"><img src='https://img.shields.io/github/contributors/EndlessCreation/EC_Community_Front'></a>
-      <a href='https://github.com/EndlessCreation/EC_Community_Front/blob/main/LICENSE'><img src='https://img.shields.io/github/license/EndlessCreation/EC_Community_Front'></a>
+      <a href="https://app.netlify.com/sites/ec-community/deploys"><img src='https://api.netlify.com/api/v1/badges/e49cdafe-409d-47c1-b45e-bb1672b7c3da/deploy-status'></a>
 </p>
 
 # EC Community
@@ -21,7 +21,7 @@
     <tr>
         <td colspan="1" align="center"><strong>Language</strong></td>
         <td colspan="2" align="center"><strong>Framework</strong></td>
-        <td colspan="1" align="center"><strong>State Manage</strong></td>
+        <td colspan="1" align="center"><strong>State Management</strong></td>
     </tr>
     <tr align="center" valign="middle">
         <td width="100">
@@ -41,7 +41,7 @@
         </td>
     </tr>
     <tr>
-        <td colspan="2" align="center"><strong>UI</strong></td>
+        <td colspan="2" align="center"><strong>Styling</strong></td>
         <td colspan="2" align="center"><strong>Testing</strong></td>
     </tr>
     <tr>
