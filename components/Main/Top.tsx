@@ -26,7 +26,7 @@ const Top: React.FC = () => {
             </Button>
           </>
         ) : (
-          <Text css={{ fontSize: '1.75rem' }}>{clubData.currentGeneration - 1}기 본격 활동중!</Text>
+          <Text css={{ fontSize: '1.75rem' }}>{clubData.currentGeneration}기 활동중!</Text>
         )}
       </Box>
     </Wrapper>

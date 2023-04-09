@@ -14,7 +14,7 @@ export const clubData = {
    * @type {boolean}
    * @example true
    */
-  isRecruiting: true,
+  isRecruiting: false,
   /**
    * 동아리 모집 기간입니다.
    * @type {string}
