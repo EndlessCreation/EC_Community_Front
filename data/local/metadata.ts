@@ -14,20 +14,20 @@ export const clubData = {
    * @type {boolean}
    * @example true
    */
-  isRecruiting: false,
+  isRecruiting: true,
   /**
    * 동아리 모집 기간입니다.
    * @type {string}
    * @example "02. 13 ~ 02. 26"
    */
-  recruitPeriod: '~ 03. 3',
+  recruitPeriod: '~ 09. 6',
   /**
    * 동아리 모집 공고 주소입니다.
    * @type {string}
    * @example "노션 페이지 등"
    */
   recruitNoticeAddress:
-    'https://foregoing-stilton-93d.notion.site/Endless-Creation-33-b45ab47c05f643d88248389d37556a1a',
+    'https://foregoing-stilton-93d.notion.site/Endless-Creation-33-0af2ded6538d4a5cb5cc12ca79ad884a?pvs=4',
   /**
    * 동아리 활동 인원 수 입니다.
    * @type {number}
